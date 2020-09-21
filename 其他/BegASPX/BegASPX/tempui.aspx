@@ -1,0 +1,22 @@
+
+<script language=cs runat=server>
+private void Sub()
+{/*
+string strCon="Provider=Microsoft.Jet.OleDb.4.0;";
+strCon+="Data Source="+Server.MapPath("db_user.mdb");
+OleDbConnection objCon=new OleDbConnection(strCon);
+string strSQL="select * from user_infor where mail='"+UID.Text+"' and pwd='"+PWD.Text+"'";
+OleDbDataAdapter objAdapter=new OleDbDataAdapter(strSQL,objCon);
+objCon.Open();
+DataSet objDS=new DataSet();
+objAdapter.Fill(objDS,"user_infor");
+mydata.DataSource=objDS.Tables[0].DefaultView;
+mydata.DataBind();
+objCon.Close();*/
+}
+
+private void Page_load()
+{
+Response.Write(Request.Form["PWD"]);
+}
+</script>

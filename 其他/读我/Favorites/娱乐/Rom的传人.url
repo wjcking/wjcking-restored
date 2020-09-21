@@ -1,0 +1,12 @@
+[DEFAULT]
+BASEURL=http://www.romman.net/
+
+[DOC#5#6]
+BASEURL=about:blank
+
+[DOC#5#7]
+BASEURL=http://www.romman.net/index.asp
+
+[InternetShortcut]
+URL=http://www.romman.net/
+Modified=205D52BADEF5C2011F

@@ -1,0 +1,109 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fmodern\fprq6\fcharset134 \'cb\'ce\'cc\'e5;}}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\lang2052\f0\fs20\'d4\'da\'b4\'cb\'d2\'aa\'bd\'e9\'c9\'dc4\'d6\'d6\'bc\'c6\'ca\'fd\'c6\'f7:\'b8\'f7\'d3\'d0\'b8\'f7\'b5\'c4\'b9\'a6\'c4\'dc.\par
+\par
+1)\'cd\'f8\'d5\'be\'d7\'dc\'b9\'b2\'b7\'c3\'ce\'ca\'c8\'cb\'ca\'fd\'bc\'c6\'ca\'fd\'c6\'f7\par
+\par
+\'d5\'e2\'d6\'d6\'bc\'c6\'ca\'fd\'c6\'f7\'ce\'d2\'c3\'c7\'bf\'c9\'d2\'d4\'ca\'b9\'d3\'c3XML\'c0\'b4\'ca\'b5\'cf\'d6\'a3\'ac\'b4\'f2\'bf\'aawindows\'b5\'c4\'bc\'c7\'ca\'c2\'b1\'be\'d4\'da\'c6\'e4\'d6\'d0\'c2\'bc\'c8\'eb\'d2\'d4\'cf\'c2\'ca\'fd\'be\'dd\'c1\'ed\'b4\'e6\'ce\'aacount.xml\'a1\'a3\par
+<MyCount>\par
+<AllCount>0</AllCount> \par
+<MaxCount>0</MaxCount>\par
+</MyCount>\par
+\'c6\'e4\'d6\'d0AllCount\'b1\'ea\'c7\'a9\'ca\'c7\'bc\'c7\'c2\'bcweb\'d2\'b3\'c3\'e6\'b7\'c3\'ce\'ca\'b5\'c4\'d7\'dc\'c8\'cb\'ca\'fd\'b5\'c4\'a3\'ac\'ce\'d2\'c3\'c7\'c0\'b4\'b1\'e0\'d0\'b4\'b4\'fa\'c2\'eb\'b2\'d9\'d7\'dd\'d5\'e2\'b8\'f6xml\'ce\'c4\'bc\'fe\par
+<%@ Import Namespace="System.Data" %>\par
+<%@ Import Namespace="System.Data.OleDb" %>//\'b5\'bc\'c8\'eb...\par
+<Script language="C#" runat=server>\par
+HttpCookie CkeCount=new HttpCookie("Count");//\'c0\'b4\'d2\'bb\'b8\'f6cookie\'b1\'e4\'c1\'bf\'a3\'ac\'d3\'c3\'c0\'b4\'c5\'d0\'b6\'cf\'b7\'c3\'bf\'cd\'ca\'c7\'b7\'f1\'d4\'da\'c4\'fa\'b5\'c4\'cd\'f8\'d5\'be\par
+void Page_Load()\par
+\{\par
+if(Request.Cookies["Count"]==null)//\'c8\'e7\'b9\'fbcookie\'ce\'aa\'bf\'d5\'a3\'ac\'cb\'b5\'c3\'f7\'b5\'da\'d2\'bb\'b4\'ce\'d4\'d8\'c8\'eb\'c4\'fa\'b5\'c4\'d2\'b3\'c3\'e6\par
+\{\par
+CkeCount.Value="true";//\'b8\'f8cookie\'cc\'ed\'bc\'d3\'d2\'bb\'b8\'f6\'d6\'b5\par
+/* \'d5\'e2\'c0\'ef\'ca\'c7\'bf\'c9\'d1\'a1\'b4\'fa\'c2\'eb\'a3\'ac\'bf\'b4\'bf\'b4cookie\'ca\'c7\'b7\'f1\'ca\'a7\'d0\'a7\'a3\'ac\'c8\'e7\'b9\'fb\'c4\'fa\'c9\'e8\'d6\'c3\'b3\'c91\'b8\'f6\'d4\'c2\'a3\'ac\'d3\'d0\'b8\'f6\'b7\'c3\'bf\'cd\'d2\'d4\'c7\'b0\'b7\'c3\'ce\'ca\'b9\'fd\'c4\'fa\'b5\'c4\'d5\'be\'b5\'e3\'a3\'ac\'cb\'fb\'b5\'c4cookies\'c0\'ef\'c3\'e6\'d3\'d0\'c4\'fa\'b4\'e6\'c8\'eb\'b5\'c4\'d6\'b5\'a3\'ac\'b2\'a2\'c7\'d2\'cb\'fb\'b5\'c4cookies\'c3\'bb\'d3\'d0\'c7\'e5\'bf\'d5\'c4\'c7\'c3\'b4\'d4\'d9\'bf\'b4if\'d3\'ef\'be\'e4\'a3\'ac\'c4\'c7\'d5\'e2\'b8\'f6\'b7\'c3\'bf\'cd\'d4\'d8\'c8\'eb\'d2\'b3\'c3\'e6\'ca\'b1\'d4\'da\'bc\'c6\'ca\'fd\'c6\'f7\'d6\'d0\'be\'cd\'b2\'bb\'bc\'d31\'a3\'ac\'c8\'e7\'b9\'fb\'c4\'fa\'b2\'bb\'c9\'e8\'d6\'c3cookies\'b1\'a3\'c1\'f4\'ca\'b1\'bc\'e4\'a3\'ac\'c4\'c7\'c3\'b4\'b7\'c3\'bf\'cd\'c0\'eb\'bf\'aa \'c4\'fa\'b5\'c4\'d5\'be\'b5\'e3cookie\'d7\'d4\'b6\'af\'cf\'fb\'ca\'a7\'a1\'a3\par
+DateTime dt=DateTime.Now;\par
+TimeSpan ts=new TimeSpan(30,0,0,0);\par
+CkeCount.Expires=dt+ts;\par
+*/\par
+\par
+///**********xml \'b2\'d9\'d7\'f7****************************8\par
+DataSet objDataSet=new DataSet(); \par
+objDataSet.ReadXml(Server.MapPath("count.xml")); //dataset\'b6\'c1xml\'ce\'c4\'bc\'fe\par
+objDataSet.Tables["MyCount"].Rows[0]["AllCount"]=Convert.ToInt64(objDataSet.Tables["MyCount"].Rows[0]["AllCount"])+1;//\'d5\'e2\'c0\'ef\'ca\'c7\'d0\'b4\'c8\'e7xml,\'b8\'fc\'d0\'c2\'b5\'da\'d2\'bb\'d0\'d0Allcount\'b1\'ea\'c7\'a9\'b5\'c4\'d6\'b5+1\par
+objDataSet.WriteXml(Server.MapPath("database/count.xml"));//\'d0\'b4\'c8\'e7xml\par
+Response.Cookies.Add(CkeCount);//\'d0\'b4\'c8\'ebcookies\par
+\'a3\'fd\par
+lbCount.Text="\'d7\'dc\'b9\'b2"+objDataSet.Tables["MyCount"].Rows[0]["AllCount"].ToString();//\'cf\'d4\'ca\'be\'d4\'da\'d2\'b3\'c3\'e6\'c9\'cf\par
+\}\par
+</script>\par
+<asp:label runat=server id=lbCount />\par
+\par
+2)\'b5\'b1\'c7\'b0\'d4\'da\'cf\'df\'c8\'cb\'ca\'fd\'bc\'c6\'ca\'fd\'c6\'f7\par
+\par
+\'c5\'d0\'b6\'cf\'b5\'b1\'c7\'b0\'d3\'d0\'bc\'b8\'b8\'f6\'c8\'cb\'d4\'da\'c4\'fa\'b5\'c4\'d5\'be\'b5\'e3,\'d5\'e2\'b8\'f6\'bc\'c6\'ca\'fd\'c6\'f7\'b1\'c8\'bd\'cf\'bc\'f2\'b5\'a5,\'d5\'e2\'c0\'ef\'d2\'aa\'d3\'c3\'b5\'bdApplication\'b1\'e4\'c1\'bf\'ba\'cdsession\'b5\'c42\'b8\'f6\'b7\'bd\'b7\'a8Application\'b1\'e4\'c1\'bf\'c6\'f0\'d7\'c5\'d4\'f6\'bc\'d3\'a3\'ac\'bc\'f5\'c9\'d9\'c8\'cb\'ca\'fd\'b5\'c4\'d7\'f7\'d3\'c3\'a1\'a3\par
+\'d4\'daglobal.asax\'ce\'c4\'bc\'fe\'c0\'ef\'c3\'e6\'ca\'e4\'c8\'eb\'d2\'d4\'cf\'c2\'b4\'fa\'c2\'eb\'a3\'ba\par
+\'a3\'bcscript language="c#" runat="Server"\'a3\'be\par
+protected void Application_Start\'a3\'a8Object sender, EventArgs e\'a3\'a9\par
+\{\par
+Application["user_sessions"] = 0;//\'c9\'f9\'c3\'f7\'d2\'bb\'b8\'f6application\'b1\'e4\'c1\'bf\'c0\'b4\'d7\'f6\'bc\'c6\'ca\'fd\'c6\'f7\par
+\}\par
+protected void Session_Start\'a3\'a8Object sender, EventArgs e\'a3\'a9\par
+\{\par
+Application.Lock\'a3\'a8\'a3\'a9;//\'cf\'c8\'cb\'f8\'b6\'a8\'d3\'a6\'d3\'c3\'b3\'cc\'d0\'f2\'a3\'ac\'d5\'e2\'c0\'ef\'b4\'f3\'bc\'d2\'b6\'bc\'c3\'f7\'b0\'d7\par
+Application["user_sessions"] = \'a3\'a8int\'a3\'a9Application["user_sessions"] + 1;\par
+//\'b5\'b1session_start\'b7\'bd\'b7\'a8\'c6\'f4\'b6\'af\'ca\'b1\'c5\'d0\'b6\'cf\'b5\'b1\'c7\'b0\'d3\'d0\'bc\'b8\'b8\'f6\'c8\'cb\'d4\'da\'cf\'df\'a3\'ac\'c8\'bb\'ba\'f3\'b8\'b3\'d6\'b5\'b5\'bdApplication["user_sessions"]\'b1\'e4\'c1\'bf.(int)\'c7\'bf\'d6\'c6\'d7\'aa\'bb\'bb\'c0\'e0\'d0\'cd\'a3\'ac\'d0\'b6\'cf\'e4\'a3\'ac\'d7\'b0\'cf\'e4\'a3\'a1\par
+Application.Unlock\'a3\'a8\'a3\'a9;\par
+\}\par
+protected void Session_End\'a3\'a8Object sender, EventArgs e\'a3\'a9\par
+\{\par
+Application.Lock\'a3\'a8\'a3\'a9;\par
+Application["user_sessions"] = \'a3\'a8int\'a3\'a9Application["user_sessions"] - 1;\par
+//\'b5\'b1\'d3\'c3\'bb\'a7\'c0\'eb\'bf\'aa\'d5\'be\'b5\'e3\'b5\'c4\'ca\'b1\'ba\'f2,\'bc\'f51 \'d0\'b6\'cf\'e4\'a3\'ac\'d7\'b0\'cf\'e4\'a3\'a1 object=int\par
+Application.Unlock\'a3\'a8\'a3\'a9;\par
+\}\par
+\'b6\'bc\'d2\'aa\'d0\'b4\'d4\'daSession_OnStart,\'ba\'cdSession_OnEnd\'b7\'bd\'b7\'a8\'c0\'ef\'c3\'e6.\par
+\'a3\'bc/script\'a3\'be\par
+\'c9\'e8\'d6\'c3label\'bf\'d8\'bc\'fe\'b0\'d1\'d6\'b5\'b6\'c1\'b3\'f6.\par
+\par
+3)\'d7\'ee\'b4\'f3\'d4\'da\'cf\'df\'c8\'cb\'ca\'fd\'cd\'b3\'bc\'c6\par
+\par
+\'d5\'e2\'b8\'f6\'be\'cd\'ba\'dc\'bc\'f2\'b5\'a5\'c1\'cb\'a3\'ac\'d5\'e2\'c0\'ef\'d3\'c3application\'b1\'e4\'c1\'bf\'c5\'e4\'ba\'cfxml\'c0\'b4\'cd\'ea\'b3\'c9,\par
+global.asax\par
+Application.Lock();//\'cb\'f8\'b6\'a8\'d3\'a6\'d3\'c3\'b3\'cc\'d0\'f2\par
+DataSet objDataSet=new DataSet()\par
+objDataSet.ReadXml(Server.MapPath("database/count.xml"));//\'b6\'c1xml\'ce\'c4\'bc\'fe\par
+if(Convert.ToInt64(objDataSet.Tables["MyCount"].Rows[0]["MaxCount"])<(int)Application["user_sessions"])//\'c8\'e7\'b9\'fbMaxCount\'b1\'ea\'c7\'a9\'c0\'ef\'c3\'e6\'b5\'c4\'d6\'b5\'d0\'a1\'d3\'da\'b5\'b1\'c7\'b0\'d4\'da\'cf\'df\'c8\'cb\'ca\'fd\'b5\'c4\'d6\'b5\'a3\'ac\'be\'cd\'b4\'e6\'c8\'eb\'a3\'ac\'b2\'bb\'d0\'a1\'d3\'da\'d4\'f2\'ca\'b2\'c3\'b4\'b6\'bc\'b2\'bb\'d7\'f6\'a1\'a3\par
+objDataSet.Tables["MyCount"].Rows[0]["MaxCount"]=(int)Application["user_sessions"];\par
+objDataSet.WriteXml(Server.MapPath("database/count.xml"));\par
+Application.UnLock();\par
+\par
+4\'a3\'a9\'cd\'b3\'bc\'c6\'bd\'f1\'c8\'d5\'d4\'da\'cf\'df\'c8\'cb\'ca\'fd\'bc\'c6\'ca\'fd\'c6\'f7\par
+\par
+\'d5\'e2\'c0\'ef\'d2\'aa\'d3\'c3\'b5\'bd\'c8\'d5\'c6\'da\'ca\'b1\'bc\'e4\'b1\'e4\'c1\'bf\'ba\'cd2application\'b1\'e4\'c1\'bf,\'c9\'f9\'c3\'fbApplication["datetTime"],\'ba\'cdApplication["day_count"]\'b1\'e4\'c1\'bf\par
+global\'a1\'a3asax\'ce\'c4\'bc\'fe\par
+Application["dateTime"]=0;//\'cf\'c8\'b8\'f8\'b8\'b3\'ce\'aa0\par
+Application["day_count]=0;//\'bd\'f1\'c8\'d5\'b7\'c3\'ce\'ca\'cd\'b3\'bc\'c6\'b1\'e4\'c1\'bf\'a3\'ac\'b3\'f5\'ca\'bc\'d6\'b5\'ce\'aa0\par
+Application.Lock();\par
+if(DateTime.Now.Day==Convert.ToInt32(Application["dateTime"]))\par
+//\'c8\'e7\'b9\'fb\'cf\'b5\'cd\'b3\'c8\'d5\'c6\'da\'a3\'a8\'cc\'ec\'ca\'fd\'a3\'ac\'b7\'fe\'ce\'f1\'c6\'f7\'c9\'cf\'b5\'c4\'a3\'a9 \'b5\'c8\'d3\'daApplication["dateTime"]\'c0\'ef\'c3\'e6\'b5\'c4\'d6\'b5\'a3\'ac\'d4\'f2Application["day_count"]\'b1\'e4\'c1\'bf\'c0\'db\'bc\'d31.\par
+\{\par
+Application["day_count"]=(int)Application["day_count"]+1;\par
+\}\par
+else//\'c8\'e7\'b9\'fb\'b2\'bb\'b5\'c8\'d3\'da\'d4\'f2\'b0\'d1Application["day_count"]\'b1\'e4\'c1\'bf\'b8\'b3\'ce\'aa1\'a3\'acApplication["datetime"]\'b8\'b3\'ce\'aa\'b5\'b1\'cc\'ec\'a3\'ac\'d2\'c0\'b4\'ce\'c0\'e0\'cd\'c6\par
+\{\par
+Application["datetime"]=DateTime.Now.Day;\par
+Application["day_count"]=1;\par
+\}\par
+\par
+Application.UnLock();\par
+\par
+\par
+\'d7\'dc\'bd\'e1\par
+-----------------------------------------------------------------------------------\par
+    \'cd\'f8\'d5\'be\'d7\'dc\'b9\'b2\'b7\'c3\'ce\'ca\'c8\'cb\'ca\'fd\'bc\'c6\'ca\'fd\'c6\'f7\'d2\'b2\'bf\'c9\'d2\'d4\'c9\'e8\'d6\'c3\'b3\'c9\'c3\'bfip\'a3\'ac\'a3\'ac\'b4\'fa\'c2\'eb\'d7\'d4\'bc\'ba\'d0\'b4\'c1\'cb \'a3\'ba\'a3\'a9\'bb\'b9\'d3\'d0\'d7\'ee\'ba\'c3\'b0\'d1\'b4\'fa\'c2\'eb\'b7\'c5\'d4\'da\'ca\'d7\'d2\'b3\'a3\'ac\'d5\'e2\'d1\'f9\'cd\'b3\'bc\'c6\'bb\'b9\'b1\'c8\'bd\'cf\'cf\'d6\'ca\'b5\'a3\'ac\'d2\'f2\'ce\'aa\'d2\'bb\'b8\'f6\'d0\'c2\'b5\'c4\'e4\'af\'c0\'c0\'d5\'df80%\'b2\'bb\'bf\'c9\'c4\'dc\'b4\'d3\'b1\'f0\'b5\'c4\'d2\'b3\'c3\'e6\'c0\'b4\'b7\'c3\'ce\'ca\'c4\'fa\'b5\'c4\'d5\'be\'b5\'e3\'a1\'a3\par
+\par
+    \'cd\'b3\'bc\'c6\'d7\'ee\'b4\'f3\'d4\'da\'cf\'df\'c8\'cb\'ca\'fd\'bc\'c6\'ca\'fd\'c6\'f7\'ce\'aa\'ca\'b2\'c3\'b4\'d2\'aa\'b4\'e6\'c8\'ebxml\'ce\'c4\'bc\'fe\'c4\'d8\'a3\'bf\'b4\'e6\'c8\'ebapplication\'b1\'e4\'c1\'bf\'b2\'bb\'d0\'d0\'c2\'f0\'a3\'bf\'ba\'dc\'bc\'f2\'b5\'a5\'a3\'ba\'c8\'e7\'b9\'fb\'b7\'fe\'ce\'f1\'c6\'f7\'b6\'cf\'b5\'e7\'c1\'cb\'c4\'c7\'c6\'f1\'b2\'bb\'ca\'c7\'b0\'d7\'b4\'e6\'c1\'cb\'a3\'bf\par
+\par
+    \'b5\'b1\'c8\'bb\'d5\'e2\'d0\'a9\'bc\'c6\'ca\'fd\'c6\'f7\'b6\'bc\'b2\'bb\'ca\'c7\'ba\'dc\'d7\'bc\'c8\'b7\'a3\'ac\'b5\'ab\'ca\'c7\'c4\'dc\'b4\'f3\'cc\'e5\'b1\'ed\'cf\'d6\'d2\'bb\'b8\'f6\'cd\'f8\'d5\'be\'b5\'c4\'c1\'f7\'c1\'bf\'c1\'cb\par
+\par
+\par
+}
+ 

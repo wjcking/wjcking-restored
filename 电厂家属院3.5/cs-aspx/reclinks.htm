@@ -1,0 +1,147 @@
+<html>
+
+<head>
+<script language=javascript src="code\reclinks.js"></script>
+
+<meta http-equiv="Content-Language" content="zh-cn">
+<link href="images/9points.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Rec Links</title>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+<form name=frmreclink method="post">
+  <div align="center">
+    <table width="98%" border="0" class="9point">
+      <tr> 
+        <td width="0%"></td>
+        <td width="37%"></td>
+        <td width="63%"></td>
+      </tr>
+      <tr> 
+        <td width="0%"></td>
+        <td width="37%"></td>
+        <td width="63%"></td>
+      </tr>
+      <tr> 
+        <td colspan="3"><img src="images/cs-aspx.gif" width="167" height="43"></td>
+      </tr>
+      <tr> 
+        <td height="18" colspan="3"> 
+          <hr size=1 color=black></td>
+      </tr>
+      <tr> 
+        <td colspan="2"> <p align="right"><font color="#000000">署名</font></p></td>
+        <td width="63%"><input type="text" name="TempName" size="20"
+    style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid" ></td>
+      </tr>
+      <tr> 
+        <td width="0%"></td>
+        <td width="37%"></td>
+        <td width="63%"></td>
+      </tr>
+      <tr> 
+        <td colspan="2"> <p align="right"><font color="#000000">E-mail</font></p></td>
+        <td width="63%"><input type="text" name="mail" size="20"
+    style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid">
+          &nbsp; </td>
+      </tr>
+      <tr> 
+        <td width="0%"></td>
+        <td width="37%"></td>
+        <td width="63%"></td>
+      </tr>
+      <tr> 
+        <td width="0%"></td>
+        <td width="37%"> <p align="right">协议类型</td>
+        <td width="63%"><select size="1" name="prot" onChange="Select_Pro()">
+            <option>------</option>
+            <option>http://</option>
+            <option>ftp://</option>
+          </select>
+          &nbsp; </td>
+      </tr>
+      <tr> 
+        <td width="0%"></td>
+        <td width="37%"></td>
+        <td width="63%"></td>
+      </tr>
+      <tr> 
+        <td colspan="2"> <p align="right"><font color="#000000">链接</font></p></td>
+        <td width="63%"><input type="text" name="Url" size="35"
+    style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid" maxlength="40">
+          &nbsp; </td>
+      </tr>
+      <tr> 
+        <td width="0%"></td>
+        <td width="37%"></td>
+        <td width="63%"></td>
+      </tr>
+      <tr> 
+        <td colspan="2"> <p align="right">网站名称</p></td>
+        <td width="63%"><input type="text" name="UrlName" size="20"
+    style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid" >
+          &nbsp; 如:搜狐</td>
+      </tr>
+      <tr> 
+        <td width="0%"></td>
+        <td width="37%"></td>
+        <td width="63%"></td>
+      </tr>
+      <tr> 
+        <td colspan="2"> <p align="right">网站类型</p></td>
+        <td width="63%"> <select size="1" name="ddllinktypes"
+   >
+            <option>.NET</option>
+            <option>学习</option>
+            <option>娱乐</option>
+            <option>游戏</option>
+            <option>其他</option>
+          </select>
+          &nbsp; </td>
+      </tr>
+      <tr> 
+        <td width="0%"></td>
+        <td width="37%"></td>
+        <td width="63%"></td>
+      </tr>
+      <tr> 
+        <td width="0%"></td>
+        <td width="37%"> <p align="right">网站说明</td>
+        <td width="63%"> 
+          <!--webbot bot="Validation" S-Data-Type="String"
+      B-Value-Required="TRUE" I-Maximum-Length="40" -->
+          <input type="text" name="UrlReadMe" size="40"
+     style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid" value="无" maxlength="40"
+     onfocus=Readme_null()></td>
+      </tr>
+      <tr> 
+        <td width="0%"></td>
+        <td width="37%"><br></td>
+        <td width="63%"></td>
+      </tr>
+      <tr> 
+        <td></td>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td></td>
+        <td colspan="2">&nbsp;&nbsp; <div align="center"> 
+            <input type="button" value="提交" name="Sub" onClick=Sub_link()       
+    style="border-style: solid; border-width: 1">
+            &nbsp;&nbsp; 
+            <input type="reset" value="重写" name="Reset"       
+    style="border-style: solid; border-width: 1">
+          </div></td>
+      </tr>
+      <tr> 
+        <td colspan="3"> <hr size=1 color=black> </td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+

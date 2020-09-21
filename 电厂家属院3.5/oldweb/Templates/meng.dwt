@@ -1,0 +1,540 @@
+<HTML>
+<HEAD>
+<style type="text/css">
+<!--
+td{font-size:9pt}
+A:link{text-decoration:none;color:#000000}
+A:active{text-decoration:none;color:#FF0000}
+A:visited{text-decoration:none;color:#0000A0}
+A:hover{FONT-SIZE:9pt;text-decoration:none;color:#FF0000}
+-->
+</style> 
+<!-- #BeginEditable "doctitle" -->
+<TITLE>无标题文档</TITLE>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../esf.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<link rel="stylesheet" href="../9.css" type="text/css">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<table width="755" border="0" class="未命名1">
+  <tr> 
+    <td colspan="4"> 
+      <table width="100%" border="0" class="未命名1">
+        <tr bgcolor="#FF9900"> 
+          <td width="11%">|梦幻工作室|</td>
+          <td width="38%">&nbsp;</td>
+          <td width="26%">&nbsp;</td>
+          <td width="25%">&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td colspan="4" class="未命名1"> 
+            <hr>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td height="79" colspan="4"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td class="未命名1" width="17%" height="61"><img src="../webpic/logo.gif" width="155" height="69"></td>
+          <td class="未命名1" width="50%" height="61"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="465" height="67">
+              <param name=movie value="../webpic/banner.swf">
+              <param name=quality value=high>
+              <embed src="../webpic/banner.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="465" height="67">
+              </embed> 
+            </object></td>
+          <td class="未命名1" width="33%" height="61">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td height="16" bgcolor="#FF9900" colspan="4"> 
+      <table width="100%" border="0">
+        <tr bgcolor="#FF9900"> 
+          <td colspan="7" class="未命名1">&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td class="未命名1"> 
+            <div align="center">◇ 首 页 ◇</div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ <a href="../game.htm">游戏相关</a> ◇</div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ <a href="../soft.htm">另类软件</a> ◇ </div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ <a href="../news.htm">每日新闻</a> ◇ </div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ <a href="../homepage.htm">主页技巧</a> ◇ </div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ 梦幻论坛 ◇ </div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ 留言板 ◇ </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td height="7" colspan="4">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="565" class="未命名1" colspan="4"> <!-- #BeginEditable "s1" --> <!-- #EndEditable --> 
+      <!-- #BeginEditable "s3" --> <!-- #EndEditable --> <!-- #BeginEditable "s5" --> 
+      <!-- #EndEditable --> <!-- #BeginEditable "c1" --> <!-- #EndEditable --> 
+      <!-- #BeginEditable "c2" --> <!-- #EndEditable --> <!-- #BeginEditable "s2" --> 
+      <!-- #EndEditable --> <!-- #BeginEditable "s4" --> <!-- #EndEditable --> 
+      <!-- #BeginEditable "s6" --> 
+      <table width="100%" border="0">
+        <tr> 
+          <td class="未命名1" width="25%">
+            <table width="100%" border="0" height="25">
+              <tr>
+                <td background="../webpic/text.gif">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="48%"> 
+            <table width="100%" border="0" class="未命名1" height="25">
+              <tr> 
+                <td background="../webpic/x1.gif"> 
+                  <div align="right"><b>每日导航</b></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="27%"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="../webpic/text.gif">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="25%">
+            <table width="100%" border="0">
+              <tr>
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="48%">&nbsp;</td>
+          <td class="未命名1" width="27%">
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <table width="100%" border="0" height="25">
+                    <tr> 
+                      <td background="../webpic/text.gif">◇ 本站图标</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1">
+                  <div align="center"><img src="../webpic/logo.JPG" width="92" height="35"></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="25%">
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="../webpic/text.gif" height="17">◇ 网络文学</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="48%"> 
+            <table width="100%" border="0" class="未命名1" height="25">
+              <tr> 
+                <td background="../webpic/x1.gif"> 
+                  <div align="right"><b>天天新闻</b> </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="27%"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="../webpic/text.gif">◇ 搜索引擎</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="25%">
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="48%">&nbsp;</td>
+          <td class="未命名1" width="27%">
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="25%">
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="../webpic/text.gif">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="48%"> 
+            <table width="100%" border="0" class="未命名1" height="25">
+              <tr> 
+                <td background="../webpic/x1.gif"> 
+                  <div align="right"><b>G A M E </b></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="27%"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="../webpic/text.gif">◇ 电子信箱</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="25%">
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="48%">&nbsp;</td>
+          <td class="未命名1" width="27%">
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="未命名1" width="25%">
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="../webpic/text.gif" class="未命名1">◇联系方式 </td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="48%"> 
+            <table width="100%" border="0" class="未命名1" height="25">
+              <tr> 
+                <td background="../webpic/x1.gif"> 
+                  <div align="right"><b>主页制作</b> </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="27%"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="../webpic/text.gif">◇ 每日笑话</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="25%">
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="48%">&nbsp;</td>
+          <td class="未命名1" width="27%">
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- #EndEditable --></td>
+  </tr>
+  <tr> 
+    <td height="6" class="未命名1" colspan="4">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" colspan="4">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" colspan="4">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" colspan="4"> 
+      <div align="center">
+        <table width="100%" border="0" class="未命名1">
+          <tr> 
+            <td colspan="3">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="45%"> 
+              <div align="right" onClick="MM_openBrWindow('file:///D|/web/myself.htm','','scrollbars=yes')"><a href="#">||关于站长|</a></div>
+            </td>
+            <td width="10%"> 
+              <div align="center">|<a href="MAILTO:WJCKING@SOHU.COM">与我联系</a>||</div>
+            </td>
+            <td width="45%"> 
+              <div align="left" onClick="MM_openBrWindow('file:///D|/web/copyrigt.htm','','scrollbars=yes,width=300,height=300')"><a href="#">关于版权||</a></div>
+            </td>
+          </tr>
+        </table>
+        <hr align="center" width="88%">
+        Copyright 2002--2003 Icefire All rights reserved </div>
+    </td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" colspan="4">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" colspan="4"> 
+      <div align="center"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" width="184">&nbsp;</td>
+    <td height="2" class="未命名1" width="157">&nbsp;</td>
+    <td height="2" class="未命名1" width="228">&nbsp;</td>
+    <td height="2" class="未命名1" width="169">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

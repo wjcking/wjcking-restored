@@ -1,0 +1,9 @@
+[DEFAULT]
+BASEURL=http://www.hongen.com/default.htm
+
+[DOC#1210]
+BASEURL=about:blank
+
+[InternetShortcut]
+URL=http://www.hongen.com/default.htm
+Modified=60B5B3534AA7C201CF

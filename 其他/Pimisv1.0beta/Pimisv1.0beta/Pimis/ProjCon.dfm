@@ -1,0 +1,232 @@
+object frmProjectOpen: TfrmProjectOpen
+  Left = 180
+  Top = 75
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = #39033#30446'...'
+  ClientHeight = 184
+  ClientWidth = 309
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDefaultSizeOnly
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CheckBox1: TCheckBox
+    Left = 10
+    Top = 300
+    Width = 276
+    Height = 17
+    Caption = #19979#19968#27425#21551#21160#26102#65292#19981#26174#31034#27492#31383#21475#30452#25509#36830#25509#21040#25968#25454#24211
+    TabOrder = 0
+  end
+  object GroupBox1: TGroupBox
+    Left = 10
+    Top = 20
+    Width = 286
+    Height = 136
+    Caption = #39033#30446#25991#20214
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = #23435#20307
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    object SpeedButton1: TSpeedButton
+      Left = 25
+      Top = 25
+      Width = 26
+      Height = 26
+      Flat = True
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        888800000888880000080BFB0888880BFB080FBF0888880FBF08000008808800
+        000888088808088808888808808E80880888880008E8E80008888888808E8088
+        8888888888080888888888888880888888888888800000888888888880FBF088
+        8888888880BFB088888888888000008888888888888888888888}
+      OnClick = SpeedButton1Click
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 25
+      Top = 100
+      Width = 23
+      Height = 22
+      Flat = True
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        88888888888888888888000000000008888800333333333088880B0333333333
+        08880FB03333333330880BFB0333333333080FBFB000000000000BFBFBFBFB08
+        88880FBFBFBFBF0888880BFB0000000888888000888888880008888888888888
+        8008888888880888080888888888800088888888888888888888}
+      OnClick = SpeedButton2Click
+    end
+    object SpeedButton3: TSpeedButton
+      Left = 25
+      Top = 65
+      Width = 23
+      Height = 22
+      Flat = True
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        888888888888888888888800000000000888880FFFFFFFFF0888880FFFFFFFFF
+        0888880FFFFFFFFF0888880FFFFFFFFF0888880FFFFFFFFF0888880FFFFFFFFF
+        0888880FFFFFFFFF0888880FFFFFFFFF0888880FFFFFF0000888880FFFFFF0F0
+        8888880FFFFFF008888888000000008888888888888888888888}
+      OnClick = SpeedButton3Click
+    end
+    object Label1: TLabel
+      Left = 60
+      Top = 30
+      Width = 210
+      Height = 12
+      Caption = #29992#24403#21069#30340#39033#30446#25991#20214'(dbase/db_data.mdb)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 60
+      Top = 70
+      Width = 96
+      Height = 12
+      Caption = #26032#24314#19968#20010#39033#30446#25991#20214
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 60
+      Top = 105
+      Width = 96
+      Height = 12
+      Caption = #25171#24320#19968#20010#39033#30446#25991#20214
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 10
+    Top = 185
+    Width = 286
+    Height = 101
+    Caption = #31649#29702#21592'(Administrator)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = #23435#20307
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    object Label4: TLabel
+      Left = 15
+      Top = 70
+      Width = 48
+      Height = 12
+      Caption = #30830'  '#35748#65306
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 15
+      Top = 35
+      Width = 48
+      Height = 12
+      Caption = #23494'  '#30721#65306
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+    end
+    object SpeedButton4: TSpeedButton
+      Left = 205
+      Top = 65
+      Width = 66
+      Height = 22
+      Caption = #30830#23450
+      Flat = True
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
+        555555555555555555555555555555555555555555FF55555555555559055555
+        55555555577FF5555555555599905555555555557777F5555555555599905555
+        555555557777FF5555555559999905555555555777777F555555559999990555
+        5555557777777FF5555557990599905555555777757777F55555790555599055
+        55557775555777FF5555555555599905555555555557777F5555555555559905
+        555555555555777FF5555555555559905555555555555777FF55555555555579
+        05555555555555777FF5555555555557905555555555555777FF555555555555
+        5990555555555555577755555555555555555555555555555555}
+      NumGlyphs = 2
+      OnClick = SpeedButton4Click
+    end
+    object mtxtPass2: TMaskEdit
+      Left = 70
+      Top = 65
+      Width = 121
+      Height = 20
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+      PasswordChar = '*'
+      TabOrder = 0
+    end
+    object mtxtPass1: TMaskEdit
+      Left = 70
+      Top = 30
+      Width = 121
+      Height = 20
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+      PasswordChar = '*'
+      TabOrder = 1
+    end
+  end
+  object SDG: TSaveDialog
+    Filter = #39033#30446#25991#20214'|*.mdb'
+    Left = 260
+    Top = 85
+  end
+  object ODG: TOpenDialog
+    Filter = #39033#30446#25991#20214'|*.mdb'
+    Left = 225
+    Top = 85
+  end
+end

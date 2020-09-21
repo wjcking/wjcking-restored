@@ -1,0 +1,976 @@
+<HTML>
+<HEAD>
+<style type="text/css">
+<!--
+td{font-size:9pt}
+A:link{text-decoration:none;color:#000000}
+A:active{text-decoration:none;color:#FF0000}
+A:visited{text-decoration:none;color:#0000A0}
+A:hover{FONT-SIZE:9pt;text-decoration:none;color:#FF0000}
+-->
+</style>
+<TITLE>梦幻工作室</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../Dreamweaver%204/Lessons/Lesson%20Files/esf.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_dragLayer(objName,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,targT,tol,dropJS,et,dragJS) { //v3.0
+  //Copyright 1998 Macromedia, Inc. All rights reserved.
+  var i,j,aLayer,retVal,curDrag=null,NS=(navigator.appName=='Netscape'), curLeft, curTop;
+  if (!document.all && !document.layers) return false;
+  retVal = true; if(!NS && event) event.returnValue = true;
+  if (MM_dragLayer.arguments.length > 1) {
+    curDrag = MM_findObj(objName); if (!curDrag) return false;
+    if (!document.allLayers) { document.allLayers = new Array();
+      with (document) if (NS) { for (i=0; i<layers.length; i++) allLayers[i]=layers[i];
+        for (i=0; i<allLayers.length; i++) if (allLayers[i].document && allLayers[i].document.layers)
+          with (allLayers[i].document) for (j=0; j<layers.length; j++) allLayers[allLayers.length]=layers[j];
+      } else for (i=0;i<all.length;i++) if (all[i].style&&all[i].style.position) allLayers[allLayers.length]=all[i];}
+    curDrag.MM_dragOk=true; curDrag.MM_targL=targL; curDrag.MM_targT=targT;
+    curDrag.MM_tol=Math.pow(tol,2); curDrag.MM_hLeft=hL; curDrag.MM_hTop=hT;
+    curDrag.MM_hWidth=hW; curDrag.MM_hHeight=hH; curDrag.MM_toFront=toFront;
+    curDrag.MM_dropBack=dropBack; curDrag.MM_dropJS=dropJS;
+    curDrag.MM_everyTime=et; curDrag.MM_dragJS=dragJS;
+    curDrag.MM_oldZ = (NS)?curDrag.zIndex:curDrag.style.zIndex;
+    curLeft= (NS)?curDrag.left:curDrag.style.pixelLeft; curDrag.MM_startL = curLeft;
+    curTop = (NS)?curDrag.top:curDrag.style.pixelTop; curDrag.MM_startT = curTop;
+    curDrag.MM_bL=(cL<0)?null:curLeft-cL; curDrag.MM_bT=(cU<0)?null:curTop -cU;
+    curDrag.MM_bR=(cR<0)?null:curLeft+cR; curDrag.MM_bB=(cD<0)?null:curTop +cD;
+    curDrag.MM_LEFTRIGHT=0; curDrag.MM_UPDOWN=0; curDrag.MM_SNAPPED=false; //use in your JS!
+    document.onmousedown = MM_dragLayer; document.onmouseup = MM_dragLayer;
+    if (NS) document.captureEvents(Event.MOUSEDOWN|Event.MOUSEUP);
+  } else {
+    var theEvent = ((NS)?objName.type:event.type);
+    if (theEvent == 'mousedown') {
+      var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+      var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+      var maxDragZ=null; document.MM_maxZ = 0;
+      for (i=0; i<document.allLayers.length; i++) { aLayer = document.allLayers[i];
+        var aLayerZ = (NS)?aLayer.zIndex:aLayer.style.zIndex;
+        if (aLayerZ > document.MM_maxZ) document.MM_maxZ = aLayerZ;
+        var isVisible = (((NS)?aLayer.visibility:aLayer.style.visibility).indexOf('hid') == -1);
+        if (aLayer.MM_dragOk != null && isVisible) with (aLayer) {
+          var parentL=0; var parentT=0;
+          if (!NS) { parentLayer = aLayer.parentElement;
+            while (parentLayer != null && parentLayer.style.position) {
+              parentL += parentLayer.offsetLeft; parentT += parentLayer.offsetTop;
+              parentLayer = parentLayer.parentElement; } }
+          var tmpX=mouseX-(((NS)?pageX:style.pixelLeft+parentL)+MM_hLeft);
+          var tmpY=mouseY-(((NS)?pageY:style.pixelTop +parentT)+MM_hTop);
+          var tmpW = MM_hWidth;  if (tmpW <= 0) tmpW += ((NS)?clip.width :offsetWidth);
+          var tmpH = MM_hHeight; if (tmpH <= 0) tmpH += ((NS)?clip.height:offsetHeight);
+          if ((0 <= tmpX && tmpX < tmpW && 0 <= tmpY && tmpY < tmpH) && (maxDragZ == null
+              || maxDragZ <= aLayerZ)) { curDrag = aLayer; maxDragZ = aLayerZ; } } }
+      if (curDrag) {
+        document.onmousemove = MM_dragLayer; if (NS) document.captureEvents(Event.MOUSEMOVE);
+        curLeft = (NS)?curDrag.left:curDrag.style.pixelLeft;
+        curTop = (NS)?curDrag.top:curDrag.style.pixelTop;
+        MM_oldX = mouseX - curLeft; MM_oldY = mouseY - curTop;
+        document.MM_curDrag = curDrag;  curDrag.MM_SNAPPED=false;
+        if(curDrag.MM_toFront) {
+          eval('curDrag.'+((NS)?'':'style.')+'zIndex=document.MM_maxZ+1');
+          if (!curDrag.MM_dropBack) document.MM_maxZ++; }
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mousemove') {
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+        var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+        newLeft = mouseX-MM_oldX; newTop  = mouseY-MM_oldY;
+        if (MM_bL!=null) newLeft = Math.max(newLeft,MM_bL);
+        if (MM_bR!=null) newLeft = Math.min(newLeft,MM_bR);
+        if (MM_bT!=null) newTop  = Math.max(newTop ,MM_bT);
+        if (MM_bB!=null) newTop  = Math.min(newTop ,MM_bB);
+        MM_LEFTRIGHT = newLeft-MM_startL; MM_UPDOWN = newTop-MM_startT;
+        if (NS) {left = newLeft; top = newTop;}
+        else {style.pixelLeft = newLeft; style.pixelTop = newTop;}
+        if (MM_dragJS) eval(MM_dragJS);
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mouseup') {
+      document.onmousemove = null;
+      if (NS) document.releaseEvents(Event.MOUSEMOVE);
+      if (NS) document.captureEvents(Event.MOUSEDOWN); //for mac NS
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        if (typeof MM_targL =='number' && typeof MM_targT == 'number' &&
+            (Math.pow(MM_targL-((NS)?left:style.pixelLeft),2)+
+             Math.pow(MM_targT-((NS)?top:style.pixelTop),2))<=MM_tol) {
+          if (NS) {left = MM_targL; top = MM_targT;}
+          else {style.pixelLeft = MM_targL; style.pixelTop = MM_targT;}
+          MM_SNAPPED = true; MM_LEFTRIGHT = MM_startL-MM_targL; MM_UPDOWN = MM_startT-MM_targT; }
+        if (MM_everyTime || MM_SNAPPED) eval(MM_dropJS);
+        if(MM_dropBack) {if (NS) zIndex = MM_oldZ; else style.zIndex = MM_oldZ;}
+        retVal = false; if(!NS) event.returnValue = false; }
+      document.MM_curDrag = null;
+    }
+    if (NS) document.routeEvent(objName);
+  } return retVal;
+}
+//-->
+</script>
+<script language="JavaScript">
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(1);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 10;
+    document.MM_Time[0][0] = new String("behavior");
+    document.MM_Time[0][0].frame = 71;
+    document.MM_Time[0][0].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 71;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" onLoad="MM_timelinePlay('Timeline1')">
+<table width="755" border="0" class="未命名1">
+  <tr> 
+    <td colspan="4"> 
+      <table width="100%" border="0" class="未命名1">
+        <tr bgcolor="#FF9900"> 
+          <td width="11%">|梦幻工作室|</td>
+          <td width="38%">&nbsp;</td>
+          <td width="28%">&nbsp;</td>
+          <td width="23%"> 
+            <div align="center">
+              <script language="JavaScript">
+ <!---
+today=new Date();
+var hours = today.getHours();
+var minutes = today.getMinutes();
+var seconds = today.getSeconds();
+var timeValue = "<FONT COLOR=black>" + ((hours >12) ? hours -12 :hours); timeValue += ((minutes < 10) ? "<BLINK><FONT COLOR=black>:</FONT></BLINK>0" : "<BLINK><FONT COLOR=black>:</FONT></BLINK>") + minutes+"</FONT></FONT>";
+timeValue += (hours >= 12) ? "<FONT COLOR=black></FONT>" : "<FONT COLOR=blue></FONT>";
+function initArray(){
+this.length=initArray.arguments.length
+for(var i=0;i<this.length;i++)
+this[i+1]=initArray.arguments[i] }
+var d=new initArray("<font color=RED>星期日","<font color=black>星期一","<font color=black>星期二","<font color=black>星期三","<font color=black>星期四","<font color=black>星期五","<font color=GREEN>星期六"); document.write("<font color=black>",today.getYear(),"<font color=black>年","<font color=black>",today.getMonth()+1,"<font color=black>月","<font color=black>",today.getDate(),"<font color=black>日 </FONT>",d[today.getDay()+1]," ",timeValue); //-->
+</script>
+            </div>
+          </td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td colspan="4" class="未命名1"> 
+            <hr>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td height="80" colspan="4"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td class="未命名1" width="17%" height="61"><img src="webpic/logo.gif" width="155" height="69"></td>
+          <td class="未命名1" width="50%" height="61"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="465" height="69">
+              <param name=movie value="webpic/banner.swf">
+              <param name=quality value=high>
+              <embed src="webpic/banner.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="465" height="69">
+              </embed> 
+            </object></td>
+          <td class="未命名1" width="33%" height="61">
+            <table width="100%" border="0">
+              <tr> 
+                <td> 
+                  <div align="center"> <img src="webpic/shou.gif" width="15" height="13" align="absmiddle"> 
+                    加收藏夹</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="center"><img src="webpic/home.gif" width="16" height="16" align="absmiddle"> 
+                    不设主页</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="center"> <img src="webpic/mail.gif" width="14" height="14" align="absmiddle"> 
+                    <a href="MAILTO:%20WJCKING@SOHU.COM">与我联系</a> </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td height="16" bgcolor="#FF9900" colspan="4"> 
+      <table width="100%" border="0">
+        <tr bgcolor="#FF9900"> 
+          <td colspan="7" class="未命名1" height="13">&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td class="未命名1"> 
+            <div align="center">◇ 首 页 ◇</div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ <a href="game.htm">游戏相关</a> ◇</div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ <a href="soft.htm">另类软件</a> ◇ </div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ <a href="news.htm">每日新闻</a> ◇ </div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ <a href="homepage.htm">主页技巧</a> ◇ </div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ <a href="http://dream1.xilubbs.com">梦幻论坛</a> 
+              ◇ </div>
+          </td>
+          <td class="未命名1"> 
+            <div align="center">◇ <a href="http://www.sxamp.com/cgi-bin/khguest/guest.cgi?id=wjcking">留言板</a> 
+              ◇ </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td height="7" colspan="4">
+      <div id="Layer1" style="position:absolute; width:65px; height:43px; z-index:1; left: 108px; top: 420px" onClick="MM_dragLayer('Layer1','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')"><img src="webpic/WalkGuy.gif" width="86" height="64" alt="walkguy" onbeforeunload="MM_dragLayer('Layer1','',0,0,0,0,true,false,-1,-1,-1,-1,108,420,50,'',false,'')"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td height="565" class="未命名1" colspan="4"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td class="未命名1" width="24%" height="28"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="webpic/text.gif">◇ 更新向导</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="51%" height="28"> 
+            <table width="100%" border="0" class="未命名1" height="25">
+              <tr> 
+                <td background="webpic/x1.gif"> 
+                  <div align="right"><b> 每日导航</b></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="25%" height="28"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="webpic/text.gif"> ◇ 聊天室</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="24%">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" height="223" align="right">
+              <tr align="center" valign="middle" bgcolor="#FFFFCC"> 
+                <td height="2" bgcolor="#FFFFFF"><img src="webpic/dog.gif" width="173" height="32"></td>
+              </tr>
+              <tr align="left" valign="top" bgcolor="#FFFFCC"> 
+                <td height="2" bgcolor="#FFFFFF"> <b><font color="#FF9900">------------------------</font></b></td>
+              </tr>
+              <tr align="left" valign="top" bgcolor="#FFFFCC"> 
+                <td height="178" bgcolor="#FFFFFF"> <marquee id=scrollArea direction="up" scrolldelay="50" scrollamount="1" width="80%" height="100"onMouseOver=scrollArea.stop() onMouseOut=scrollArea.start() > 
+                  <center class=font1>
+                  </center>
+                  <br>
+                  <center class=font1>
+                  </center>
+                  <font color="#FF0000">◇</font>在游戏相关里给大家推荐一个动作小游戏《武士美眉历险记》<br>
+                  真的不错哦 
+                  <center class=font1>
+                  </center>
+                  <font color="#FF0000">◇</font>个人主页Step By Step网页制作九步曲推荐大家学习学习<br>
+                  看看另类软件里有没有你要的东西。<br>
+                  <center class=font1>
+                  </center>
+                  <font color="#FF0000">◇</font>想看看新闻吗？里面新闻分类有很多每天更新一次请进去看看吧。
+                  <center class=font1>
+                  </center>
+                  <font color="#FF0000">◇</font> <a href="http://dream1.xilubbs.com">梦幻论坛</a>现在已经开张了大家有什么意见尽管往上贴</marquee></td>
+              </tr>
+            </table>
+          <p>&nbsp;</p></td>
+          <td class="未命名1" width="51%">
+            <table width="100%" border="0">
+              <tr> 
+                <td><img src="webpic/hot1.gif" width="10" height="14"> 今天网站刚开张内容不算挺多，有什么错误和技术上的问题请提宝贵意见谢谢合作 
+                  <font color="#FF0000">2002-02-20</font></td>
+              </tr>
+              <tr> 
+                <td><img src="webpic/hot1.gif" width="10" height="14"> 游戏相关里有三个小游戏都是非常经典的我觉得都非常好玩儿不知何不和你胃口<font color="#000000">还有我个人喜欢的游戏和攻略 
+                  </font><font color="#FF0000">2002-02-20</font></td>
+              </tr>
+              <tr> 
+                <td><img src="webpic/hot1.gif" width="10" height="14"></td>
+              </tr>
+              <tr> 
+                <td>&nbsp;</td>
+              </tr>
+              <tr> 
+                <td><img src="webpic/hot1.gif" width="10" height="14"> 新闻由<a href="www.china.com">中华网</a>和<a href="http://www.yinsha.com">碧浪银沙</a>提供新闻几乎是每天更新一次，他们还提供许多免费资源实如：JAVA股市行情，新闻代码等 
+                  <font color="#FF0000">2002-02-20</font></td>
+              </tr>
+              <tr> 
+                <td><img src="webpic/hot1.gif" width="10" height="14">怎样才能把自己得主页做好做的美观而且又实用这是一个网页初学者都要考虑的问题您在这里也许可以找到答案</td>
+              </tr>
+              <tr> 
+                <td><img src="webpic/hot1.gif" width="10" height="14">喜欢看关于网络的文章吗？这里多数是关于言情的大部分摘自<a href="www.pcdiy.com.cn">网友杂志</a>共二十篇 
+                  <font color="#FF0000">2002-02-20</font></td>
+              </tr>
+              <tr> 
+                <td><img src="webpic/joke.gif" width="10" height="10"> </td>
+              </tr>
+              <tr> 
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="25%"> 
+            <table width="100%" border="0" height="55">
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="center">
+                    <script language = "javascript"  src="http://xian.xilu.com/cgi-bin/newchat/lproom1?room=dream1&list=0 "></script>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF9900">----------------------------</font></td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <table width="100%" border="0" height="25">
+                    <tr> 
+                      <td background="webpic/text.gif">◇ 本站图标</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="center"><img src="webpic/cat.gif" width="32" height="32" alt="喵～～" border="0"> 
+                    <img src="webpic/logo.JPG" width="92" height="35" border="0" alt="欢迎来到梦幻工作室"><img src="webpic/cat.gif" width="32" height="32" alt="喵～～"> 
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1" height="2" bgcolor="#FF9900"> 
+                  <div align="center"><marquee>◇大 家 来 做 个 链 接 吧◇</marquee></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="24%"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="webpic/text.gif" height="17">◇ 网络文学</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="51%"> 
+            <table width="100%" border="0" class="未命名1" height="25">
+              <tr> 
+                <td background="webpic/x1.gif"> 
+                  <div align="right"><b>每日新闻</b></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="25%"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="webpic/text.gif">◇ 搜索引擎</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="24%"> 
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>相爱吧！月光和海水! </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>网事如风 </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>命运如此安排（男女对写） </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>始终是个吻 </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>病毒－－网恋　（搞笑篇） </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>等我有了一千万就回来娶你 </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>第一次恋爱时触电的感觉！ </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>我的初恋 </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>请你为我留起长发 </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="right"><a href="learn.htm">进入--&gt;&gt;</a> </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="51%">
+            <table width="100%" border="0">
+              <tr> 
+                <td width="72%"> 
+                  <script src="http://www.yinsha.com/news/jsfile/title.js"></script>
+                </td>
+                <td width="28%"> 
+                  <div align="center"><img src="webpic/earth.gif" width="64" height="64"> 
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td width="72%">&nbsp;</td>
+                <td width="28%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="72%">&nbsp;</td>
+                <td width="28%"> 
+                  <div align="right"><a href="news.htm">更多内容-&gt;&gt; </a></div>
+                </td>
+              </tr>
+            </table>
+            
+          </td>
+          <td class="未命名1" width="25%"> 
+            <table width="100%" border="0" height="86">
+              <tr> 
+                <td class="未命名1" height="29"> 
+                  <form action=http://ftp.online.ha.cn/cgi-bin/searchem.pl class=nosmall method=post name="" target=main ?>
+                    <div align=left> 
+                      <table width=100% border=1 cellspacing=0 cellpadding=0 bordercolor=#ffffff bordercolorlight=#2580B6>
+                        <tr> 
+                          <td height=26 colspan=2 bordercolor="#FF9900"> 
+                            <div align=center> 请选择引擎
+<select class=enss name=engines>
+                                <option selected value=cyahoo>雅虎中文</option>
+                                <option value=sina>新浪中文</option>
+                                <option value=sohu>搜狐中文</option>
+                                <option value=pkgod>北大天网</option>
+                                <option value=neaseyeah>网易中文</option>
+                                <option value=about>About.com</option>
+                                <option value=altavista>Altavista</option>
+                                <option value=yahoo>Yahoo</option>
+                                <option value=goto>Goto</option>
+                                <option value=infoseek>Infoseek</option>
+                                <option value=excite>Excite</option>
+                                <option value=lycos>Lycos</option>
+                                <option value=cnetmain>C|NET</option>
+                                <option value=dejanews>Deja</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr> 
+                          <td width=28% bordercolor="#FF9900"> 
+                            <div align=center>关键字</div>
+                          </td>
+                          <td width=72%> 
+                            <div align=center> 
+                              <input class=en9 name=searchwords size=14>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr> 
+                          <td colspan=2 bordercolor="#FF9900"> 
+                            <div align=center> 
+                              <input type=submit name=Submit value="搜 索">
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </form>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1" bgcolor="#FF9900">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF9900">----------------------------</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="24%"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="webpic/text.gif">◇ 友情连接</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="51%"> 
+            <table width="100%" border="0" class="未命名1" height="25">
+              <tr> 
+                <td background="webpic/x1.gif"> 
+                  <div align="right"><b><font color="#FF0000">G A M E </font></b></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="25%"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="webpic/text.gif">◇ 电子信箱</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="24%"> 
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="center"><font color="#FF0000">◇ </font>酷页DREAMWEAVER<font color="#FF0000">◇</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="center"><font color="#FF0000">◇</font> 白 领 大 同 盟 
+                    <font color="#FF0000">◇</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="center"><font color="#FF0000">◇</font> 国 际 财 神 网 
+                    <font color="#FF0000">◇</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF9900">----------------------------</font></td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="51%">
+            <p><br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+            </p>
+            </td>
+          <td class="未命名1" width="25%"> 
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1"> 
+                  <form action=http://aod.wol.com.cn/asp/mail.asp method=post target=_blank>
+                    <center>
+                      <table border=1 bordercolor=#FF9900 bordercolorlight=#2580B6 cellpadding=0 cellspacing=0 width=100%>
+                        <tbody> 
+                        <tr align=middle> 
+                          <td align=middle class=font1 colspan=2> 情选择信箱
+<select class=font name=site size=1 9pt>
+                              <option value=请选择邮局 selected>请选择邮局</option>
+                              <option value=sohu.com>搜狐免费信箱</option>
+                              <option value=263.net>263电子邮局</option>
+                              <option value=netease.com>网易电子邮局</option>
+                              <option value=21cn.com>21cn.com</option>
+                              <option value=chinabyte>chinabyte</option>
+                              <option value=hongkong>香港免费电邮</option>
+                              <option value=126.com>126电子邮局</option>
+                              <option value=163.net>163电子邮局</option>
+                              <option value=188.net>188电子邮局</option>
+                              <option value=371.net>371电子邮局</option>
+                              <option value=777.net>777电子邮局</option>
+                              <option value=990.net>990电子邮局</option>
+                              <option value=yn.cninfo>云南169电邮</option>
+                              <option value=hotmail>@hotmail</option>
+                              <option value=usa.net>@usa.net</option>
+                              <option value=email>@email.com</option>
+                              <option value=mail>@Mail.com</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr align=middle> 
+                          <td align=middle class=font1 height=0 width=62>帐号</td>
+                          <td align=middle class=font1 width=99> 
+                            <input class=account name=account size=12 80px>
+                          </td>
+                        </tr>
+                        <tr align=middle> 
+                          <td align=middle class=font1 width=62>密码</td>
+                          <td align=middle class=font1 width=99> 
+                            <input class=password name=password size=12 type=password 80px>
+                          </td>
+                        </tr>
+                        <tr align=middle> 
+                          <td align=middle class=font1 colspan=2> 
+                            <input class=font1 name=mbenter type=submit value=登录 9pt>
+                            　 
+                            <input class=font1 name=apply type=submit value=申请 9pt>
+                          </td>
+                        </tr>
+                        </tbody> 
+                      </table>
+                    </center>
+                  </form>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1" bgcolor="#FF9900">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF9900">----------------------------</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="24%"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="webpic/text.gif" class="未命名1">◇联系方式 </td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="51%"> 
+            <table width="100%" border="0" class="未命名1" height="25">
+              <tr> 
+                <td background="webpic/x1.gif"> 
+                  <div align="right"><b>主页制作</b> </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="25%"> 
+            <table width="100%" border="0" height="25">
+              <tr> 
+                <td background="webpic/text.gif">◇ 每期笑话</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="未命名1" width="24%"> 
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1"><img src="webpic/home.gif" width="14" height="14" align="absmiddle">
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><img src="webpic/mail.gif" width="14" height="14" align="absmiddle">
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><img src="webpic/oicq.gif" width="14" height="14">OICQ: 
+                  36520234 </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> </td>
+              </tr>
+              <tr> 
+                <td class="未命名1">ADD:(301)</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF9900">----------------------------</font></td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="51%"> 
+            <table width="100%" border="0">
+              <tr> 
+                <td width="50%">个人主页Step By Step </td>
+                <td width="50%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="50%"><font color="#FF0000">◇</font> 第一步 三个首要问题</td>
+                <td width="50%"><font color="#FF0000">◇</font> 第六步 制定主页的风格 </td>
+              </tr>
+              <tr> 
+                <td width="50%"><font color="#FF0000">◇</font> 第二步 一个实际可行的计划</td>
+                <td width="50%"><font color="#FF0000">◇</font> 第七步 硬件配置</td>
+              </tr>
+              <tr> 
+                <td width="50%"><font color="#FF0000">◇</font> 第三步 内容与美观的抉择</td>
+                <td width="50%"><font color="#FF0000">◇</font> 第八步 相关软件</td>
+              </tr>
+              <tr> 
+                <td width="50%"><font color="#FF0000">◇</font> 第四步 资料搜集的方法</td>
+                <td width="50%"><font color="#FF0000">◇</font> 第九步 怎样上传网页</td>
+              </tr>
+              <tr> 
+                <td width="50%" height="12"><font color="#FF0000">◇</font> 第五步 
+                  原创精神</td>
+                <td width="50%" height="12"><font color="#FF0000">◇</font> 几个免费主页空间</td>
+              </tr>
+              <tr> 
+                <td width="50%">&nbsp;</td>
+                <td width="50%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="50%">&nbsp;</td>
+                <td width="50%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="50%">&nbsp;</td>
+                <td width="50%"> 
+                  <div align="right"><a href="homepage.htm">更多内容-&gt;&gt;</a></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="2"><font color="#FF9900">------------------------------------------------------------</font></td>
+              </tr>
+            </table>
+          </td>
+          <td class="未命名1" width="25%"> 
+            <table width="100%" border="0">
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>都这样活着</td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>拿破仑的惊叹</td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>看电视 </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>高尔基的故事 </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF0000">◇</font>粗心的丈夫 </td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="未命名1"> 
+                  <div align="right"><a href="#" onClick="MM_openBrWindow('joke/joke.htm','','scrollbars=yes')">进入--&gt;&gt;</a></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="未命名1"><font color="#FF9900">----------------------------</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      </td>
+  </tr>
+  <tr> 
+    <td height="6" class="未命名1" colspan="4">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" colspan="4">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" colspan="4">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" colspan="4"> 
+      <div align="center"> 
+        <table width="100%" border="0" class="未命名1">
+          <tr> 
+            <td colspan="3">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="45%"> 
+              <div align="right" onClick="MM_openBrWindow('myself.htm','','scrollbars=yes')"><a href="#">||关于站长|</a></div>
+            </td>
+            <td width="10%"> 
+              <div align="center">|<a href="MAILTO:WJCKING@SOHU.COM">与我联系</a>||</div>
+            </td>
+            <td width="45%"> 
+              <div align="left" onClick="MM_openBrWindow('copyrigt.htm','','scrollbars=yes,width=300,height=300')"><a href="#">关于版权||</a></div>
+            </td>
+          </tr>
+        </table>
+        <hr align="center" width="88%">
+        建议您用IE4.0以上浏览器800*600象素浏览以获取最佳效果</div>
+    </td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" colspan="4">
+      <div align="center">Copyright 2002--2003 Icefire All rights reserved </div>
+    </td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" colspan="4"> 
+      <div align="center"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td height="2" class="未命名1" width="184">&nbsp;</td>
+    <td height="2" class="未命名1" width="157">&nbsp;</td>
+    <td height="2" class="未命名1" width="228">&nbsp;</td>
+    <td height="2" class="未命名1" width="169">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

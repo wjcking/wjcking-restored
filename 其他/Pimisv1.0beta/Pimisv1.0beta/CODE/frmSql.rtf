@@ -1,0 +1,278 @@
+{\rtf1\ansi\ansicpg936\deff0\deflang1033\deflangfe2052{\fonttbl{\f0\fmodern\fprq6\fcharset134 \'cb\'ce\'cc\'e5;}}
+\viewkind4\uc1\pard\lang2052\f0\fs20 unit Sql;\par
+\par
+interface\par
+\par
+uses\par
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,\par
+  Dialogs, ComCtrls, StdCtrls, ExtCtrls,iniFiles;\par
+\par
+type\par
+  TfrmSQL = class(TForm)\par
+    PageControl1: TPageControl;\par
+    TabSheet1: TTabSheet;\par
+    TabSheet2: TTabSheet;\par
+    MemoSql: TMemo;\par
+    Button1: TButton;\par
+    GroupBox1: TGroupBox;\par
+    cbxIS: TComboBox;\par
+    lbSeaIDC: TLabel;\par
+    txtIdcValue: TEdit;\par
+    GroupBox2: TGroupBox;\par
+    lvDtTypes: TLabel;\par
+    cbxDtIs: TComboBox;\par
+    dt: TDateTimePicker;\par
+    GroupBox3: TGroupBox;\par
+    lbAge: TLabel;\par
+    cbxAgeIS: TComboBox;\par
+    txtSeaAge: TEdit;\par
+    Button2: TButton;\par
+    cbDT: TCheckBox;\par
+    TabSheet3: TTabSheet;\par
+    Button3: TButton;\par
+    Button4: TButton;\par
+    Button5: TButton;\par
+    Button6: TButton;\par
+    Button7: TButton;\par
+    rbChart: TRadioGroup;\par
+    GroupBox4: TGroupBox;\par
+    RadioButton1: TRadioButton;\par
+    RadioButton2: TRadioButton;\par
+    Button8: TButton;\par
+    Button9: TButton;\par
+    procedure Button2Click(Sender: TObject);\par
+    procedure Button1Click(Sender: TObject);\par
+    procedure cbDTClick(Sender: TObject);\par
+    procedure FormCreate(Sender: TObject);\par
+    procedure Button4Click(Sender: TObject);\par
+    procedure RadioButton1Click(Sender: TObject);\par
+    procedure RadioButton2Click(Sender: TObject);\par
+    procedure Button5Click(Sender: TObject);\par
+    procedure Button6Click(Sender: TObject);\par
+    procedure Button3Click(Sender: TObject);\par
+    procedure Button8Click(Sender: TObject);\par
+    procedure Button7Click(Sender: TObject);\par
+    procedure Button9Click(Sender: TObject);\par
+  private\par
+    \{ Private declarations \}\par
+    strPath:string;\par
+  public\par
+  strIDC:string;\par
+    \{ Public declarations \}\par
+  end;\par
+\par
+var\par
+  frmSQL: TfrmSQL;\par
+\par
+implementation\par
+uses pimis;\par
+\{$R *.dfm\}\par
+procedure DataCharClear;\par
+begin\par
+with frmmain do\par
+begin\par
+  adochart.active:=false;\par
+  adoChart.SQL.Clear;\par
+  DBChart.Series[0].Active:=false;\par
+  DBChart.Series[1].Active:=false;\par
+  DBChart.Series[0].Clear;\par
+  DBChart.Series[1].Clear;\par
+  //dbchart.Series[0].f\par
+  dbchart.Series[0].XLabelsSource:='';\par
+  dbchart.Series[1].XLabelsSource:='';\par
+end;\par
+end;\par
+//**********************************************************************\par
+\par
+procedure DataChartShow(strSQL,strTitle,strField:string;intCount:integer);\par
+begin\par
+with frmmain do\par
+begin\par
+  adochart.SQL.Clear;\par
+  adochart.SQL.Text:=strSQL;\par
+  adochart.ExecSQL;\par
+  dbchart.Series[intCount].DataSource:=adochart;\par
+  dbchart.Series[intCount].clear;\par
+  dbchart.Series[intCount].Active:=true;\par
+  dbchart.Title.Text.Clear;\par
+  dbchart.Title.Text.Add(strTitle);\par
+  dbchart.Series[intCount].XLabelsSource:=strField;\par
+  adochart.Active:=true;\par
+end;\par
+end;\par
+//**********************************************************************\par
+procedure TfrmSQL.Button2Click(Sender: TObject);\par
+begin\par
+close;\par
+end;\par
+\par
+procedure TfrmSQL.Button1Click(Sender: TObject);\par
+var strValue1,strValue2,strValue3:string;\par
+begin\par
+if (pos('''',self.txtIdcValue.Text)>0)or(pos('''',self.txtSeaAge.Text)>0)then\par
+   begin\par
+      Application.MessageBox('\'b2\'bb\'d7\'bc\'d3\'d0\'b7\'c7\'b7\'a8\'d7\'d6\'b7\'fb','\'d6\'b0\'b9\'a4\'d0\'c5\'cf\'a2\'b9\'dc\'c0\'ed\'cf\'b5\'cd\'b3v1.0',MB_IConERROR);\par
+      self.txtIdcValue.Clear;\par
+      self.txtSeaAge.Clear;\par
+   end;\par
+if (pos('%',txtIdcValue.Text)>0)or(pos('%',self.txtSeaAge.Text)>0)then\par
+   begin\par
+      Application.MessageBox('\'b2\'bb\'d7\'bc\'d3\'d0\'b7\'c7\'b7\'a8\'d7\'d6\'b7\'fb','\'d6\'b0\'b9\'a4\'d0\'c5\'cf\'a2\'b9\'dc\'c0\'ed\'cf\'b5\'cd\'b3v1.0',MB_IConERROR);\par
+      self.txtIdcValue.Clear;\par
+      self.txtSeaAge.Clear;\par
+   end;\par
+if (pos('"',txtIdcValue.Text)>0)or(pos('"',self.txtSeaAge.Text)>0) then\par
+   begin\par
+      Application.MessageBox('\'b2\'bb\'d7\'bc\'d3\'d0\'b7\'c7\'b7\'a8\'d7\'d6\'b7\'fb','\'d6\'b0\'b9\'a4\'d0\'c5\'cf\'a2\'b9\'dc\'c0\'ed\'cf\'b5\'cd\'b3v1.0',MB_IConERROR);\par
+      self.txtIdcValue.Clear;\par
+      self.txtSeaAge.Clear;\par
+   end ;\par
+if (pos('#',txtIdcValue.Text)>0)or(pos('#',self.txtSeaAge.Text)>0) then\par
+   begin\par
+      Application.MessageBox('\'b2\'bb\'d7\'bc\'d3\'d0\'b7\'c7\'b7\'a8\'d7\'d6\'b7\'fb','\'d6\'b0\'b9\'a4\'d0\'c5\'cf\'a2\'b9\'dc\'c0\'ed\'cf\'b5\'cd\'b3v1.0',MB_IConERROR);\par
+      self.txtIdcValue.Clear;\par
+      self.txtSeaAge.Clear;\par
+   end ;\par
+\par
+if self.lbSeaIDC.Caption='\'d0\'d5\'c3\'fb' then lbSeaIDC.Caption:='Name'\par
+else if lbSeaIDC.Caption='\'d6\'b0\'b9\'a4\'b1\'e0\'ba\'c5'then lbSeaIDC.Caption:='ID'\par
+else if lbSeaIDC.Caption='\'c9\'ed\'b7\'dd\'d6\'a4\'ba\'c5' then lbSeaIDC.Caption:='IdCard';\par
+if(txtIdcValue.Text<>'') then\par
+begin\par
+  if(cbxIs.ItemIndex<>2) then\par
+    strValue1:=lbSeaIDC.Caption+' '+self.cbxIS.Text+''''+self.txtIdcValue.Text+''''\par
+  else\par
+    strValue1:=lbSeaIDC.Caption+' '+self.cbxIS.Text+'''%'+self.txtIdcValue.Text+'%''';\par
+  end\par
+else\par
+  strValue1:='';\par
+if(txtSeaAge.Text<>'') then\par
+strValue2:='Age'+' '+self.cbxAgeIS.Text+''''+self.txtSeaAge.Text+''''\par
+else\par
+strValue2:='';\par
+\par
+if(self.lvDtTypes.Caption='\'c8\'eb\'cd\'c5\'ca\'b1\'bc\'e4') then lvDtTypes.Caption:='MemberTime'\par
+else if(lvDtTypes.Caption='\'c8\'eb\'b5\'b3\'ca\'b1\'bc\'e4') then lvDtTypes.Caption:='Tongtime'\par
+else if(lvDtTypes.Caption='\'b9\'a4\'d7\'f7\'ca\'b1\'bc\'e4') then lvDtTypes.Caption:='StartWorkTime';\par
+\par
+if(dt.Enabled) then\par
+   strValue3:=lvDtTypes.Caption+' '+self.cbxDtIs.Text+''''+formatdatetime('yyyy-M-d',dt.datetime)+''''\par
+else\par
+   strValue3:='';\par
+with frmmain do\par
+begin\par
+  txtSeaIDC.Text:=strValue1;\par
+  txtSeaAge.Text:=strValue2;\par
+  txtSeaDt.Text:=strValue3;\par
+end;\par
+\par
+close;\par
+\par
+end;\par
+procedure TfrmSQL.cbDTClick(Sender: TObject);\par
+begin\par
+if (self.cbDT.Checked) then\par
+   self.dt.Enabled:=false\par
+else\par
+   self.dt.Enabled:=true;\par
+if not( self.cbDT.Checked)and(self.lvDtTypes.Caption='\'ce\'de')then\par
+  begin\par
+   self.dt.Enabled:=false;\par
+   Application.MessageBox('\'c4\'fa\'c3\'bb\'d3\'d0\'d1\'a1\'d4\'f1\'d7\'d6\'b6\'ce\'c3\'fb,\'b2\'bb\'c4\'dc\'b1\'bb\'bc\'a4\'bb\'ee','\'d6\'b0\'b9\'a4\'d0\'c5\'cf\'a2\'b9\'dc\'c0\'ed\'cf\'b5\'cd\'b3v1.0',MB_IConERROR);\par
+   self.cbDT.Checked;\par
+  end;\par
+end;\par
+\par
+procedure TfrmSQL.FormCreate(Sender: TObject);\par
+var iniCon:TiniFile;\par
+begin\par
+if lvDtTypes.Caption='\'ce\'de' then cbDt.Enabled:=false;\par
+MemoSql.Text:=frmmain.MemoSeaInfo.Text;\par
+strPath:=ExtractFilePath(paramstr(0))+'config.ini';\par
+iniCon:=Tinifile.Create(strPath);\par
+MemoSql.Text:=iniCon.ReadString('sql','key','');\par
+end;\par
+\par
+procedure TfrmSQL.Button4Click(Sender: TObject);\par
+var strSexSql:string;\par
+begin\par
+DataCharClear;\par
+strSexSql:='SELECT count(sex),sex AS \'d0\'d4\'b1\'f0 FROM tb_proinfor GROUP BY sex';\par
+DataChartShow(strSexSql,'\'d6\'b0\'b9\'a4\'c8\'cb\'ca\'fd\'cd\'b3\'bc\'c6(\'d0\'d4\'b1\'f0)','\'d0\'d4\'b1\'f0',rbChart.itemindex);\par
+\par
+\par
+end;\par
+\par
+procedure TfrmSQL.RadioButton1Click(Sender: TObject);\par
+begin\par
+frmmain.DBChart.View3D:=true;\par
+end;\par
+\par
+procedure TfrmSQL.RadioButton2Click(Sender: TObject);\par
+begin\par
+frmmain.DBChart.View3D:=false;\par
+end;\par
+\par
+procedure TfrmSQL.Button5Click(Sender: TObject);\par
+var strklSql:string;\par
+begin\par
+DataCharClear;\par
+strKlSql:='SELECT count(knowledge),knowledge AS \'d1\'a7\'c0\'fa FROM tb_proinfor GROUP BY knowledge';\par
+DataChartShow(strklSql,'\'d6\'b0\'b9\'a4\'c8\'cb\'ca\'fd\'cd\'b3\'bc\'c6(\'d1\'a7\'c0\'fa)','\'d1\'a7\'c0\'fa',rbChart.itemindex);\par
+\par
+end;\par
+\par
+procedure TfrmSQL.Button6Click(Sender: TObject);\par
+var strPpsSql:string;\par
+begin\par
+DataCharClear;\par
+strPpsSql:='SELECT count(principalship),principalship AS \'d6\'b0\'ce\'f1 FROM tb_proinfor GROUP BY principalship';\par
+DataChartShow(strPpsSql,'\'d6\'b0\'b9\'a4\'c8\'cb\'ca\'fd\'cd\'b3\'bc\'c6(\'d6\'b0\'ce\'f1)','\'d6\'b0\'ce\'f1',rbChart.itemindex);\par
+\par
+end;\par
+procedure TfrmSQL.Button3Click(Sender: TObject);\par
+var strTTSql:string ;\par
+begin\par
+DataCharClear;\par
+strTTSql:='SELECT count(TitleTechPost),TitleTechPost AS \'d6\'b0\'b3\'c6 FROM tb_proinfor GROUP BY TitleTechPost';\par
+DataChartShow(strTTSql,'\'d6\'b0\'b9\'a4\'c8\'cb\'ca\'fd\'cd\'b3\'bc\'c6(\'d6\'b0\'b3\'c6)','\'d6\'b0\'b3\'c6',rbChart.itemindex);\par
+end;\par
+\par
+procedure TfrmSQL.Button8Click(Sender: TObject);\par
+var strFaceSql:string;\par
+begin\par
+ DataCharClear;\par
+strFaceSql:='SELECT count(PoliticsFace),PoliticsFace AS \'d5\'fe\'d6\'ce\'c3\'e6\'c3\'b2 FROM tb_proinfor GROUP BY PoliticsFace';\par
+DataChartShow(strFaceSql,'\'d6\'b0\'b9\'a4\'c8\'cb\'ca\'fd\'cd\'b3\'bc\'c6(\'d5\'fe\'d6\'ce\'c3\'e6\'c3\'b2)','\'d5\'fe\'d6\'ce\'c3\'e6\'c3\'b2',rbChart.itemindex);\par
+end;\par
+\par
+procedure TfrmSQL.Button7Click(Sender: TObject);\par
+var strPlSql:string;\par
+begin\par
+DataCharClear;\par
+strPlSql:='SELECT count(Paylevel),Paylevel AS \'b9\'a4\'d7\'ca FROM tb_proinfor GROUP BY Paylevel';\par
+DataChartShow(strPlSql,'\'d6\'b0\'b9\'a4\'c8\'cb\'ca\'fd\'cd\'b3\'bc\'c6(\'b9\'a4\'d7\'ca\'b5\'c8\'bc\'b6)','\'b9\'a4\'d7\'ca',rbChart.itemindex);\par
+end;\par
+\par
+procedure TfrmSQL.Button9Click(Sender: TObject);\par
+var iniCon:TiniFile;\par
+begin\par
+strPath:=ExtractFilePath(paramstr(0))+'config.ini';\par
+iniCon:=Tinifile.Create(strPath);\par
+with frmmain do\par
+begin\par
+if(iniCon.ReadString('sql','key','')<>'') then\par
+begin\par
+  ADOQuery.Active:=false;\par
+  ADOQuery.SQL.Clear;\par
+  ADOQuery.SQL.Text:=iniCon.ReadString('sql','key','');\par
+  ADOQuery.ExecSQL;\par
+  ADOQuery.Active:=true;\par
+  DbGrid.DataSource:=dsSearch;\par
+end;\par
+end;\par
+end;\par
+\par
+end.\par
+}
+ 

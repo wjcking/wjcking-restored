@@ -1,0 +1,8 @@
+[DEFAULT]
+BASEURL=http://www.kempsun.com/download/
+[DOC#7#9]
+BASEURL=http://www.kempsun.com/download/showFolder.asp?id=1&page=2
+ORIGURL=showFolder.asp
+[InternetShortcut]
+URL=http://www.kempsun.com/download/
+Modified=103370031767C401F9

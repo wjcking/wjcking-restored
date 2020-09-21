@@ -1,0 +1,17 @@
+[DEFAULT]
+BASEURL=http://www.hopefly.com/it/regfix/
+[DOC#16]
+BASEURL=http://www.hopefly.com/top.htm
+ORIGURL=../../top.htm
+[DOC#19]
+BASEURL=http://www.qxcomm.com/p_html/xiaoxihu/image/newrings.htm
+ORIGURL=http://www.qxcomm.com/p_html/xiaoxihu/image/newrings.htm
+[DOC#369]
+BASEURL=http://www.hopefly.com/bottom.htm
+ORIGURL=../../bottom.htm
+[DOC#369#7]
+BASEURL=http://www.qxcomm.com/p_html/xiaoxihu/image/newrings.htm
+ORIGURL=http://www.qxcomm.com/p_html/xiaoxihu/image/newrings.htm
+[InternetShortcut]
+URL=http://www.hopefly.com/it/regfix/
+Modified=B017BB4D4F9DC3017F

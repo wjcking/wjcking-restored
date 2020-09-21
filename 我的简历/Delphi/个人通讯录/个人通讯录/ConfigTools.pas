@@ -1,0 +1,55 @@
+unit ConfigTools;
+
+
+interface
+
+uses
+    Windows, Messages, SysUtils, Variants,
+    Classes, Graphics, Controls, Forms,
+    Dialogs, StdCtrls, ComCtrls, ExtCtrls,
+    shellapi,MMSystem;
+type
+
+    TConfigTool = class(TObject)
+
+    public
+
+    class procedure playsound(const Path:string);
+    class function Filter(  value: string):string;
+    class procedure myCopyFile(const fromPath:string;const toPath:string);
+    end;
+const
+    Empty = '';
+    SOUND_PUSH   = 'Sound\push.wav';
+    SOUND_MOVE   = 'Sound\move.wav';
+    SOUND_PATH   = 'Sound\done.wav';
+    COPY_ERROR_1   = '没找到文件';
+    COPY_ERROR_2   = '';
+implementation
+
+class procedure TConfigTool.playsound(const Path:string);
+var
+  ms: TMemoryStream;
+begin
+  ms := TMemoryStream.Create;
+  ms.LoadFromFile(Path);
+  sndPlaySound(ms.Memory, SND_MEMORY or SND_NODEFAULT or SND_ASYNC);
+end;
+class function TConfigTool.Filter( value: string):string;
+begin
+    value := StringReplace(value,'''','',[rfReplaceAll]);
+    value := StringReplace(value,'%','',[rfReplaceAll]);
+    value := StringReplace(value,'"','',[rfReplaceAll]);
+    Result := value;
+end;
+class procedure TConfigTool.MyCopyFile(const fromPath:string;const toPath:string);
+begin
+      if not (FileExists(fromPath)) Then  ShowMessage(COPY_ERROR_1) else
+      begin
+        CopyFile(Pchar(ExtractFilePath(Application.ExeName) + fromPath),
+              Pchar(ExtractFilePath(Application.ExeName) +toPath), false) ;
+        TConfigTool.playsound(SOUND_PATH);
+      end;
+end;
+end.
+

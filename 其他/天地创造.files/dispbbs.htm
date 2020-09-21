@@ -1,0 +1,988 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0064)http://bbs.emusun.net/dispbbs.asp?boardID=10&RootID=3191&ID=3191 -->
+<HTML><HEAD><TITLE>EmuSun BBS--游戏攻略坊</TITLE>
+<STYLE type=text/css>.cid {
+	BACKGROUND: #ffffff; BORDER-BOTTOM-COLOR: #3366cc; BORDER-LEFT-COLOR: #4f0000; BORDER-RIGHT-COLOR: #3366cc; BORDER-TOP-COLOR: #4f0000; COLOR: #353535; FONT-FAMILY: Tahoma, Verdana, Arial; FONT-SIZE: 9pt; border-colordark: #517196; border-colorlight: #CCCCCC
+}
+.4u {
+	BACKGROUND: #ffffff; BORDER-BOTTOM-COLOR: #4f0000; BORDER-LEFT-COLOR: #3366cc; BORDER-RIGHT-COLOR: #4f0000; BORDER-TOP-COLOR: #3366cc; COLOR: #353535; FONT-FAMILY: Tahoma, Verdana, Arial; FONT-SIZE: 9pt; border-colordark: #517196; border-colorlight: #CCCCCC
+}
+</STYLE>
+
+<SCRIPT language=javascript>
+function openUser(id) {
+	var Win = window.open("dispuser.asp?name="+id,"openScript");
+}
+
+function openScript(url, width, height){
+	var Win = window.open(url,"openScript",'width=' + width + ',height=' + height + ',resizable=1,scrollbars=yes,menubar=no,status=yes' );
+}
+
+function openDis(bid,rid,id){
+	self.location="dispbbs.asp?boardid="+bid+"&RootID="+rid+"&id="+id
+}
+
+function PopWindow()
+{ 
+openScript('messanger.asp?action=newmsg',420,320); 
+}
+var nn = !!document.layers;
+var ie = !!document.all;
+
+if (nn) {
+  netscape.security.PrivilegeManager.enablePrivilege("UniversalSystemClipboardAccess");
+  var fr=new java.awt.Frame();
+  var Zwischenablage = fr.getToolkit().getSystemClipboard();
+}
+
+function submitonce(theform){
+//if IE 4+ or NS 6+
+if (document.all||document.getElementById){
+//screen thru every element in the form, and hunt down "submit" and "reset"
+for (i=0;i<theform.length;i++){
+var tempobj=theform.elements[i]
+if(tempobj.type.toLowerCase()=="submit"||tempobj.type.toLowerCase()=="reset")
+//disable em
+tempobj.disabled=true
+}
+}
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+//***********默认设置定义.*********************
+tPopWait=50;//停留tWait豪秒后显示提示。
+tPopShow=5000;//显示tShow豪秒后关闭提示
+showPopStep=20;
+popOpacity=99;
+
+//***************内部变量定义*****************
+sPop=null;
+curShow=null;
+tFadeOut=null;
+tFadeIn=null;
+tFadeWaiting=null;
+
+document.write("<style type='text/css'id='defaultPopStyle'>");
+document.write(".cPopText {  background-color: #F8F8F5;color:#000000; border: 1px #000000 solid;font-color: font-size: 12px; padding-right: 4px; padding-left: 4px; height: 20px; padding-top: 2px; padding-bottom: 2px; filter: Alpha(Opacity=0)}");
+document.write("</style>");
+document.write("<div id='dypopLayer' style='position:absolute;z-index:1000;' class='cPopText'></div>");
+
+
+function showPopupText(){
+var o=event.srcElement;
+	MouseX=event.x;
+	MouseY=event.y;
+	if(o.alt!=null && o.alt!=""){o.dypop=o.alt;o.alt=""};
+        if(o.title!=null && o.title!=""){o.dypop=o.title;o.title=""};
+	if(o.dypop!=sPop) {
+			sPop=o.dypop;
+			clearTimeout(curShow);
+			clearTimeout(tFadeOut);
+			clearTimeout(tFadeIn);
+			clearTimeout(tFadeWaiting);	
+			if(sPop==null || sPop=="") {
+				dypopLayer.innerHTML="";
+				dypopLayer.style.filter="Alpha()";
+				dypopLayer.filters.Alpha.opacity=0;	
+				}
+			else {
+				if(o.dyclass!=null) popStyle=o.dyclass 
+					else popStyle="cPopText";
+				curShow=setTimeout("showIt()",tPopWait);
+			}
+			
+	}
+}
+
+function showIt(){
+		dypopLayer.className=popStyle;
+		dypopLayer.innerHTML=sPop;
+		popWidth=dypopLayer.clientWidth;
+		popHeight=dypopLayer.clientHeight;
+		if(MouseX+12+popWidth>document.body.clientWidth) popLeftAdjust=-popWidth-24
+			else popLeftAdjust=0;
+		if(MouseY+12+popHeight>document.body.clientHeight) popTopAdjust=-popHeight-24
+			else popTopAdjust=0;
+		dypopLayer.style.left=MouseX+12+document.body.scrollLeft+popLeftAdjust;
+		dypopLayer.style.top=MouseY+12+document.body.scrollTop+popTopAdjust;
+		dypopLayer.style.filter="Alpha(Opacity=0)";
+		fadeOut();
+}
+
+function fadeOut(){
+	if(dypopLayer.filters.Alpha.opacity<popOpacity) {
+		dypopLayer.filters.Alpha.opacity+=showPopStep;
+		tFadeOut=setTimeout("fadeOut()",1);
+		}
+		else {
+			dypopLayer.filters.Alpha.opacity=popOpacity;
+			tFadeWaiting=setTimeout("fadeIn()",tPopShow);
+			}
+}
+
+function fadeIn(){
+	if(dypopLayer.filters.Alpha.opacity>0) {
+		dypopLayer.filters.Alpha.opacity-=1;
+		tFadeIn=setTimeout("fadeIn()",1);
+		}
+}
+document.onmouseover=showPopupText;
+</SCRIPT>
+
+<STYLE type=text/css>A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.t {
+	LINE-HEIGHT: 1.4
+}
+BODY {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: #dddddd; SCROLLBAR-SHADOW-COLOR: #dddddd; SCROLLBAR-3DLIGHT-COLOR: #dddddd; SCROLLBAR-TRACK-COLOR: #FFFFFF; SCROLLBAR-DARKSHADOW-COLOR: #dddddd; scrollbar-Base-Color: #dddddd
+}
+TD {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 12px
+}
+P {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 12px
+}
+DIV {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 12px
+}
+BR {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 12px
+}
+FORM {
+	FONT-FAMILY: "宋体"; FONT-SIZE: 12px
+}
+OPTION {
+	FONT-FAMILY: "宋体"; FONT-SIZE: 12px
+}
+INPUT {
+	BORDER-BOTTOM-COLOR: #cccccc; BORDER-BOTTOM-WIDTH: 1px; BORDER-LEFT-COLOR: #cccccc; BORDER-LEFT-WIDTH: 1px; BORDER-RIGHT-COLOR: #cccccc; BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-COLOR: #cccccc; BORDER-TOP-WIDTH: 1px; FONT-FAMILY: "宋体"; FONT-SIZE: 12px; HEIGHT: 18px; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 1px
+}
+TEXTAREA {
+	BACKGROUND-COLOR: #efefef; BORDER-BOTTOM-COLOR: #000000; BORDER-BOTTOM-WIDTH: 1px; BORDER-LEFT-COLOR: #000000; BORDER-LEFT-WIDTH: 1px; BORDER-RIGHT-COLOR: #000000; BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-COLOR: #000000; BORDER-TOP-WIDTH: 1px; FONT-FAMILY: "宋体"; FONT-SIZE: 12px
+}
+SELECT {
+	BACKGROUND-COLOR: #eeeeee; BORDER-BOTTOM-COLOR: #000000; BORDER-BOTTOM-WIDTH: 1px; BORDER-LEFT-COLOR: #000000; BORDER-LEFT-WIDTH: 1px; BORDER-RIGHT-COLOR: #000000; BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-COLOR: #000000; BORDER-TOP-WIDTH: 1px; FONT-FAMILY: "宋体"; FONT-SIZE: 12px
+}
+.tb {
+	BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid
+}
+</STYLE>
+
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2614.3500" name=GENERATOR></HEAD>
+<BODY aLink=#333333 background=dispbbs.files/bg_dot.gif leftMargin=0 
+link=#333333 topMargin=0 vLink=#333333>
+<TABLE align=center border=0 cellPadding=3 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD align=right><FONT color=#000000>
+      <TABLE align=center bgColor=#ffffff border=0 cellPadding=0 cellSpacing=0 
+      class=tb width="100%">
+        <TBODY>
+        <TR>
+          <TD width=300><IMG border=0 height=60 src="dispbbs.files/bboard.jpg" 
+            width=300></TD>
+          <TD align=right id=hmenu vAlign=bottom>欢迎光临 EmuSun BBS！<BR><A 
+            href="http://www.emusun.net/default.htm">EmuSun 首页</A> | <A 
+            href="http://bbs.emusun.net/login.asp">登录论坛</A> | <A 
+            href="http://bbs.emusun.net/reg.asp">免费注册</A> | <A 
+            href="http://bbs.emusun.net/toplist.asp?orders=1">论坛排行</A> | <A 
+            href="http://bbs.emusun.net/query.asp?boardid=10">搜索论坛</A> | <A 
+            href="http://bbs.emusun.net/logout.asp">退出论坛</A></TD></TR></TBODY></TABLE><BR>
+      <TABLE align=center border=0 cellPadding=1 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD align=right width="50%"></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 width="95%">
+        <TBODY>
+        <TR></TR></TBODY></TABLE><BR>
+      <TABLE align=center border=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD align=top vAlign=center><FONT color=#000000><IMG align=absMiddle 
+            src="dispbbs.files/img_arrow_lil.gif">&nbsp;&nbsp;<A 
+            href="http://bbs.emusun.net/index.asp">EmuSun BBS</A> -&gt; 
+            &nbsp;&nbsp;<A 
+            href="http://bbs.emusun.net/list.asp?boardid=10"><FONT 
+            color=#000000>游戏攻略坊</A><A 
+            href="http://bbs.emusun.net/list.asp?boardid=10&amp;page="></A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
+            name=top></A></FONT></FONT></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD align=right vAlign=center width="30%">&nbsp; <A 
+            href="http://bbs.emusun.net/announce.asp?BoardID=10"><IMG alt=发表新主题 
+            border=0 src="dispbbs.files/postnew.gif"></A>&nbsp;<A 
+            href="http://bbs.emusun.net/vote.asp?BoardID=10"><IMG alt=发表新投票 
+            border=0 src="dispbbs.files/votenew.gif"></A>&nbsp;<A 
+            href="http://bbs.emusun.net/reannounce.asp?BoardID=10&amp;RootID=3191&amp;id=3191"><IMG 
+            alt=回复主题 border=0 
+      src="dispbbs.files/reply.gif"></A></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD background=dispbbs.files/tl.gif height=20 width=20></TD>
+          <TD background=dispbbs.files/t.gif height=20 vAlign=center><FONT 
+            color=#ffffff face=Verdana size=1>TOPIC</FONT></TD>
+          <TD background=dispbbs.files/tr.gif height=20 
+      width=20></TD></TR></TBODY></TABLE>
+      <TABLE align=center bgColor=#ffffff border=0 cellPadding=0 cellSpacing=0 
+      width="95%">
+        <TBODY>
+        <TR>
+          <TD height=1></TD></TR></TBODY></TABLE>
+      <TABLE align=center bgColor=#ffffff border=0 cellPadding=0 cellSpacing=0 
+      width="95%">
+        <TBODY>
+        <TR>
+          <TD height=1></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff height=24 vAlign=center width=1></TD>
+          <TD align=left bgColor=#dddddd vAlign=center width=*>
+            <TABLE border=0 cellPadding=7 cellSpacing=1 width="100%">
+              <TBODY>
+              <TR>
+                <TD align=left background=dispbbs.files/topcell.jpg 
+                bgColor=#dddddd vAlign=center width="65%"><FONT 
+                  color=#ffffff>&nbsp;<IMG border=0 
+                  src="dispbbs.files/nav_m.gif"> 求助！！天地创造SFC！！第3个求雨祭坛！！</FONT> 
+                </TD>
+                <TD align=right background=dispbbs.files/topcell.jpg 
+                  width="35%"><A 
+                  href="http://bbs.emusun.net/dispbbs.asp?boardID=10&amp;RootID=3191&amp;ID=3191#" 
+                  onclick=javascript:WebBrowser.ExecWB(4,1)><FONT 
+                  color=#ffffff>保存本页 </FONT></A>&nbsp;
+                  <OBJECT classid=CLSID:8856F961-340A-11D0-A96B-00C04FD705A2 
+                  height=0 id=WebBrowser width=0></OBJECT><A 
+                  href="http://bbs.emusun.net/report.asp?BoardID=10&amp;RootID=3191&amp;id=3191"><FONT 
+                  color=#ffffff>报告版主</FONT></A>&nbsp;<A 
+                  href="http://bbs.emusun.net/printpage.asp?BoardID=10&amp;RootID=3191&amp;id=3191"> 
+                  <A 
+                  href="http://bbs.emusun.net/pag.asp?BoardID=10&amp;RootID=3191&amp;id=3191"><FONT 
+                  color=#ffffff>打包邮递</FONT></A>&nbsp; <A 
+                  href="http://bbs.emusun.net/favadd.asp?BoardID=10&amp;RootID=3191&amp;id=3191"><A 
+                  href="http://bbs.emusun.net/sendpage.asp?BoardID=10&amp;RootID=3191&amp;id=3191"><FONT 
+                  color=#ffffff>发送朋友</FONT></A>&nbsp;</TD></TR></TBODY></TABLE></TD>
+          <TD bgColor=#ffffff height=24 vAlign=center 
+      width=1></TD></TR></TBODY></TABLE>
+      <TABLE align=center bgColor=#888888 border=0 cellPadding=0 cellSpacing=1 
+      width="95%">
+        <TBODY>
+        <TR>
+          <TD align=right background=dispbbs.files/tablebg.gif bgColor=#888888 
+          height=23 vAlign=center width="70%"><A 
+            href="http://bbs.emusun.net/go.asp?BoardID=10&amp;sid=7388">上一篇主题</A>&nbsp;　<A 
+            href="javascript:this.location.reload()">刷新本主题</A> &nbsp;<A 
+            href="http://bbs.emusun.net/go.asp?BoardID=10&amp;sid=7388&amp;action=next">下一篇主题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+          </TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff height=24 vAlign=center width=1></TD>
+          <TD bgColor=#eeeeee>
+            <TABLE cellPadding=4 cellSpacing=0 width="100%">
+              <TBODY>
+              <TR>
+                <TD bgColor=#eeeeee rowSpan=2 vAlign=top width=180><IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0>
+                  <TABLE cellPadding=4 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD 
+                        style="FILTER: glow(color=#cccccc,strength=2)">&nbsp;<A 
+                        name=3191><FONT color=#000000>
+                        <CENTER><B>sfcemu</B>&nbsp;[<A 
+                        href="http://bbs.emusun.net/queryResult.asp?stype=1&amp;nSearch=3&amp;keyword=sfcemu&amp;BoardID=10&amp;SearchDate=ALL" 
+                        target=_blank><IMG align=absMiddle 
+                        alt=搜索sfcemu在游戏攻略坊的所有贴子 border=0 
+                        src="dispbbs.files/findposter.gif"></A>]</CENTER></FONT></A></TD></TR></TBODY></TABLE>
+                  <CENTER><IMG src="dispbbs.files/Image1.gif"><BR></CENTER>
+                  <CENTER><IMG src="dispbbs.files/level0.gif"></CENTER><BR>
+                  <CENTER><IMG alt=Offline 
+                  src="dispbbs.files/ofMale.gif"></CENTER><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;等级：新进会员<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积分：8<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经验：2<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注册于：2002-9-1<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发帖数：1 
+                  <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;来自：保密 <IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0><BR></TD>
+                <TD bgColor=#eeeeee height="100%" rowSpan=2 width=1>
+                  <TABLE bgColor=#777777 cellPadding=0 cellSpacing=0 
+                  height="100%" width=1>
+                    <TBODY>
+                    <TR>
+                      <TD width=1></TD></TR></TBODY></TABLE></TD>
+                <TD bgColor=#eeeeee height="95%" vAlign=top width=*><IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0><BR><A 
+                  href="http://bbs.emusun.net/usersms.asp?action=new&amp;touser=sfcemu" 
+                  target=_blank><IMG alt=给sfcemu发送一个短消息 border=0 
+                  src="dispbbs.files/message.gif"></A><A 
+                  href="http://bbs.emusun.net/friendlist.asp?action=addF&amp;myFriend=sfcemu" 
+                  target=_blank></A>&nbsp;<A 
+                  href="http://bbs.emusun.net/dispuser.asp?name=sfcemu" 
+                  target=_blank><IMG alt=查看sfcemu的个人资料 border=0 
+                  src="dispbbs.files/profile.gif"></A><A 
+                  href="http://bbs.emusun.net/queryResult.asp?stype=1&amp;nSearch=3&amp;keyword=sfcemu&amp;BoardID=10&amp;SearchDate=ALL" 
+                  target=_blank></A> <A href="mailto:aa@163.net"><IMG 
+                  alt=点击这里发送电邮给sfcemu border=0 
+                  src="dispbbs.files/email.gif"></A>&nbsp;<A 
+                  href="http://bbs.emusun.net/reannounce.asp?BoardID=10&amp;RootID=3191&amp;id=3191&amp;reply=true"><IMG 
+                  alt=引用回复这个贴子 border=0 
+                  src="C:\WINDOWS\Desktop\天地创造.files\dispbbs.files\reply(1).gif"></A>&nbsp; 
+                  <A 
+                  href="http://bbs.emusun.net/reannounce.asp?BoardID=10&amp;RootID=3191&amp;id=3191"></A><BR>
+                  <HR color=#777777 SIZE=1 width="100%">
+
+                  <TABLE cellPadding=0 cellSpacing=0 
+                  style="TABLE-LAYOUT: fixed; WORD-BREAK: break-all" 
+width="95%">
+                    <TBODY>
+                    <TR><FONT color=#aaaaaa>第 1 贴</FONT><BR>
+                      <TD align=left vAlign=top width=32><IMG alt=发贴心情 
+                        border=0 src="dispbbs.files/face1.gif">&nbsp;</TD></TD>
+                      <TD><FONT 
+                        style="FONT-SIZE: 9pt; LINE-HEIGHT: 15pt"><B>求助！！天地创造SFC！！第3个求雨祭坛！！</B><BR>我只打出一个灵魂，其他3个怎么也找不到，看着地图右边那么大片地方，N多的怪，就是过不去啊 
+                        <BR><BR>谁能帮帮我啊 <BR><BR><BR><FONT color=#aaaaaa>非常感谢<B> 
+                        sfcemu </B>在EmuSun BBS发表文章,我们离不开您的参与和支持</FONT></FONT></TD>
+                      <TD width=16></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD align=right bgColor=#eeeeee class=bottomline 
+                  vAlign=bottom><A 
+                  href="http://bbs.emusun.net/dispbbs.asp?boardID=10&amp;RootID=3191&amp;ID=3191#top"><IMG 
+                  border=0 src="dispbbs.files/gotop.gif"></A>
+                  <HR color=#777777 SIZE=1 width="100%">
+
+                  <TABLE cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD align=left vAlign=center></TD>
+                      <TD align=left vAlign=bottom>&nbsp;<IMG align=absMiddle 
+                        border=0 src="dispbbs.files/postime.gif"> 这篇帖子发表于： 
+                        2002-9-1 5:51:02 </TD>
+                      <TD align=right vAlign=bottom width=110 nowarp></TD>
+                      <TD align=right vAlign=bottom 
+                  width=4></TD></TR></TBODY></TABLE><IMG height=4 
+                  src="dispbbs.files/bbs.emusun.htm" 
+            width=0><BR></TD></TR></TBODY></TABLE></TD>
+          <TD bgColor=#ffffff height=24 vAlign=center 
+      width=1></TD></TR></TBODY></TABLE>
+      <TABLE align=center bgColor=#ffffff border=0 cellPadding=0 cellSpacing=0 
+      width="95%">
+        <TBODY>
+        <TR>
+          <TD height=1></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD background=dispbbs.files/tablebg.gif 
+      width=15></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff height=24 vAlign=center width=1></TD>
+          <TD bgColor=#dddddd>
+            <TABLE cellPadding=4 cellSpacing=0 width="100%">
+              <TBODY>
+              <TR>
+                <TD bgColor=#dddddd rowSpan=2 vAlign=top width=180><IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0>
+                  <TABLE cellPadding=4 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD 
+                        style="FILTER: glow(color=#cccccc,strength=2)">&nbsp;<A 
+                        name=6630><FONT color=#000000>
+                        <CENTER><B>hi1003</B>&nbsp;[<A 
+                        href="http://bbs.emusun.net/queryResult.asp?stype=1&amp;nSearch=3&amp;keyword=hi1003&amp;BoardID=10&amp;SearchDate=ALL" 
+                        target=_blank><IMG align=absMiddle 
+                        alt=搜索hi1003在游戏攻略坊的所有贴子 border=0 
+                        src="dispbbs.files/findposter.gif"></A>]</CENTER></FONT></A></TD></TR></TBODY></TABLE>
+                  <CENTER><IMG src="dispbbs.files/Image1.gif"><BR></CENTER>
+                  <CENTER><IMG src="dispbbs.files/level1.gif"></CENTER><BR>
+                  <CENTER><IMG alt=Offline 
+                  src="dispbbs.files/ofMale.gif"></CENTER><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;等级：一星会员<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积分：10<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经验：2<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注册于：2002-10-5<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发帖数：1 
+                  <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;来自：保密 <IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0><BR></TD>
+                <TD bgColor=#dddddd height="100%" rowSpan=2 width=1>
+                  <TABLE bgColor=#777777 cellPadding=0 cellSpacing=0 
+                  height="100%" width=1>
+                    <TBODY>
+                    <TR>
+                      <TD width=1></TD></TR></TBODY></TABLE></TD>
+                <TD bgColor=#dddddd height="95%" vAlign=top width=*><IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0><BR><A 
+                  href="http://bbs.emusun.net/usersms.asp?action=new&amp;touser=hi1003" 
+                  target=_blank><IMG alt=给hi1003发送一个短消息 border=0 
+                  src="dispbbs.files/message.gif"></A><A 
+                  href="http://bbs.emusun.net/friendlist.asp?action=addF&amp;myFriend=hi1003" 
+                  target=_blank></A>&nbsp;<A 
+                  href="http://bbs.emusun.net/dispuser.asp?name=hi1003" 
+                  target=_blank><IMG alt=查看hi1003的个人资料 border=0 
+                  src="dispbbs.files/profile.gif"></A><A 
+                  href="http://bbs.emusun.net/queryResult.asp?stype=1&amp;nSearch=3&amp;keyword=hi1003&amp;BoardID=10&amp;SearchDate=ALL" 
+                  target=_blank></A> <A href="mailto:hi1003@eyou.com"><IMG 
+                  alt=点击这里发送电邮给hi1003 border=0 
+                  src="dispbbs.files/email.gif"></A>&nbsp;<A 
+                  href="http://bbs.emusun.net/reannounce.asp?BoardID=10&amp;RootID=3191&amp;id=6630&amp;reply=true"><IMG 
+                  alt=引用回复这个贴子 border=0 
+                  src="C:\WINDOWS\Desktop\天地创造.files\dispbbs.files\reply(1).gif"></A>&nbsp; 
+                  <A 
+                  href="http://bbs.emusun.net/reannounce.asp?BoardID=10&amp;RootID=3191&amp;id=6630"></A><BR>
+                  <HR color=#777777 SIZE=1 width="100%">
+
+                  <TABLE cellPadding=0 cellSpacing=0 
+                  style="TABLE-LAYOUT: fixed; WORD-BREAK: break-all" 
+width="95%">
+                    <TBODY>
+                    <TR><FONT color=#aaaaaa>第 2 贴</FONT><BR>
+                      <TD align=left vAlign=top width=32><IMG alt=发贴心情 
+                        border=0 src="dispbbs.files/face1.gif">&nbsp;</TD></TD>
+                      <TD><FONT 
+                        style="FONT-SIZE: 9pt; LINE-HEIGHT: 15pt"><B>那个雨坛我打过去了</B><BR>只要你好好找是找的出的！其实很好找！ 
+                        <BR>不过我到仙人谷卡了，找不到出路！ 
+                        <BR>《天地创造》很好玩的希望大家都试试！！！！<BR><BR><FONT 
+                        color=#aaaaaa>非常感谢<B> hi1003 </B>在EmuSun 
+                        BBS发表文章,我们离不开您的参与和支持</FONT></FONT></TD>
+                      <TD width=16></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD align=right bgColor=#dddddd class=bottomline 
+                  vAlign=bottom><A 
+                  href="http://bbs.emusun.net/dispbbs.asp?boardID=10&amp;RootID=3191&amp;ID=3191#top"><IMG 
+                  border=0 src="dispbbs.files/gotop.gif"></A>
+                  <HR color=#777777 SIZE=1 width="100%">
+
+                  <TABLE cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD align=left vAlign=center></TD>
+                      <TD align=left vAlign=bottom>&nbsp;<IMG align=absMiddle 
+                        border=0 src="dispbbs.files/postime.gif"> 这篇帖子发表于： 
+                        2002-10-5 11:31:36 </TD>
+                      <TD align=right vAlign=bottom width=110 nowarp></TD>
+                      <TD align=right vAlign=bottom 
+                  width=4></TD></TR></TBODY></TABLE><IMG height=4 
+                  src="dispbbs.files/bbs.emusun.htm" 
+            width=0><BR></TD></TR></TBODY></TABLE></TD>
+          <TD bgColor=#ffffff height=24 vAlign=center 
+      width=1></TD></TR></TBODY></TABLE>
+      <TABLE align=center bgColor=#ffffff border=0 cellPadding=0 cellSpacing=0 
+      width="95%">
+        <TBODY>
+        <TR>
+          <TD height=1></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD background=dispbbs.files/tablebg.gif 
+      width=15></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff height=24 vAlign=center width=1></TD>
+          <TD bgColor=#eeeeee>
+            <TABLE cellPadding=4 cellSpacing=0 width="100%">
+              <TBODY>
+              <TR>
+                <TD bgColor=#eeeeee rowSpan=2 vAlign=top width=180><IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0>
+                  <TABLE cellPadding=4 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD 
+                        style="FILTER: glow(color=#cccccc,strength=2)">&nbsp;<A 
+                        name=7387><FONT color=#1a1ae6>
+                        <CENTER><B>alecs</B>&nbsp;[<A 
+                        href="http://bbs.emusun.net/queryResult.asp?stype=1&amp;nSearch=3&amp;keyword=alecs&amp;BoardID=10&amp;SearchDate=ALL" 
+                        target=_blank><IMG align=absMiddle 
+                        alt=搜索alecs在游戏攻略坊的所有贴子 border=0 
+                        src="dispbbs.files/findposter.gif"></A>]</CENTER></FONT></A></TD></TR></TBODY></TABLE>
+                  <CENTER><IMG src="dispbbs.files/Image446.gif"><BR></CENTER>
+                  <CENTER><IMG src="dispbbs.files/level8.gif"></CENTER><BR>
+                  <CENTER><IMG alt=Offline 
+                  src="dispbbs.files/ofMale.gif"></CENTER><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;等级：版主<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积分：355<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经验：151<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注册于：2002-7-31<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发帖数：76 
+                  <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;来自：保密 <IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0><BR></TD>
+                <TD bgColor=#eeeeee height="100%" rowSpan=2 width=1>
+                  <TABLE bgColor=#777777 cellPadding=0 cellSpacing=0 
+                  height="100%" width=1>
+                    <TBODY>
+                    <TR>
+                      <TD width=1></TD></TR></TBODY></TABLE></TD>
+                <TD bgColor=#eeeeee height="95%" vAlign=top width=*><IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0><BR><A 
+                  href="http://bbs.emusun.net/usersms.asp?action=new&amp;touser=alecs" 
+                  target=_blank><IMG alt=给alecs发送一个短消息 border=0 
+                  src="dispbbs.files/message.gif"></A><A 
+                  href="http://bbs.emusun.net/friendlist.asp?action=addF&amp;myFriend=alecs" 
+                  target=_blank></A>&nbsp;<A 
+                  href="http://bbs.emusun.net/dispuser.asp?name=alecs" 
+                  target=_blank><IMG alt=查看alecs的个人资料 border=0 
+                  src="dispbbs.files/profile.gif"></A><A 
+                  href="http://bbs.emusun.net/queryResult.asp?stype=1&amp;nSearch=3&amp;keyword=alecs&amp;BoardID=10&amp;SearchDate=ALL" 
+                  target=_blank></A> <A href="mailto:alecs_s@sina.com"><IMG 
+                  alt=点击这里发送电邮给alecs border=0 
+                  src="dispbbs.files/email.gif"></A>&nbsp;<A 
+                  href="http://bbs.emusun.net/reannounce.asp?BoardID=10&amp;RootID=3191&amp;id=7387&amp;reply=true"><IMG 
+                  alt=引用回复这个贴子 border=0 
+                  src="C:\WINDOWS\Desktop\天地创造.files\dispbbs.files\reply(1).gif"></A>&nbsp; 
+                  <A 
+                  href="http://bbs.emusun.net/reannounce.asp?BoardID=10&amp;RootID=3191&amp;id=7387"></A><BR>
+                  <HR color=#777777 SIZE=1 width="100%">
+
+                  <TABLE cellPadding=0 cellSpacing=0 
+                  style="TABLE-LAYOUT: fixed; WORD-BREAK: break-all" 
+width="95%">
+                    <TBODY>
+                    <TR><FONT color=#aaaaaa>第 3 贴</FONT><BR>
+                      <TD align=left vAlign=top width=32><IMG alt=发贴心情 
+                        border=0 src="dispbbs.files/face0.gif">&nbsp;</TD></TD>
+                      <TD><FONT 
+                        style="FONT-SIZE: 9pt; LINE-HEIGHT: 15pt"><B></B><BR>攻略: 
+                        <BR>一、地底世界 
+                        <BR><BR>主人公了一ク（阿空）几天来一直做着同样的梦，早上，主角被女朋友艾路（エル）叫醒，不料两人发生口角，艾路跑出了房门。无奈来到长老的屋子，被教训了一顿后前往上方的机织小屋道歉。回到家，不见了长老。屋外三个男子让阿空砸开了一道长久锁死的门又笑着跑了。阿空人小胆大，破门而进，来到幽暗的地下，在黑暗之中，感到有一种强大的力存在，出现了一个精灵（友米），送给他一个道具箱子，并告之使用方法。这是艾路赶来，却意外地变成石人，连忙出屋，发现全村的人都成了石人，只有长老无恙。为了释放水晶小村（クリスタルホルム）村民的灵魂，只好去试练之塔使地面大陆复兴。 
+                        <BR><BR>试练之塔1：玩者大可将之视为熟悉游戏操作的一版（练习关）。在最后一层与首领相遇，是四个红色球型怪物，极易通关。 
+                        <BR><BR>试练之塔2：在这塔内只要推开阻路的石像便可通关。如额头上发出红光的石像都是可以移动的。此塔内无首领登场，玩者亦必须学会活用被沟渠包围着的按钮，才可通关。好好利用身边的东西掷向按钮即可。 
+                        <BR><BR>试练之塔3：这里的立足点甚为险峻，玩者要注意主角的操作，否则很容易坠下深渊。此塔首领分裂为三个分身向主角展开攻击。若玩者无法分辨其真伪，唯有依靠直觉逐个攻击，直到找出真身为止。 
+                        <BR><BR>试练之塔4：在这塔内首次有须走细线才可渡过的地方，主角若一时大意，便很容易“塞翁失马”。当然亦有故意下坠洞穴才会出现进路的机关。首领是球型物体串连而成的怪物，会高速移动，主角可集中攻击其最后尾部。 
+                        <BR><BR>试练之塔5：虽然这一个塔迷宫并不十分复杂，但塔内的保护神会阻碍主角通过。只要将以前取得的水晶丝（クリスタリの糸）交给艾路，如此便可获得[艾路斗篷]（エルのマント）。有了这件斗篷，便可反弹保护神的攻击。首领是名为SHADOW 
+                        KEEPER 的怪兽，主角应先集中火力攻击其中一只手臂，然后再破坏另一只，便可集中攻击躯体了。 
+                        <BR><BR>在地底世界除了五个试练之塔外，还有隐藏迷宫存在。 
+                        <BR><BR><BR>迷宫一：位于试练之塔4以南的地方。主角若能将迷宫内出没的怪兽全部打倒，便可过关。若已通过试练之塔，波利尼斯亚诸岛（ポリネツア诸岛）便会复活。 
+                        <BR><BR>迷宫二：位于水晶小村以东[地上大穴]两面被海洋挟着之地区右侧。无魔物出没，只要设法推开岩石来到门前，便可以复兴（姆大陆）。 
+                        <BR><BR><BR>村里人全部复活，出乎意料的是也开启了沉睡多年的封印，欧亚、非洲、南北美洲、南极洲几块大陆相继浮出地表。从长老那里得知阿空肩负着改造世界的重任，于是与艾路泪别，毅然踏上了征程。大地之穴，阿空听完长老关于世界形成的介绍，来到地上。 
+                        <BR><BR><BR>主角首次挑战地面世界的第一个地方，便是这个巨木洞穴。主角在进入迷宫后再走一段短路，便可来到拦断去路的一个洞穴。若坠下这个洞穴，即可不受任何损伤地降落到下一层。（注意应选择从下方坠下） 
+                        <BR><BR>这一层四周均是有着积水的地方，玩者在此首先要取得巨木之树叶（巨大な叶），靠树叶浮游往右渡过积水。遇到花卉会请求主角拯救拉之大树，但进入怪物洞穴便会因吸入毒气而失去神志。必须在洞穴最深层得到[ラーの 
+                        ]，方可保护主角免受毒气攻击。 [BOSS]寄生虫（パラサイト） 
+                        <BR><BR>这个首领可由躯体中喷出胞子，向四方八面作攻击，还会在洞穴中高速窜来窜去，是个十分难以应付的对手。虽然寄生虫的弱点是忌火，但此洞穴却无法使用魔法攻击，唯有用物理攻击直接打中其中央的真身方为上上之策。 
+                        <BR><BR>除去寄生虫后，大地上红色的土地消失了，植物复苏了，呈现一片绿意昂然、百花盛开的景象。 
+                        <BR><BR><BR>三、巨大岩山（グしートクリフ） 
+                        由于迷宫内部构造复杂无比，所以要掌握整个地形很不容易。主角若迷路，在原地兜来兜去，则会在挑战首领前便已将体力消耗得所剩无几。故此，主角亦无必要走到每个角落去，但你若想找出所有隐藏宝物，仍是可以勇往直前的。 
+                        <BR><BR>主角在探索一番后，应会看到有一个类似魔物巢穴的东西，巢中则有一样闪闪发光的物件。若搜查这个物件，便会得到一个叫[利爪]（するどいツメ）的宝物。利爪可用来攀爬悬崖之用，若错过了以后就无法爬山，所以一定要取到手！ 
+                        <BR><BR><BR>阻碍鸟类解放的敌人是巨型怪鸟（ダークツイソズ），它们会在空中展开攻击。怪鸟最初只有一只登场。其会在上空回旋、发弹攻击。此时主角应一面闪避一面静待怪鸟接近，然后才展开进攻。怪鸟会不时卷起疾风，主角必须牢牢站稳，否则便会被疾风吹落崖底。当怪鸟受到某种程度损伤后，会召来另一只怪鸟，它会落下鸟粪进行攻击。主角亦可四周移动，分散鸟粪落下的位置。魔法对怪鸟几乎无效，故此唯有以一般方法展开攻击。 
+                        <BR><BR><BR>四、季风之谷 
+                        凭助宝物，在山顶阿空击败了绿色怪鸟，鸟类得救了！于是世界又有了鸟类，到处鸟语花香。鸟王为了报恩允许阿空随意乘坐鸟类来往各地（**服务）。有了树，有花有飞鸟，那么下面该是走兽了。爬上鸟之山顶，可乘大鸟前往季风之谷，用石头砸醒季风。此后方可去干燥平原令动物复活。 
+                        <BR><BR>五、干燥平原（ズウ） 
+                        <BR><BR>主角为了令动物复活而到达干燥平原。这里有着三个求雨祭坛，若将祭坛解放，已干燥的河床便会重新注入水流，如是则主角方可游泳到别的地方。在平原的一个地方，主角会自言自语的对白一番，此时只要故意被附近的怪物击飞，撞在岩壁之上，便会将岩壁崩塌让你通过。 
+                        在干燥平原的最深部分，充满邪恶色彩的首领STORM 
+                        MASTER（ストームマスター）早已严阵以待。初时其会口喷火焰及投掷两手的回力刀作为攻击。主角可在避过回力刀后飞身上前，向魔物躯体施以一击。 
+                        <BR><BR>击到STORM 
+                        MASTER之后，其会开始变形，以第二次形态再展开攻击。攻击方法与前身大致相同，而喷出的火焰，在落地后仍会在地面上延伸出去；两把回力刀则变形为三块岩石向主角投掷。STORM 
+                        MASTER可防御魔法，所以主角唯有以武器打出直接攻击。 <BR><BR><BR>六、千寻之谷 
+                        胜利了，万兽回归大地，生机勃勃，下一个目标就是要令人类的灵魂复活。见到了动物之王狮子，交谈中得知，动物王国年轻的王子正在千寻之谷受训，狮子族的传统，年幼的小狮子拉尔姆（ライオソ）必须自己从谷底上来，经历种种磨难，才能成为真正的狮子王。在动物乐园接受动物之王[狮子尼奥]的委托，去千寻之谷找到小狮子拉尔姆（ライオソ）助自己一臂之力。 
+                        <BR><BR>主角跌落下谷底的最深处后，发现小狮子正被两头魔物袭击，主角要把它救回。在千寻之谷中，一定要时常与拉尔姆共同行动，切勿让其单独行动。来到山顶附近，会与一种名为[泥公仔]的首领碰头。这家伙位于山谷的另一边，无法直接攻击，可拾起附近的岩石向其投掷。小狮子拉尔姆会协助主角搬来石头打倒敌人。人形假装投降，却将阿空骗下陷井。陷井里，阿空焦急地倾听着愤怒的王子搏斗的声音。突然声音停了，王子赢了，并得到宝物（这宝物在游戏结局时有大用！）回到动物王国，接受狮子王的谢礼。 
+                        <BR><BR>七、艾古路摩达（エクルマータ） 
+                        <BR><BR>在动物复活后，主角可借助它们的力量来到封印着人类灵魂的地方，进入复活生物的最后一个阶段。 
+                        <BR><BR><BR>艾古路摩达是四周均被白雪覆盖的山谷地带。在最初的一个洞穴中，主角会发现两个无法从下方攀爬上斜坡。主角若想走上斜坡，便会顺势滑至与山壁碰撞的位置，经撞击后山壁便会出现新的通道。山谷的某一处可获得进入温泉后即可治疗伤势的[雪见草]，主角应在有着依艾迪的温泉使用雪见草，如是者依艾迪便会痊愈，并会助主角一臂之力以作回报。（在吊桥被毁的位置，依艾迪可用怪力将主角投掷彼岸） 
+                        <BR><BR>不久，主角会进入一个只有滑台的洞穴。在此会强制性地撞向山壁，引起雪崩，被困于一个没有出口的山洞之中。在洞穴中，与同样被困的山羊加莫斯加相遇，并得悉其丈夫已于先前的雪崩殉难。其后，加莫斯加再向主角搭话，谓洞穴之内已无任何食物，所以为了传宗接代，便无法不吃掉其丈夫的肉。“吃”或“不吃”，你会作出怎样决定？爬上满是冰花的山顶，再回到断桥。河水冻成了冰，顺河岸向右行，攀上雪峰，阿空得到了世界技术之花。世界的经济及科学技术日益猛进。 
+                        <BR><BR><BR>人类复活之前的首领拥有三个攻击模式 
+                        <BR>依艾迪：会投掷冰块攻击，但动作则极为迟钝。主角若将依艾迪投掷出来的冰块全部作为反击破坏之用，便可将其击败。 
+                        <BR><BR>加迪特：会快速由远处施展射击攻击，且不会受到主角的直接攻击所伤。故主角应将其发出攻击反弹。玩者应静待加迪特停下来发动攻击，然后再将其绝招反弹。 
+                        <BR><BR><BR>黑暗雪怪：真身，有时直接或间接攻击均对其无效。受到攻击后会分裂成为多种蝙蝠，向主角展开攻击，但稍等一会儿，又会回复原状。主角应在首领回复原状时立刻攻击。 
+                        <BR><BR><BR>八、洛拉尔镇（ロウランの町） 
+                        <BR><BR>长期疲劳使阿空晕倒了，醒来时已被人救起，来到子甘の村。拜访了活佛，并得到宝物（可瞬间脱离所处迷宫），一个老人要主角帮忙寻找他的孙女。在大地图的一个小沙漠中，会发现一个少女美玲（メイリン），要快跑跟上她方可进入洛拉尔镇。睡上一觉，却发现此镇竟是鬼域，必须尽快找出美玲。 
+                        <BR><BR>主角在将类似俑人的敌人（マドウー）打倒后，鬼魂便会从其体内涌现，并会强行将主角带回城镇的中央广场。若要回避鬼魂，则必须夺得宝物[辟邪护身符]（きょけのフダ）。将其装备上身，便毋须惧怕鬼魂了。在中央广场向西侧居住区移动时，会看见有怪物莫名其妙地被吸入民居之内，尾随其后便会发现肉眼看不到的入口。若不发现这间便绝对无法找出美玲。 
+                        <BR><BR>来到游牧民之村，村里的人们一听阿空提到美玲就热情地告诉了他穿越沙漠的正确路径。先西行见到三块豆石，再南行到石头群，以石头群为一个座标朝西北方向行走见到大骷髅头就到了出口。 
+                        <BR><BR><BR>九、挪菲斯达（ノルフエスター） 
+                        <BR><BR>阿空在一小村中闲逛，进到旅店，老板一见有客人，十分殷胁，又是酒又是舞蹈，完了开口要一百万。哇操！想宰客！阿空正在为难之时，王国公主的护卫女剑客（菲塔）赶来解围，并约阿空明日去王城。第二天来到王城见到国王和公主，主角发现公主竟跟故乡女友长得一模一佯，名字也叫艾路。莫明其妙的阿空应国王请求给艾路公主治病，百思不得其解，在王城里四处游荡，在地下牢房里看见了被捕的侠盗白风。回到图书馆翻阅了有关书籍，阿空知道了国王的秘密。艾路公主的双亲已遭不幸。在国王的卧室前有卫兵把守，阿空心生一计。受城里药商指点，北行绕过王城，在森林找到药材，回去请药商做成迷药，投到王城食堂的饭锅里。 
+                        <BR><BR>夜里来到王城，所有的人都沉睡在梦中，不能醒来，药性还挺强的。在地牢救出白风，得知国王的屋中有秘道。在国王的卧室推动石像进入城塔，得到宝物[守之铃]（まキりのすず）并装备上身。若主角在森林中通过正确的路途，守之铃便会摇动发声提醒玩者。借助宝物的神奇功能穿过了版图上西北方面的挪菲斯达森林，来到星见桥，绕河岸东行在河滩时，一个黑影跟踪而来…… 
+                        <BR><BR>行走了一段路程，身后不远处传来响声，阿空回头查询原来是美玲，一场虚惊。路上二人捡到了[犬笛]（犬ぶえ）。在挪菲斯达中间部分，森林的景色会变得一片黑暗，而敌人亦会趁机纷纷出现，突然展开阻击。此外，树木之间更会有一些蜈蚣形怪物穿插其中，玩者须掌握时间灵活避过。在到达目的地的村子后，会有一群豺狼空群而出，向主角袭击。此时要及时装备宝物[犬笛]（犬ぶえ）。 
+                        <BR><BR><BR>主角终于可以进入村子。来到路瓦尔公主艾路出生之家。村子内的环境竟与主角在地底世界的故乡一模一样，使得主角在惊愕不已之余，同时又产生了无数的疑问。在艾路出生之家内，得到艾路家族肖像画，并在途中借用了一起同行的美玲的力量，让自己看到了公主家族的幻影。 
+                        <BR><BR><BR>回到王城，向国王说了公主叶娜患病的原因。国王听后却变了脸色。公主终于恢复记忆重拾自己的过去，但…… 
+                        <BR>待公主恢复记忆后，主角当晚便在旅馆中投宿，但在梦中会见到长老，长老之所以出现，是委托主角另一项新任务。由于发展文明必须拥有一班天才的力量，而主角的使命则是要把这些天才拯救出来。玩者于是依长老所言，向着南方进发。 
+                        <BR><BR>十、施尔巴英城 
+                        <BR><BR>于是，南下经过关所，在海港四处打听过海的方法。在リッツ村得知一个叫コロンブス的冒险家曾远渡重洋，到过新大陆。为了寻找冒险家，阿空潜入了村庄附近废弃的古代王城。在图书馆藏书中记载着大厅悬挂的四幅油画的背景及王城自身的秘密。按书中的暗示，阿空必须寻找四颗宝石；这四颗宝石分别藏在以下地方：一、城门前水池中；二、食堂烟筒深处；三、城堡的塔楼上；四、最难找，先在机器房将三个齿轮转动，编出密码“286”使一处房中的吊灯停止，才可在平时跳不过去的地方寻到宝石。回到大厅，将四幅画像的人头嵌上宝石。一个大吊灯从天而降将大厅砸出了大黑洞，阿空跳下，在地牢救出了冒险家コロンブス。他问明阿空来意后，高兴地教授了航海术，阿空有了航海术就可在海洋中分辩方向了。来到码头，听船员说除了阿空，还有一位神秘乘客，回到村里，夜里女剑士菲塔前来拜访。原来那神秘乘客就是叶娜公主。第二天，阿空和叶娜公主来到码头，乘上了去南北美洲新大陆的航船。 
+                        <BR><BR>十一、人鱼之塔 
+                        <BR>上陆后叶娜公主给阿空留下一封信提前走了。阿空读后茫然若失，独自一人开始了在新大陆的历险。在フリ一ダム遇见了一个滑板少年ペルル（百鲁鲁），得知有人正在做飞行器。一个叫ベル青年委托给女友带个口信。阿空来到ニアレイワ村，见到ベル的女友，但已其另有新欢。ベル知道情况十分伤心，来到酒馆喝闷酒，阿空找到他，让他鼓起生活的勇气。ベル听了劝告，发明了电话。 
+                        <BR><BR>在此期间阿空还协助另一科学家研究出电灯（真是神速科技！）。阿空为了西行，在ニアレイワ村打听飞行器的事情，却不得要领。无奈向西北行，在一处密林拿到优质木林——丸太，途经五大湖桥头时见到一个青年的魂魄在那痴痴地等头着失约的女友（真是一个失恋的大陆）。在西面河川，请人使用优质木材丸太修好了桥。来到リォット都市，这里正举行盛大祭把狂欢。阿空遇见了メイリン，夜晚在救世主神像下二人谈心，由于阿空依然惦念着家乡的女友气跑了メイリン。在港口听水手说东海人鱼塔出现了怪物。应船主之聘阿空到人鱼塔打败了怪鱼解救了人鱼，碰见了一个叫ナナ的人鱼，原来它就是五大湖那个青年等的人。ナナ交给阿空一个戒指转交青年。并听其他人鱼说冰封的第六块大陆有人鱼族的秘密。回到港口，得到一艘海船做报酬。从此阿空就可以自由来往各大陆了。 
+                        <BR><BR>十二、五大湖 
+                        <BR>回到五大湖青年得到戒指后，魂魄升天而去（看样子是与女友会合去了）。阿空进入五大湖地下，在山洞中得到了空气水草，可在水中冒气泡处潜泳。顺瀑布而下在半山腰左边突起的岩石上得到一个铁球。可防止游泳时被急流冲走。极深处尽头的洞中阿空扔石块砸开了山壁，瀑布倾流而出。大水谭中与双头海龙恶斗，救出了飞行器的设计者ゥイル。回到其研究室，由于缺乏器械，飞行器无法完成。 
+                        <BR><BR>阿空只得乘船来到ユンコゥ，（今日香港附近）到ロン商会寻购飞行器械。在旅店意外发现女剑士菲塔身患重病躺在床上。阿空为菲塔到医院求药，医生说コウラィニンツン药只有ロン商会卖（又是它）。到了商会向ロン求药，做为交换条件，阿空必须去ドラダ—ン城找ロン的弟弟。拿到药找医生问明了喂服方法，救醒了菲塔。 
+                        <BR><BR>原来叶娜公主在ドラダ—ン王城，听到此消息阿空很焦急，出旅馆在街上遇到了百鲁鲁。二人结伴来到王城，百鲁鲁引开了门卫。阿空在城里一边躲避看守的巡逻，一边寻找，却毫无头绪。回到ュンコゥ，从一个万事通口中得知ドラダ—ン城昔日的主人曾携带财宝逃到海外山岛居住。阿空乘船南下探险，在一小岛上寻到はやこのくつ宝物。再回到王城借助宝物撞开平时关闭的城墙，却被关在了地牢中。与此同时，在王城的秘室中ロン的弟弟ゥォン向叶娜公主表明了身份。地库里阿空被及时赶来的菲塔救出，二人分头寻找。在城东边屋中，找到几本书，阿空内心的心魔此时夏苏，但阿空战胜了自己的心魔。菲塔和メィリン赶来会合，メィリン旧事重提，竟大哭起来。百鲁鲁顺着哭声找来了。众人商议，阿空留下，其余三人前面开道。在左边城中大教堂依照所得暗示阿空用六个坛子砸灭了六盏灯，出现了秘道，在一个单独摆放的石像对面墙壁上看见菲塔留的字条，开启了秘室，阿空终了见到了叶娜公主。一个叫ロィド（路易多）的人出现，女剑士菲塔赶来叫阿空和叶娜公主先行。阿空二人在メィリン的指点下来到出口。此时路易多告诉菲塔整个事件是一场误会。路上叶娜公主借口支走了阿空。メィリン在地下赶上了阿空，突然天崩地裂…… 
+                        <BR><BR>十三、世界的恶梦 
+                        <BR>阿空被百鲁鲁和メィリン救起后，稍作休息就回到了ニアレィク村。ゥィル己经研制成功飞行器，阿空试飞来到了グランドモスク。这是个白信徒盛行的地方，人们信奉着一个叫ベル一ガ的学者，其人建立了新バィォ学说，通过DNA遗传现象，研讨人类长生不老的方法，还鼓吹说世界应改造成不生不灭的状态。人们把ベル－ガ当成了救世主。阿空为了探查原因，南下来到ベル－ガ学者的研究塔，据传说此学者曾将自己冷冻在塔内，以待新时代的来临。研究塔中，阿空先将右手的两个电力装置启动，开动电梯进入塔底层。塔中道路错综繁杂，不时还有机器人出来向阿空袭击，很多地方还需爬行通过。在第三层电脑室中阿空向电脑查询了资料，来到了尚未增筑的B3F层。唤醒了沉睡的ベル－ガ博士，阿空却被博士打晕了过去。 
+                        <BR><BR>邪恶的ベル－ガ终于实施了蓄谋已久的计划，向神代岛发射了超级武器。神代岛原是个富饶的城市，阿空曾经乘坐鸟类游览过这里（玩家可在在神代岛见到《夭地创造》设计组的人员和策划者们）。现在所有的人一夜之间被超强光融化了。世界末日来临了，恶梦中阿空见到了长老…… 
+                        <BR><BR>再次醒来又在ラサの村活佛处，活佛说人一生的命运因果循环，难以逃脱命运法轮控制；而黄金之子现世，则产生新的时代。阿空就是一个在命运之轮控制外的人。为了挽救人类，活佛说必须聚集五颗星のかけら，在时のかけら墓使用。才能产生奇迹。（像是《七龙珠》的片段）阿空曾经在动物王国得到过一颗星，剩下的按照活佛所说的暗语，首先前往人の死绝城镇。神代岛上，杳无人迹，在警署一楼桌上的对讲机中传出少女呼救的声音，根据判断阿空抓起对讲机来到了地下水道。先在下水道管理所取得钥匙，进入贮水池，一头狮子正在追赶一位少女。阿空挺身迎上，竟发现狮子就是动物王国的小王子，故人见面份外高兴。少女在惊诧之余送给阿空一颗星のかけら。忽然对讲机中传来フリ一ダム调查团的寻呼声，阿空叫小王子看护少女，自己出来迎接。街上空无一人，再回地下小王子与少女也消失了。阿空来到南美大陆西海岸的ァスタリカ，又得到了星珠。在サンコ一スト西边的山崖上。从老学者手中得到一颗星。在リッツ海港听水手说冒险家曾捡到一颗美丽的石头，后去沙漠旅行下落不明。阿空来到非洲中心右上方处，在一处遗迹发现了一件破旧的服装，又发现了一颗星。在リォット都市南部森林找到一口鸟，乘鸟飞到冰封大陆，在企鹅居住处得到最后一颗星。凑齐了五颗垦，阿空乘船来到南极ドラィバレ，给五个骷髅头装上。这时出现了ラィトサィド的使者，原来阿空也是ラィトサィド的使者。二者合一，阿空又进入了心魔空间…… 
+                        <BR><BR>十四、世界的本原 
+                        <BR>此时故事情节有长达十分钟的强制画面。阿空的内心善与恶激烈地冲突着，何去何从。叶娜及公主叶娜相独出现，难以选择，最终阿空选择了故乡青梅竹马的女友。（应该善始善终）！阿空发誓要与这一切的事件操纵者决一雌雄。门外飞来一只鸟带来メィホゥ的手信，女剑土菲塔、えょぅ兵路易多、滑板少年百鲁鲁、メィホゥ祖孙俩，所有的正义战士都在指定地点集合待命。阿空乘飞行器来到ネォトヌォの城，东行穿过茫茫的冰封平原来到恶博士ベル一ガ新建的研究塔。恶战开始了，众人互相配合杀进研究塔，破坏了电脑控制室的导弹发射装置。 
+                        <BR><BR>恶博士想驾飞船逃走，阿空、菲塔、路易多三人追上飞船用定时炸弹毁掉了整个飞船。在飞船船尾找到了无路可逃的恶博士，他还垂死挣扎向三人口出狂言，却可笑地被螺旋桨吸入绞碎。此时飞船在一万米的高空中，一只ゎたリ鸟赶来，但只能载一人，为了大局，菲塔和路易多牺牲了自己，让阿空一人脱离。 
+                        <BR><BR>阿空落在サンコ一スト的大山岩上，听学者说一道闪光落在南美大陆方向。阿空乘船赶去，发现通往地下的入口被炸开了，遇见了コロンブス冒险家。互道珍重，阿空返回了地里世界。在故乡，阿空找到长老，知道了一切事件的原因。四十六亿年来世界一直按照两种意志存在而发展，光的意志创造了生命形态，而个ャミ意志则是无生命状态。现在ャミ时代即将来临！阿空来到亚空间战胜了两个最终生命形态，一个是蓝色武士，一个是四翅大鸟。一切都结束了！地球上，一只美丽的わたリ鸟自由翱翔，飞过绿色平原，飞过蓝色海洋，飞过高耸的山峰，穿过白色的云层；现代化的电气列车在地上飞驰而过，新颖的飞行器在高空鸟瞰大地，繁华的都市夜色降临，万家灯火汇成了一片幸福之光。 
+                        <BR>叶娜坐在家中，静溢之夜偶尔传来两声蟋蟀的欢叫。咚咚……有人敲门也叶娜站起身开门，是谁？…… 
+                        <BR>也许这一切使你我深深陶醉和迷茫，哪个是梦幻，那个是真实？掩卷长息，伴着浓浓的夜色，站在窗前，谁又知道我在想什么，我又何曾在意他人正做什么。我举镜自赏，我看镜中人，镜中人亦笑我了！<BR><BR><FONT 
+                        color=#aaaaaa>非常感谢<B> alecs </B>在EmuSun 
+                        BBS发表文章,我们离不开您的参与和支持</FONT></FONT></TD>
+                      <TD width=16></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD align=right bgColor=#eeeeee class=bottomline 
+                  vAlign=bottom><A 
+                  href="http://bbs.emusun.net/dispbbs.asp?boardID=10&amp;RootID=3191&amp;ID=3191#top"><IMG 
+                  border=0 src="dispbbs.files/gotop.gif"></A>
+                  <HR color=#777777 SIZE=1 width="100%">
+
+                  <TABLE cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD align=left vAlign=center></TD>
+                      <TD align=left vAlign=bottom>&nbsp;<IMG align=absMiddle 
+                        border=0 src="dispbbs.files/postime.gif"> 这篇帖子发表于： 
+                        2002-10-23 15:03:10 </TD>
+                      <TD align=right vAlign=bottom width=110 nowarp></TD>
+                      <TD align=right vAlign=bottom 
+                  width=4></TD></TR></TBODY></TABLE><IMG height=4 
+                  src="dispbbs.files/bbs.emusun.htm" 
+            width=0><BR></TD></TR></TBODY></TABLE></TD>
+          <TD bgColor=#ffffff height=24 vAlign=center 
+      width=1></TD></TR></TBODY></TABLE>
+      <TABLE align=center bgColor=#ffffff border=0 cellPadding=0 cellSpacing=0 
+      width="95%">
+        <TBODY>
+        <TR>
+          <TD height=1></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD background=dispbbs.files/tablebg.gif 
+      width=15></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff height=24 vAlign=center width=1></TD>
+          <TD bgColor=#dddddd>
+            <TABLE cellPadding=4 cellSpacing=0 width="100%">
+              <TBODY>
+              <TR>
+                <TD bgColor=#dddddd rowSpan=2 vAlign=top width=180><IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0>
+                  <TABLE cellPadding=4 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD 
+                        style="FILTER: glow(color=#cccccc,strength=2)">&nbsp;<A 
+                        name=7388><FONT color=#1a1ae6>
+                        <CENTER><B>alecs</B>&nbsp;[<A 
+                        href="http://bbs.emusun.net/queryResult.asp?stype=1&amp;nSearch=3&amp;keyword=alecs&amp;BoardID=10&amp;SearchDate=ALL" 
+                        target=_blank><IMG align=absMiddle 
+                        alt=搜索alecs在游戏攻略坊的所有贴子 border=0 
+                        src="dispbbs.files/findposter.gif"></A>]</CENTER></FONT></A></TD></TR></TBODY></TABLE>
+                  <CENTER><IMG src="dispbbs.files/Image446.gif"><BR></CENTER>
+                  <CENTER><IMG src="dispbbs.files/level8.gif"></CENTER><BR>
+                  <CENTER><IMG alt=Offline 
+                  src="dispbbs.files/ofMale.gif"></CENTER><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;等级：版主<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积分：355<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经验：151<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注册于：2002-7-31<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发帖数：76 
+                  <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;来自：保密 <IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0><BR></TD>
+                <TD bgColor=#dddddd height="100%" rowSpan=2 width=1>
+                  <TABLE bgColor=#777777 cellPadding=0 cellSpacing=0 
+                  height="100%" width=1>
+                    <TBODY>
+                    <TR>
+                      <TD width=1></TD></TR></TBODY></TABLE></TD>
+                <TD bgColor=#dddddd height="95%" vAlign=top width=*><IMG 
+                  height=4 src="dispbbs.files/bbs.emusun.htm" width=0><BR><A 
+                  href="http://bbs.emusun.net/usersms.asp?action=new&amp;touser=alecs" 
+                  target=_blank><IMG alt=给alecs发送一个短消息 border=0 
+                  src="dispbbs.files/message.gif"></A><A 
+                  href="http://bbs.emusun.net/friendlist.asp?action=addF&amp;myFriend=alecs" 
+                  target=_blank></A>&nbsp;<A 
+                  href="http://bbs.emusun.net/dispuser.asp?name=alecs" 
+                  target=_blank><IMG alt=查看alecs的个人资料 border=0 
+                  src="dispbbs.files/profile.gif"></A><A 
+                  href="http://bbs.emusun.net/queryResult.asp?stype=1&amp;nSearch=3&amp;keyword=alecs&amp;BoardID=10&amp;SearchDate=ALL" 
+                  target=_blank></A> <A href="mailto:alecs_s@sina.com"><IMG 
+                  alt=点击这里发送电邮给alecs border=0 
+                  src="dispbbs.files/email.gif"></A>&nbsp;<A 
+                  href="http://bbs.emusun.net/reannounce.asp?BoardID=10&amp;RootID=3191&amp;id=7388&amp;reply=true"><IMG 
+                  alt=引用回复这个贴子 border=0 
+                  src="C:\WINDOWS\Desktop\天地创造.files\dispbbs.files\reply(1).gif"></A>&nbsp; 
+                  <A 
+                  href="http://bbs.emusun.net/reannounce.asp?BoardID=10&amp;RootID=3191&amp;id=7388"></A><BR>
+                  <HR color=#777777 SIZE=1 width="100%">
+
+                  <TABLE cellPadding=0 cellSpacing=0 
+                  style="TABLE-LAYOUT: fixed; WORD-BREAK: break-all" 
+width="95%">
+                    <TBODY>
+                    <TR><FONT color=#aaaaaa>第 4 贴</FONT><BR>
+                      <TD align=left vAlign=top width=32><IMG alt=发贴心情 
+                        border=0 src="dispbbs.files/face0.gif">&nbsp;</TD></TD>
+                      <TD><FONT 
+                        style="FONT-SIZE: 9pt; LINE-HEIGHT: 15pt"><B></B><BR>攻略2: 
+                        <BR>第一章 序幕--出发 
+                        <BR><BR>主人公アーク(阿空)几天来一直做着同样的梦，早上起来就迷迷糊糊地被叫到长老的屋中，按照指示来到"机织小屋"，见到好友少女エル(艾娜)，交谈后再回长老处。长老不见了，屋外三个男子让阿空砸开了一道封印以久的门。阿空人小胆大，破门而入，来到幽暗的地下，在黑暗之中，感到一股强大的力量存在，便出现了一个精灵ヨミ(优米)，送给他一个神奇的道具箱，并且告诉了你使用的方法。艾娜赶到了，却变成了冰人，阿空连忙出洞查看，发现全村的人都变成了冰人，只有长老无恙，从长老处得知解救大家的方法后，阿空踏上了自己的旅行。 
+                        <BR><BR>来到镇左边的1号试练塔，告诉塔之番人来意，进入塔中一场血战，使镇上的织女和艾娜恢复了原状。在2号试练塔里，阿空在没有通路时，必须推动石像找到秘道。在3，4号试练塔，阿空经受了勇气和果断的考验，顺利的过关了。但在5号试练塔前，却被数次弹了出来。 
+                        <BR><BR>阿空回到镇上后，将捡到的织物交给艾娜，在半夜里再来时，发现艾娜在连夜为阿空赶制防身衣。到白天阿空得到了"エルのマント"回到5号试练塔打败了塔中的巨蝎，使镇上的人全部复活了。出人意料的是这也开启了沉睡多年的封印，欧亚、非洲、南北美洲、南极洲几块大陆相继浮出地表。从长老那里得知阿空肩负着改造世界的重任，于是阿空与艾娜挥泪告别，毅然踏上了征程。 
+                        <BR><BR>第二章 世界的复兴 
+                        <BR><BR>大地之穴，阿空听完长老关于世界形成的介绍，来到地上。在海湾エバーグリーン，阿空见到一棵千年巨木--"ラーの大树"，钻入巨树深处，解了树中的毒气，打败了寄生的怪物，阿空还练会了游泳。大地上红色的土壤消失了，植物复苏了。阿空从大树那里得到了"草のメダル"(可恢复体力)。 
+                        <BR><BR>北行，途径ギアナ高地、サンクチェアリ。鲜花求助，救救那些可怜的鸟吧！来到北面的山崖，得到了两件宝物："岩石のやり"--可劈开挡路的岩石；"すろどいツメ"--可徒手攀登坚硬的岩石。凭借这两样宝物，在山顶阿空击败了绿色的怪鸟，鸟类们得救了！于是世界上又有了鸟类，到处是鸟语花香。鸟王为了报恩，允许阿空随意乘坐鸟类来往各地。有了树，有花有鸟，那么接下去是走兽了。 
+                        <BR><BR>来到动物乐园(ズゥ)，在此处阿空必须开启三个祭祀雨神的魔力，地形十分复杂，请仔细查看地图。在深处有一斜木坡，巧妙的让青蛙喷出的气浪吹上斜坡冲破木板墙，才可通关。最后ズゥ降下大量雨水，久旱的河沟绿水盈盈。阿空在祭坛勇斗带刀骷髅和飞龙骷髅。胜利了，万兽回归大地，生机勃勃。见到了动物之王狮子，交谈中得知，动物王国年轻的王子正在んじんの谷受训，狮子族的传统，年幼的小狮子必须自己从谷底上来，经历种种磨难，才能成为真正的狮子王。 
+                        <BR><BR>帮人帮到底，阿空来到んじんの谷，正赶上王子被两头怪鸟袭击。赶走怪鸟后，阿空提心吊胆地护送王子离开深谷，一路上多次打败捣乱的怪鸟，而小狮子王却兴奋地告诉阿空每天都这样训练多好啊！阿空担心的事发生了，一个どろ人形挡住了去路，阿空和小王子合作用石头砸伤了人形，人形假装投降，却将阿空骗下了陷阱。在陷阱里，阿空焦急地倾听着愤怒的小狮子王搏斗的声音。突然间声音停止了，王子胜利了，并得到宝物星のかけら(此宝物在游戏大结局是有大用)，回到了动物王国，接受狮子王的谢礼。 
+                        <BR><BR>东行，在インダス川河马自愿搭起浮桥，阿空渡过河川，来到黄河流域的冰山。在山腰见到一个冰雪野人在温泉中疗伤，阿空找到雪见草之叶投入温泉，治愈了冰雪野人。野人帮阿空过了断桥，路上遇到雪崩掉进寒冰洞穴，得到羚羊帮助，爬上满是冰花的雪山，再回到断桥。河水冻成了冰，顺河岸向右行，攀上雪峰，阿空得到了世界技术之花。世界的经济和科学技术日益猛进。 
+                        <BR><BR>第三章 天才复活 
+                        <BR><BR>长期疲劳使阿空晕倒了，醒来时已被人救起，来到ラサの村。拜访了活佛クマリ，并得到骨之メダル(可瞬间脱离所处迷宫)，一个叫ナイホウ的老人叫我去找他的孙女メイリン。向东来到ロウラン镇，见到了メイリン，态度很恶劣。没办法，回到旅馆住下，夜里传来了巨响。出来一看原来这里是吃人妖怪的废都，急忙赶到家，在地板上拿到红头巾，现在的线索只有メイリン养的一只狗了，必须找到它。 
+                        <BR><BR>在中央广场北面道具屋足迹地前，向左到西侧居住区发现两个不与阿空战斗的小鬼(这里大家要注意看，因为这两个小鬼进入秘道的瞬间很短)，跟随他们进入了秘室。这期间必须装备可不受幽灵的袭击，来到北侧居住区。在墓地找到那只狗，给它嗅红头巾，找到了メイリン。ナイホウ赶来，告诉去找游牧民之村。 
+                        <BR><BR>游牧民之村的人们一听阿空提到ナイホウ就热情地告诉他穿越沙漠的正确路径。先西行见到三块巨石，再南行到石头群，以石头群为一个坐标朝西北方向行走见到大骷髅头就到了出口。 
+                        <BR>阿空在ルフール村买到もれいな花来到旅店。老板一见有客人，十分殷勤，又是酒又是舞蹈，完了开口要价1，000，000(一百万)！！想宰客？阿空正在为难之即，王国公主的护卫女剑士フイーダ(菲塔)赶来解围，并约阿空明日去王城。 
+                        <BR><BR>第二天来到王城见到国王和公主，阿空发现公主竟然跟故乡的女友长的一模一样，名字也叫艾娜。莫名其妙的阿空答应国王的给艾娜公主治病的请求。在王城里四处溜达，在地下牢房里见到了被捕的侠盗白风。回到图书馆翻阅了有关的书籍，阿空知道了国王的秘密。艾娜公主的双亲以遭不幸。在国王的卧室前有卫兵把守，阿空心生一计。受城里药商指点，北行绕过王城，在マゥッエの森林找到药材きのこ，回去请药商做成ねれり药，投到王城食堂的饭锅里。 
+                        <BR><BR>夜里来到王城，所有的人都沉睡在梦中，不能唤醒，药性还是很强的。在地牢中救出侠盗白风，得知国王的屋中有秘道。 
+                        <BR><BR>在国王的卧室推动石像进入城塔，得到宝物まもりのちぢ。借助宝物的神奇功能穿过了版图上西北方向的迷宫ノルフェスター森林，(如果是正确方向行走，宝物就会鸣叫)来到星见桥，绕河岸东行在河滩时，一个黑影跟踪而来…… 
+                        <BR><BR>行走了一段路程，身后不远处传来响声，阿空回头查询原来是メイリソ，一场虚惊。路上二人捡到犬ぶえ，来到ストークホルム村驱散了狼群。 
+                        <BR><BR>在艾娜公主的家中找到她家族的画像，回到王城，向国王说了公主艾娜患病的原因。国王听了之后却变了脸色，阿空不理他回到城里休息。梦中长老出现命令阿空去南面海洋寻救天才。 
+                        <BR>于是，南下经过关所，在海港四处打听过海的方法。在リッツ村得知一个叫コロンブス的冒险家曾远渡重洋，到过新大陆。为了寻找冒险家，阿空潜入了村庄附近废弃的古代王城。 
+                        <BR><BR>在图书馆藏书中记载着大厅悬挂的四幅油画的背景和王城自身的秘密。按书中的暗示，阿空必须寻找四颗宝石，分别藏在以下地方：一、城门前水池中；二、食堂烟囱的深处；三、城堡的塔楼上；四、先在机器房将三个齿轮转动，编出密码"286"使一处房中的吊灯静止，才可在平时跳不过去的地方得到宝石。 
+                        <BR><BR>回到大厅，将四幅画像的人头嵌上宝石。一个大吊灯从天而降将大厅砸出了个大窟窿，阿空跳进洞中，在地牢中救出冒险家コロンブス。他问明阿空的来意后，高兴地教授了航海术，阿空有了航海术就可在海洋中分辨方向了。 
+                        <BR><BR>来到码头，听船员说除了阿空，还有一位神秘乘客，回到村里，夜里女剑士菲塔前来拜访。原来神秘的乘客就是艾娜公主。 
+                        <BR><BR>第二天，阿空和艾娜公主来到码头，乘上了去南北美洲新大陆的航船。 
+                        <BR>上陆后，艾娜公主给阿空留下了一封信提前走了。阿空读了信后茫然若失，独自一人开始了在新大陆的冒险。 
+                        <BR><BR>在フリーダム遇见了一个滑板少年ペルル(派鲁鲁)，得知有人正在做飞行器。一个叫ベル青年委托阿空给女友带个口信。 
+                        <BR><BR>阿空来到ニアレイワ村，见到ベル的女友，但她已有新欢了。ベル知道情况十分伤心，来到酒馆喝闷酒，阿空找他，让他从新燃起生活的勇气。ベル听了阿空的劝告，发明了电话。在此期间阿空还协助另一科学家研究了电灯。(Ard：……^o^ 
+                        &lt;汗&gt;…… ) 
+                        <BR><BR>阿空为了西行，在ニアレイク村向人打听飞行器的事情，却不得要领。无奈向西北行进，在一处密林拿到优质木材--丸太，途径五大湖桥头时见到一个青年的魂魄在那里痴痴地等着失约的女友。 
+                        <BR><BR>在西面河川，请人用优质木材丸太修好了桥。 
+                        <BR><BR>来到リォット都市，这里正在举行盛大的祭祀狂欢。阿空遇见了メイリン，夜晚在救世主神像下两人谈心，由于阿空依然惦念着家乡的女友，所以把メイリン气跑了。 
+                        <BR><BR>在港口听水手说东海人鱼塔出现了怪物。应船主之聘阿空到了人鱼塔打败了怪鱼解救了人鱼，碰见了一个叫ナナ的人鱼，原来它就是五大湖那个青年等的人。ナナ交给阿空一个戒指转交个青年。并听其他人鱼说冰封的第六块大陆有人鱼族的秘密。 
+                        <BR><BR>回到港口，得到一艘海船作为报酬。从此阿空就可以自由来往各个大陆了。回到五大湖青年得到戒指后，魂魄升天而去。 
+                        <BR>阿空进入五大湖地下，在山洞中得到了空气水草，可在水中冒气泡处游泳。顺瀑布而下在半山腰左边突起的岩石上得到一个铁球，可防止游泳时被急流冲走。极深处尽头的洞中阿空扔石块砸开了山壁，瀑布倾流而出。在大水潭中与双头海龙恶斗，救出了飞行器的设计者ウイル。回到其研究室，由于缺乏器械，飞行器目前无法完成。 
+                        <BR><BR>阿空只得乘船来到ユンコウ，到ロン商会寻购飞行器械。在旅店意外的发现女剑士菲塔身患重病躺在床上。阿空为菲塔到医院求药，医生说コゥラィニンツン药只有商会卖。到了商会向ロン求药，作为交换条件，阿空必须去ドラダーン城找ロン的弟弟。拿到要找医生问明了喂服的方法，救醒了菲塔。原来艾娜公主在ドラダーン城，听到此消息阿空很焦急，出旅店在街上遇到了百鲁鲁。 
+                        <BR><BR>二人结伴来到王城，百鲁鲁引开门卫。阿空在城里一边躲避看守的巡逻，一边寻找，却毫无头绪。回到ユンコゥ，从一个万事通口中得知ドラダーン城昔日的主人曾携带财宝逃到海外山岛居住。阿空乘船南下探险，在一小岛上寻到はやてのくつ宝物。在回到王城借助宝物撞开平时关闭的城墙，却被关在了地牢中。与此同时，在王城的秘室中ロン的弟弟ウォン向艾娜公主表明了身份。 
+                        <BR><BR>地库里，阿空被及时赶来的菲塔救出，二人分头寻找。在城东边屋中，找到了几本书，阿空内心的心魔此时复苏了，但阿空战胜了自己的心魔。菲塔和メィリン赶来会合，メィリン旧事重提，竟然大哭起来，百鲁鲁顺着哭声找来了。众人商议，阿空留下，其余三人前面开道。在左边城中大教堂依照所得暗示阿空用六个坛子砸灭了六盏灯，出现了秘道，在一个单独摆放的石像对面墙上看见菲塔留的字条，开启了秘室，阿空终于见到了艾娜公主。一个叫ロィド(路易多)的人出现，女剑士菲塔赶来叫阿空和艾娜公主先行。阿空二人在メィリン的指点下来到出口。此时路易多告诉菲塔整个事件是一场误会。 
+                        <BR><BR>路上艾娜公主借口支走了阿空。メィリン在地下赶上了阿空，突然天崩地裂…… <BR><BR>第四章 
+                        世界的噩梦 
+                        <BR><BR>阿空被百鲁鲁和メィリン救起后，稍作休息就回到了ニアレイク村。ウィル已经研制成功飞行器，阿空试飞来到了グランドモスク。这是个白信徒盛行的地方，人们信奉着一个叫ベルーガ的学者，其人建立了新バィオ学说，通过DNA遗传现象，研讨人类长生不老的方法，还鼓吹说世界应改造成不生不灭的状态。人们把ベルーガ当成了救世主。阿空为了探察原因，南下来到ベルーガ学者的研究塔，据传说此学者曾将自己冷冻在塔内，以待新时代的来临。 
+                        <BR><BR>研究塔中，阿空先将右手的两个电力装置启动，开动电梯进入塔底层。塔中道路错综复杂，不时还会有机器人出来向阿空袭击，很多地方还需爬行通过。在第三层电脑室中阿空向电脑查询了资料，来到了尚未增筑的B3F层。唤醒了沉睡的ベルーガ博士，阿空却被博士打晕了过去。邪恶的ベルーガ终于实施了蓄谋已久的计划，向神代岛发射了超级武器。神代岛原是个富饶的城市，阿空曾经乘坐鸟类游览过这里(玩家可在神代岛见到《天地创造》的制作组^o^……)。现在所有的人一夜之间被超强光融化了。世界末日来临了，噩梦中阿空见到了长老…… 
+                        <BR><BR>再次醒来又在ラサの村活佛处，活佛说人一生的命运因果循环，难以逃脱命运法轮的控制；而黄金之子现世，则产生新的时代。阿空就是一个在命运之轮控制外的人。为了挽救人类，活佛说必须聚集五颗星のかけら，在时のはての墓使用，才能产生奇迹。阿空曾经在动物王国得到过一颗星，剩下的按照活佛所说的暗语，首先前往人の死绝城镇。 
+                        <BR><BR>神代岛上，杳无人迹，在警署一楼桌上的对讲机中传出少女呼救的声音，根据判断阿空抓起对讲机来到了地下水道。先在下水道管理所取得钥匙，进入贮水池，一头狮子正在追赶一位少女。阿空挺身迎上，竟然发现狮子就是动物王国的小王子，故人见面格外高兴。少女在惊诧之余送给阿空一颗星のかけら。忽然对讲机中传来フリーダム调查团的寻呼声，阿空叫小王子看护少女，自己出来迎接。街上空无一人，再回到地下小王子和少女也消失了。阿空来到南美大陆西海岸的アスタリカ，又得到了星珠。 
+                        <BR><BR>在サンコースト西边的山崖上，从老学者手中得到了一颗星。 
+                        <BR>在リッツ海港听水手说冒险家曾捡到一颗美丽的石头，后去沙漠旅行下落不明。阿空来到非洲中心右上方处，在一处遗迹发现了一件破旧的服装，又发现了一颗星。 
+                        <BR>在リォット都市南部森林找到一只鸟，乘鸟飞到冰封大陆，在企鹅居住处得到最后一颗星。 
+                        <BR><BR>凑齐了五颗星，阿空乘船来到南极ドラィバレ，给五个骷髅头装上。这时出现了ラィトサィド的使者，原来阿空也是ダークサィド的使者。二者合一，阿空又进入了心魔空间…… 
+                        <BR><BR>第五章 世界的本原 
+                        <BR><BR>此时故事情节有长达十分钟的强制画面。阿空的内心善与恶激烈地冲突着，何去何从，艾娜及公主艾娜相继出现，难以选择，最终阿空选择了故乡青梅竹马的女友艾娜。 
+                        <BR><BR>阿空发誓要与这一切的事件操纵者决一雌雄。门外飞来一只鸟带来メィホウ的手信，女剑士菲塔、えよう兵路易多、滑板少年百鲁鲁、メィホウ祖孙俩，所有的正义战士都在指定地点集合待命。阿空乘飞行器来到ネォトヲォの城，东行穿过茫茫的冰封平原来到恶博士ベルーガ新建的研究塔。 
+                        <BR><BR>恶战开始了，众人互相配合杀进研究塔，破坏了电脑控制室的导弹发射装置。恶博士想驾飞船逃走，阿空、菲塔、路易多三人追上飞船用定时炸弹毁掉了整个飞船。在飞船船尾找到了无路可逃的恶博士，他还垂死挣扎向三人口出狂言，却可笑地被螺旋桨吸入绞碎。此时飞船在一万米的高空中，一只わたり鸟赶来，但只能载一人，为了大局，菲塔和路易多牺牲了自己，让阿空一人脱离。 
+                        <BR><BR>阿空落在サンコースト的大山岩上，听学者说一道闪光落在南美大陆方向。阿空乘船赶去，发现通往地下的入口被炸开了，遇见了コロンブス冒险家。互道珍重，阿空返回了地里世界。 
+                        <BR><BR>在故乡，阿空找到长老，知道了一切事件的原因。四十六亿年来世界一直按照两种意志存在而发展，光的意志创造了生命形态，而ヤミ意志则是无生命状态。现在ヤミ时代即将来临！阿空来到亚空间战胜了两个最终生命形态，一个是蓝色武士，一个是四翅大鸟。一切都结束了！地球上，一只美丽的わたり鸟自由翱翔，飞过绿色平原，飞过蓝色大海，飞过高耸的山峰，穿过白色的云层；现代化的电气列车在地上飞驰而过，新颖的飞行器在高空俯视大地，繁华的都市夜色降临，万家灯火汇成了一片幸福之光。 
+                        <BR><BR>艾娜坐在家中，静谧之夜偶尔传来两声蟋蟀的叫声。咚咚……有人敲门，艾娜站起身来开门，是谁……<BR><BR><FONT 
+                        color=#aaaaaa>非常感谢<B> alecs </B>在EmuSun 
+                        BBS发表文章,我们离不开您的参与和支持</FONT></FONT></TD>
+                      <TD width=16></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD align=right bgColor=#dddddd class=bottomline 
+                  vAlign=bottom><A 
+                  href="http://bbs.emusun.net/dispbbs.asp?boardID=10&amp;RootID=3191&amp;ID=3191#top"><IMG 
+                  border=0 src="dispbbs.files/gotop.gif"></A>
+                  <HR color=#777777 SIZE=1 width="100%">
+
+                  <TABLE cellPadding=0 cellSpacing=0 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD align=left vAlign=center></TD>
+                      <TD align=left vAlign=bottom>&nbsp;<IMG align=absMiddle 
+                        border=0 src="dispbbs.files/postime.gif"> 这篇帖子发表于： 
+                        2002-10-23 15:04:47 </TD>
+                      <TD align=right vAlign=bottom width=110 nowarp></TD>
+                      <TD align=right vAlign=bottom 
+                  width=4></TD></TR></TBODY></TABLE><IMG height=4 
+                  src="dispbbs.files/bbs.emusun.htm" 
+            width=0><BR></TD></TR></TBODY></TABLE></TD>
+          <TD bgColor=#ffffff height=24 vAlign=center 
+      width=1></TD></TR></TBODY></TABLE>
+      <TABLE align=center bgColor=#ffffff border=0 cellPadding=0 cellSpacing=0 
+      width="95%">
+        <TBODY>
+        <TR>
+          <TD height=1></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD background=dispbbs.files/tablebg.gif 
+      width=15></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD background=dispbbs.files/d1.gif height=20 width=20></TD>
+          <TD background=dispbbs.files/d.gif height=20 vAlign=center><FONT 
+            color=#bbbbbb face=Verdana size=1>.</FONT></TD>
+          <TD background=dispbbs.files/d2.gif height=20 
+      width=20></TD></TR></TBODY></TABLE><BR>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD align=left vAlign=center>&nbsp; <A 
+            href="http://bbs.emusun.net/announce.asp?BoardID=10"><IMG alt=发表新主题 
+            border=0 src="dispbbs.files/postnew.gif"></A>&nbsp;<A 
+            href="http://bbs.emusun.net/vote.asp?BoardID=10"><IMG alt=发表新投票 
+            border=0 src="dispbbs.files/votenew.gif"></A>&nbsp;<A 
+            href="http://bbs.emusun.net/reannounce.asp?BoardID=10&amp;RootID=3191&amp;id=7388"><IMG 
+            alt=回复主题 border=0 src="dispbbs.files/reply.gif"></A></TD>
+          <TD align=right noWrap vAlign=center>本主题贴数<B>4</B>，分页： <FONT 
+            color=#ff0000>[1]</FONT></TD></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=3 width="95%">
+        <TBODY>
+        <TR>
+          <TD align=right noWrap vAlign=center><SELECT 
+            onchange="if(this.options[this.selectedIndex].value!=''){location=this.options[this.selectedIndex].value;}"><OPTION 
+              selected>跳转论坛至...</OPTION><OPTION 
+              style="BACKGROUND-COLOR: #dddddd">╋ 模拟器论坛</OPTION><OPTION 
+              value=list.asp?boardid=1>　├模拟器FAQ</OPTION><OPTION 
+              value=list.asp?boardid=9>　├格斗游戏天地</OPTION><OPTION 
+              value=list.asp?boardid=10>　├游戏攻略坊</OPTION><OPTION 
+              value=list.asp?boardid=16>　├掌机模拟天地</OPTION><OPTION 
+              style="BACKGROUND-COLOR: #dddddd">╋ 个人论坛专区</OPTION><OPTION 
+              value=list.asp?boardid=3>　├#english频道专用论坛</OPTION><OPTION 
+              value=list.asp?boardid=5>　├0073X</OPTION><OPTION 
+              value=list.asp?boardid=14>　├珊璞的包子店</OPTION><OPTION 
+              value=list.asp?boardid=18>　├且歌且行</OPTION><OPTION 
+              value=list.asp?boardid=20>　├八月照相馆</OPTION><OPTION 
+              value=list.asp?boardid=28>　├舞夜频道感情社区</OPTION><OPTION 
+              value=list.asp?boardid=30>　├Rogue战队</OPTION><OPTION 
+              style="BACKGROUND-COLOR: #dddddd">╋ 娱乐休闲</OPTION><OPTION 
+              value=list.asp?boardid=12>　├天天诌棚</OPTION><OPTION 
+              value=list.asp?boardid=22>　├光阴的故事</OPTION><OPTION 
+              value=list.asp?boardid=24>　├动漫贴图秀</OPTION><OPTION 
+              value=list.asp?boardid=26>　├时尚公园</OPTION><OPTION 
+              style="BACKGROUND-COLOR: #dddddd">╋ 站务工作室</OPTION><OPTION 
+              value=list.asp?boardid=7>　├站长办公室</OPTION></SELECT></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD background=dispbbs.files/tl.gif height=20 width=20></TD>
+          <TD background=dispbbs.files/t.gif height=20 vAlign=center><FONT 
+            color=#ffffff face=Verdana size=1>REPLY</FONT></TD>
+          <TD background=dispbbs.files/tr.gif height=20 
+      width=20></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR bgColor=#dddddd>
+          <TD align=left background=dispbbs.files/topcell.jpg vAlign=center 
+          width="90%"><FONT 
+            color=#ffffff>&nbsp;<B>&nbsp;快速回复</B>：求助！！天地创造SFC！！第3个求雨祭坛！！</FONT></TD>
+          <TD align=right background=dispbbs.files/topcell.jpg height=24 
+          vAlign=center width="10%"><A 
+            href="http://bbs.emusun.net/dispbbs.asp?boardID=10&amp;RootID=3191&amp;ID=3191#top"><IMG 
+            border=0 src="dispbbs.files/gotop.gif"><FONT 
+            color=#000000></FONT></A>&nbsp;</TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=1 cellSpacing=1 width="95%">
+        <TBODY>
+        <TR bgColor=#ffffff>
+          <TD colSpan=3 vAlign=top>
+            <TABLE bgColor=#dddddd border=0 cellPadding=3 cellSpacing=0 
+            width="100%">
+              <FORM action=SaveReAnnounce.asp?method=fastreply&amp;BoardID=10 
+              method=post name=frmAnnounce onsubmit=submitonce(this)><INPUT 
+              name=followup type=hidden value=3191><INPUT name=RootID 
+              type=hidden value=3191><INPUT name=boardtype type=hidden 
+              value=游戏攻略坊>
+              <TBODY>
+              <TR bgColor=#eeeeee>
+                <TD noWrap width=175>用户名:</TD>
+                <TD><INPUT class=cid maxLength=25 name=UserName 
+                  size=15>&nbsp;&nbsp; <A 
+                  href="http://bbs.emusun.net/reg.asp">还没注册?</A> 密码:<INPUT 
+                  class=cid maxLength=13 name=passwd size=15 
+                  type=password>&nbsp;&nbsp; <A 
+                  href="http://bbs.emusun.net/lostpass.asp">忘记密码?</A></TD></TR>
+              <TR bgColor=#dddddd>
+                <TD noWrap vAlign=top><B>内容</B><BR>
+                  <LI>HTML标签： 不可用 
+                  <LI>UBB标签： 允许
+                  <LI>贴图标签： 允许
+                  <LI>Flash标签：允许
+                  <LI>表情字符转换：允许
+                  <LI>上传图片：允许</LI></TD>
+                <TD><TEXTAREA class=cid cols=80 name=Content onkeydown=ctlent() rows=6 title=可以使用Ctrl+Enter直接提交贴子 wrap=VIRTUAL></TEXTAREA></TD></TR>
+              <TR bgColor=#eeeeee>
+                <TD background=dispbbs.files/tablebg.gif bgColor=#dddddd 
+                  noWrap><INPUT name=emailflag type=checkbox value=yes>邮件回复 
+                  <INPUT CHECKED name=signflag type=checkbox value=yes>显示签名 </TD>
+                <TD background=dispbbs.files/tablebg.gif bgColor=#dddddd 
+                width="100%"><FONT color=#000000><INPUT class=4u name=Submit type=submit value=发表>&nbsp;<INPUT class=4u name=Clear type=reset value=清空></FONT> 
+                </TD></TR></FORM></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR>
+          <TD background=dispbbs.files/d1.gif height=20 width=20></TD>
+          <TD background=dispbbs.files/d.gif height=20 vAlign=center><FONT 
+            color=#bbbbbb face=Verdana size=1>.</FONT></TD>
+          <TD background=dispbbs.files/d2.gif height=20 
+      width=20></TD></TR></TBODY></TABLE>
+      <FORM action=preview.asp method=post name=preview 
+      target=preview_page><INPUT name=title type=hidden><INPUT name=body 
+      type=hidden> </FORM>
+      <SCRIPT>
+		function gopreview()
+		{
+		//document.forms[1].title.value=document.forms[0].subject.value;
+		document.forms[1].body.value=document.forms[0].Content.value;
+		var popupWin = window.open('preview.asp', 'preview_page', 'scrollbars=yes,width=750,height=450');
+		document.forms[1].submit()
+		}
+		</SCRIPT>
+
+      <P>
+      <P>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="95%">
+        <TBODY>
+        <TR vAlign=center>
+          <TD align=middle></FONT></TD></TR></TBODY></TABLE>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 
+      width=&amp;TableWidth&amp;>
+        <TBODY>
+        <TR>
+          <TD align=middle style="FONT-SIZE: 9pt"><A 
+            href="http://bbs.emusun.net/tom_sms.htm"><IMG border=0 height=60 
+            src="dispbbs.files/tom_sms.gif" width=120></A><BR>
+            <SCRIPT>var tc_user="emusun";var tc_class="10";</SCRIPT>
+
+            <SCRIPT src="dispbbs.files/stat.js"></SCRIPT>
+<!--<a href="http://www.textclick.com/viewmain.asp?name=emusun" target="_blank"><img WIDTH=20 EIGHT=2 src=http://stat.t2t2.com/scripts/stat_007.dll?default&user=emusun&refer='+escape(document.referrer)+'&cur=type2 alt=太极统计 border=0 height="20"></a>--><!--
+                      <script src="http://www.emusun.net/count/mystat.asp?style=icon"></script> 
+                      -->
+          <TD></TD>
+        <TR>
+          <TD align=middle><B>［<A href="mailto:a-ren@emusun.net">联系我们</A> | <A 
+            href="http://www.emusun.net/bbs/">返回论坛</A>］</B> 
+      </TD></TR><BR></TBODY></TABLE>
+      <TABLE align=center>
+        <TBODY>
+        <TR>
+          <TD align=middle>Powered by: 动网 V5.0 </TD></TR>
+        <TR>
+          <TD align=middle>该交流中心的帖子中的言论为会员个人见解　并不代表EmuSun BBS的立场 
+      </TD></TR></TBODY></TABLE></P></FONT></TR></TBODY></TABLE>
+<TABLE bgColor=#222222 border=0 cellPadding=0 cellSpacing=0 height=23 
+width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV align=center><FONT color=#e6e7e8>.::Copyright &copy;2002, EmuSun 模拟器专业站. 
+      All rights reserved. Best view 1024 by 768 IE5.5 or 
+    higher::.</FONT></DIV></TD></TR></TBODY></TABLE>
+<SCRIPT language=javascript>
+ie = (document.all)? true:false
+if (ie){
+function ctlent(eventobject){if(event.ctrlKey && window.event.keyCode==13){this.document.frmAnnounce.submit();}}
+}
+
+function submitonce(theform){
+//if IE 4+ or NS 6+
+if (document.all||document.getElementById){
+//screen thru every element in the form, and hunt down "submit" and "reset"
+for (i=0;i<theform.length;i++){
+var tempobj=theform.elements[i]
+if(tempobj.type.toLowerCase()=="submit"||tempobj.type.toLowerCase()=="reset")
+//disable em
+tempobj.disabled=true
+}
+}
+}
+</SCRIPT>
+</BODY></HTML>
+

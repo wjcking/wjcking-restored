@@ -1,0 +1,1528 @@
+{\rtf1\ansi\ansicpg936\deff0\deflang1033\deflangfe2052{\fonttbl{\f0\fmodern\fprq6\fcharset134 \'cb\'ce\'cc\'e5;}}
+\viewkind4\uc1\pard\lang2052\f0\fs20 unit PIMIS;\par
+\par
+interface\par
+\par
+uses\par
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,\par
+  Dialogs, DBCtrls, StdCtrls, TeeProcs, TeEngine, Chart, DbChart, ComCtrls,\par
+  Grids, DBGrids, Tabs, ExtCtrls, Buttons, ImgList, StdActns, ActnList,\par
+  Menus, ToolWin, ADODB, DB, Provider,shellapi,IniFiles,jpeg,Series;\par
+\par
+type\par
+  TfrmMain = class(TForm)\par
+    StatusBar: TStatusBar;\par
+    CoolBar1: TCoolBar;\par
+    ToolBar2: TToolBar;\par
+    ToolButton9: TToolButton;\par
+    ToolButton1: TToolButton;\par
+    ToolButton2: TToolButton;\par
+    ToolButton12: TToolButton;\par
+    ToolButton19: TToolButton;\par
+    ToolButton22: TToolButton;\par
+    ToolButton3: TToolButton;\par
+    ToolButton18: TToolButton;\par
+    ToolButton4: TToolButton;\par
+    ToolButton5: TToolButton;\par
+    ToolButton6: TToolButton;\par
+    ToolButton23: TToolButton;\par
+    ToolButton7: TToolButton;\par
+    ToolButton26: TToolButton;\par
+    ToolButton25: TToolButton;\par
+    ToolButton24: TToolButton;\par
+    ToolButton13: TToolButton;\par
+    ToolButton14: TToolButton;\par
+    ToolButton15: TToolButton;\par
+    ToolButton16: TToolButton;\par
+    ToolButton17: TToolButton;\par
+    ToolButton20: TToolButton;\par
+    ToolButton21: TToolButton;\par
+    ToolBar1: TToolBar;\par
+    MainMenu1: TMainMenu;\par
+    File1: TMenuItem;\par
+    FileNewItem: TMenuItem;\par
+    FileOpenItem: TMenuItem;\par
+    FileSaveItem: TMenuItem;\par
+    N5: TMenuItem;\par
+    N2: TMenuItem;\par
+    N3: TMenuItem;\par
+    N4: TMenuItem;\par
+    N1: TMenuItem;\par
+    FileCloseItem: TMenuItem;\par
+    FileExitItem: TMenuItem;\par
+    Edit1: TMenuItem;\par
+    Z1: TMenuItem;\par
+    CutItem: TMenuItem;\par
+    CopyItem: TMenuItem;\par
+    PasteItem: TMenuItem;\par
+    Delete1: TMenuItem;\par
+    N24: TMenuItem;\par
+    SelectAll1: TMenuItem;\par
+    N6: TMenuItem;\par
+    N7: TMenuItem;\par
+    N8: TMenuItem;\par
+    N9: TMenuItem;\par
+    N11: TMenuItem;\par
+    N12: TMenuItem;\par
+    N20: TMenuItem;\par
+    N13: TMenuItem;\par
+    N15: TMenuItem;\par
+    N16: TMenuItem;\par
+    N18: TMenuItem;\par
+    N17: TMenuItem;\par
+    N19: TMenuItem;\par
+    Window1: TMenuItem;\par
+    WindowCascadeItem: TMenuItem;\par
+    WindowTileItem: TMenuItem;\par
+    WindowMinimizeItem: TMenuItem;\par
+    T1: TMenuItem;\par
+    N14: TMenuItem;\par
+    N25: TMenuItem;\par
+    N10: TMenuItem;\par
+    Help1: TMenuItem;\par
+    N21: TMenuItem;\par
+    N22: TMenuItem;\par
+    N23: TMenuItem;\par
+    HelpAboutItem: TMenuItem;\par
+    OpenDialog: TOpenDialog;\par
+    ActionList1: TActionList;\par
+    FileNew1: TAction;\par
+    EditUndo1: TEditUndo;\par
+    FileOpen1: TAction;\par
+    FileClose1: TWindowClose;\par
+    FileSave1: TAction;\par
+    FileSaveAs1: TAction;\par
+    FileExit1: TAction;\par
+    EditCut1: TEditCut;\par
+    EditCopy1: TEditCopy;\par
+    EditPaste1: TEditPaste;\par
+    WindowCascade1: TWindowCascade;\par
+    WindowTileHorizontal1: TWindowTileHorizontal;\par
+    WindowTileVertical1: TWindowTileVertical;\par
+    WindowMinimizeAll1: TWindowMinimizeAll;\par
+    WindowArrangeAll1: TWindowArrange;\par
+    HelpAbout1: TAction;\par
+    New: TAction;\par
+    EditDelete1: TEditDelete;\par
+    EditSelectAll1: TEditSelectAll;\par
+    Update: TAction;\par
+    Delete: TAction;\par
+    First: TAction;\par
+    Prev: TAction;\par
+    Next: TAction;\par
+    Last: TAction;\par
+    ImageList1: TImageList;\par
+    Timer: TTimer;\par
+    SaveDlgData: TSaveDialog;\par
+    Notebook: TNotebook;\par
+    Splitter1: TSplitter;\par
+    Label31: TLabel;\par
+    Label32: TLabel;\par
+    Panel1: TPanel;\par
+    PageControl: TPageControl;\par
+    TabSheet1: TTabSheet;\par
+    Splitter4: TSplitter;\par
+    tvInfo: TTreeView;\par
+    Panel5: TPanel;\par
+    GroupBox5: TGroupBox;\par
+    Label29: TLabel;\par
+    Label30: TLabel;\par
+    Label33: TLabel;\par
+    Label35: TLabel;\par
+    Label36: TLabel;\par
+    Label37: TLabel;\par
+    TabSheet2: TTabSheet;\par
+    Splitter2: TSplitter;\par
+    lvSearch: TListView;\par
+    Notebook2: TNotebook;\par
+    Label2: TLabel;\par
+    sbtnSearch: TSpeedButton;\par
+    cbxSeaInfo: TComboBox;\par
+    Panel2: TPanel;\par
+    TabSet: TTabSet;\par
+    ScrollBox1: TScrollBox;\par
+    PanelSearch: TPanel;\par
+    Splitter3: TSplitter;\par
+    Splitter6: TSplitter;\par
+    Panel3: TPanel;\par
+    Label34: TLabel;\par
+    Label38: TLabel;\par
+    Label39: TLabel;\par
+    Label40: TLabel;\par
+    Label41: TLabel;\par
+    Label42: TLabel;\par
+    cbxSeaIDC: TComboBox;\par
+    txtSeaIDC: TEdit;\par
+    txtSeaAge: TEdit;\par
+    cbxSeaSex: TComboBox;\par
+    cbxSeaNation: TComboBox;\par
+    cbxSeaFace: TComboBox;\par
+    cbxSeaDt: TComboBox;\par
+    cbxSeaPrincipalship: TComboBox;\par
+    cbxSeaKl: TComboBox;\par
+    MemoSeaInfo: TMemo;\par
+    Panel6: TPanel;\par
+    DBGrid: TDBGrid;\par
+    PanelSource: TPanel;\par
+    DBChart: TDBChart;\par
+    PanelInfo: TPanel;\par
+    Label1: TLabel;\par
+    Label10: TLabel;\par
+    GroupBox1: TGroupBox;\par
+    Label3: TLabel;\par
+    Label4: TLabel;\par
+    Label5: TLabel;\par
+    Label6: TLabel;\par
+    Label7: TLabel;\par
+    Label8: TLabel;\par
+    Label9: TLabel;\par
+    Label11: TLabel;\par
+    txtName: TEdit;\par
+    txtIdCard: TEdit;\par
+    txtAge: TEdit;\par
+    DBPhoto: TDBImage;\par
+    dtBrithDay: TDateTimePicker;\par
+    cbxNation: TComboBox;\par
+    MemoNativePlace: TMemo;\par
+    txtID: TEdit;\par
+    GroupBox2: TGroupBox;\par
+    Label12: TLabel;\par
+    Label13: TLabel;\par
+    Label14: TLabel;\par
+    Label15: TLabel;\par
+    Label16: TLabel;\par
+    Label17: TLabel;\par
+    Label18: TLabel;\par
+    Label19: TLabel;\par
+    Label20: TLabel;\par
+    cbxPoliticsFace: TComboBox;\par
+    cbxTitleTechPost: TComboBox;\par
+    cbxPrincipalship: TComboBox;\par
+    cbxPaylevel: TComboBox;\par
+    txtHeatlh: TEdit;\par
+    dtMemberTime: TDateTimePicker;\par
+    dtTongTime: TDateTimePicker;\par
+    dtStartWorkTime: TDateTimePicker;\par
+    cbxknowledge: TComboBox;\par
+    GroupBox3: TGroupBox;\par
+    Label21: TLabel;\par
+    Label22: TLabel;\par
+    Label23: TLabel;\par
+    MemoIShortation: TMemo;\par
+    MemoIsPunish: TMemo;\par
+    MemoComment: TMemo;\par
+    GroupBox4: TGroupBox;\par
+    Label24: TLabel;\par
+    Label25: TLabel;\par
+    Label26: TLabel;\par
+    Label27: TLabel;\par
+    txtPhone: TEdit;\par
+    txtZip: TEdit;\par
+    txtAddress: TEdit;\par
+    cbxPhoneType: TComboBox;\par
+    ADOTable: TADOTable;\par
+    ADOCon: TADOConnection;\par
+    ADOQuery: TADOQuery;\par
+    dsSearch: TDataSource;\par
+    ToolButton8: TToolButton;\par
+    ToolButton10: TToolButton;\par
+    ToolButton11: TToolButton;\par
+    ADOQueryCount: TADOQuery;\par
+    ToolButton27: TToolButton;\par
+    ADOQueryPass: TADOQuery;\par
+    cbxSex: TComboBox;\par
+    ToolButton28: TToolButton;\par
+    ToolButton30: TToolButton;\par
+    PopMenuSQL: TPopupMenu;\par
+    SQL1: TMenuItem;\par
+    N26: TMenuItem;\par
+    ADOTableTv: TADOTable;\par
+    lbZhengzhi: TLabel;\par
+    lbZhiwei: TLabel;\par
+    lbGongZi: TLabel;\par
+    lbShenTi: TLabel;\par
+    lbZhiCheng: TLabel;\par
+    lbXueLi: TLabel;\par
+    ToolButton33: TToolButton;\par
+    ImageList2: TImageList;\par
+    GroupBox6: TGroupBox;\par
+    rbSeaID: TRadioButton;\par
+    rbSeaName: TRadioButton;\par
+    rbSeaIdCard: TRadioButton;\par
+    txtSeaDt: TEdit;\par
+    lbOut: TLabel;\par
+    Label43: TLabel;\par
+    Label28: TLabel;\par
+    Label44: TLabel;\par
+    N27: TMenuItem;\par
+    popMenuTv: TPopupMenu;\par
+    N28: TMenuItem;\par
+    N29: TMenuItem;\par
+    N30: TMenuItem;\par
+    adoChart: TADOQuery;\par
+    Series1: TBarSeries;\par
+    Series2: TPieSeries;\par
+    N31: TMenuItem;\par
+    N32: TMenuItem;\par
+    odgPic: TOpenDialog;\par
+    Rundo: TAction;\par
+    procedure TabSetChange(Sender: TObject; NewTab: Integer;\par
+      var AllowChange: Boolean);\par
+    procedure cbxPoliticsFaceChange(Sender: TObject);\par
+    procedure FormCreate(Sender: TObject);\par
+    procedure TimerTimer(Sender: TObject);\par
+    procedure ToolButton15Click(Sender: TObject);\par
+    procedure ToolButton14Click(Sender: TObject);\par
+    procedure ToolButton13Click(Sender: TObject);\par
+    procedure ToolButton16Click(Sender: TObject);\par
+    procedure FileCloseItemClick(Sender: TObject);\par
+    procedure ToolButton24Click(Sender: TObject);\par
+    procedure ToolButton2Click(Sender: TObject);\par
+    procedure WindowCascadeItemClick(Sender: TObject);\par
+    procedure WindowTileItemClick(Sender: TObject);\par
+    procedure WindowMinimizeItemClick(Sender: TObject);\par
+    procedure ToolButton8Click(Sender: TObject);\par
+    procedure ToolButton10Click(Sender: TObject);\par
+    procedure ToolButton11Click(Sender: TObject);\par
+    procedure N26Click(Sender: TObject);\par
+    procedure ToolButton27Click(Sender: TObject);\par
+    procedure N7Click(Sender: TObject);\par
+    procedure N8Click(Sender: TObject);\par
+    procedure N9Click(Sender: TObject);\par
+    procedure ToolButton28Click(Sender: TObject);\par
+    procedure N14Click(Sender: TObject);\par
+    procedure N25Click(Sender: TObject);\par
+    procedure tvInfoClick(Sender: TObject);\par
+    procedure sbtnSearchClick(Sender: TObject);\par
+    procedure ToolButton25Click(Sender: TObject);\par
+    procedure FileExitItemClick(Sender: TObject);\par
+    procedure ToolButton33Click(Sender: TObject);\par
+    procedure HelpAboutItemClick(Sender: TObject);\par
+    procedure lvSearchClick(Sender: TObject);\par
+    procedure ToolButton20Click(Sender: TObject);\par
+    procedure txtSeaIDCClick(Sender: TObject);\par
+    procedure txtSeaAgeClick(Sender: TObject);\par
+    procedure txtSeaDtClick(Sender: TObject);\par
+    procedure cbxSeaDtChange(Sender: TObject);\par
+    procedure Label43Click(Sender: TObject);\par
+    procedure N27Click(Sender: TObject);\par
+    procedure N28Click(Sender: TObject);\par
+    procedure N29Click(Sender: TObject);\par
+    procedure N30Click(Sender: TObject);\par
+    procedure DBChartDblClick(Sender: TObject);\par
+    procedure N31Click(Sender: TObject);\par
+    procedure SQL1Click(Sender: TObject);\par
+    procedure N32Click(Sender: TObject);\par
+    procedure N10Click(Sender: TObject);\par
+    procedure DBPhotoDblClick(Sender: TObject);\par
+    procedure FirstExecute(Sender: TObject);\par
+    procedure PrevExecute(Sender: TObject);\par
+    procedure NextExecute(Sender: TObject);\par
+    procedure LastExecute(Sender: TObject);\par
+    procedure UpdateExecute(Sender: TObject);\par
+    procedure NewExecute(Sender: TObject);\par
+    procedure RundoExecute(Sender: TObject);\par
+    procedure FileSave1Execute(Sender: TObject);\par
+    procedure DeleteExecute(Sender: TObject);\par
+    procedure N23Click(Sender: TObject);\par
+    procedure N22Click(Sender: TObject);\par
+  \par
+\par
+  private\par
+  nodeRecName,nodeRecID,nodeRecIDCard,nodeRecAll:TTreeNode;\par
+  iniCon:TiniFile;\par
+  strPath:string;\par
+\par
+    \{ Private declarations \}\par
+  public\par
+\par
+  strID:string;\par
+    \{ Public declarations \}\par
+  end;\par
+\par
+var\par
+  frmMain: TfrmMain;\par
+    JPG:TJPEGImage;\par
+  MS:TMemoryStream;\par
+implementation\par
+uses login,about,Sql,Proj, option;\par
+\{$R *.dfm\}\par
+//******************************************************************************\par
+\par
+//******************************************************************************\par
+procedure IsMDbCon(IsCon:boolean);\par
+begin\par
+with frmmain do\par
+begin\par
+\par
+if(IsCon) then\par
+ begin\par
+    ADOCon.open;\par
+    ADOchart.Active:=true;\par
+//    ADOchart.open;\par
+    ADOQuery.Active:=true;\par
+    ADOQuery.open;\par
+    ADOTable.Active:=true;\par
+    ADOTable.open ;\par
+    ADOQueryCount.Open;\par
+    ADOQueryCount.Active:=true;\par
+    ToolButton27.Enabled:=true;\par
+    ToolButton28.Enabled:=true;\par
+    ToolButton2.Enabled:=true;\par
+    ToolButton12.Enabled:=true;\par
+    ToolButton22.Enabled:=true;\par
+    ToolButton19.Enabled:=true;\par
+    ToolButton26.Enabled:=true;\par
+    ToolButton25.Enabled:=true;\par
+    ToolButton24.Enabled:=true;\par
+    ToolButton13.Enabled:=true;\par
+    ToolButton14.Enabled:=true;\par
+    ToolButton15.Enabled:=true;\par
+    ToolButton16.Enabled:=true;\par
+    ToolButton17.Enabled:=true;\par
+    ToolButton20.Enabled:=true;\par
+    Notebook.Visible:=true;\par
+  end\par
+  else\par
+  begin\par
+    ADOCon.Close;\par
+    ADOQuery.Active:=false;\par
+    ADOchart.Active:=false;\par
+    ADOchart.close;\par
+    ADOQuery.Close;\par
+    ADOTable.Active:=false;\par
+    ADOTable.Close;\par
+    ADOQueryCount.Close;\par
+    ADOQueryCount.Active:=false;\par
+    ToolButton27.Enabled:=false;\par
+    ToolButton28.Enabled:=false;\par
+    ToolButton2.Enabled:=false;\par
+    ToolButton12.Enabled:=false;\par
+    ToolButton22.Enabled:=false;\par
+    ToolButton19.Enabled:=false;\par
+    ToolButton26.Enabled:=false;\par
+    ToolButton25.Enabled:=false;\par
+    ToolButton24.Enabled:=false;\par
+    ToolButton13.Enabled:=false;\par
+    ToolButton14.Enabled:=false;\par
+    ToolButton15.Enabled:=false;\par
+    ToolButton16.Enabled:=false;\par
+    ToolButton17.Enabled:=false;\par
+    ToolButton20.Enabled:=false;\par
+    Notebook.Visible:=false;\par
+  end;\par
+ end;\par
+end;\par
+//******************************************************************************\par
+procedure QuitCom; //quit confiem\par
+begin\par
+with frmmain do\par
+if(frmmain.Toolbutton27.Enabled)or(toolbutton18.Enabled) then\par
+begin\par
+with frmmain do\par
+case Application.MessageBox('\'ca\'fd\'be\'dd\'bc\'c7\'c2\'bc\'d2\'d1\'be\'ad\'b8\'fc\'b8\'c4\'ca\'c7\'b7\'f1\'b1\'a3\'b4\'e6\'a3\'bf','\'d6\'b0\'b9\'a4\'d0\'c5\'cf\'a2\'b9\'dc\'c0\'ed\'cf\'b5\'cd\'b3v1.0',\par
+  MB_YESNOCANCEL + MB_ICONQUESTION) of\par
+    ID_YES :\par
+    begin\par
+    adoquery.Edit;\par
+    adoquery.UpdateRecord;\par
+\par
+    if(frmmain.TabSet.TabIndex=1) then\par
+    frmmain.adoquery.UpdateBatch;\par
+    close;\par
+    end;\par
+    ID_NO : Application.Terminate;\par
+    ID_CANCEL:\par
+   end;\par
+\par
+ end\par
+else\par
+close;\par
+end;\par
+//******************************************************************************\par
+function RecMaxMin(IsMaxMin:boolean):string; //here is Max or Min count of 'ID'\par
+var strMinCount,strMaxCount:string;\par
+begin\par
+with frmmain do\par
+begin\par
+  if(IsMaxMin) then\par
+  begin\par
+    ADOQueryCount.SQL.Text:='select max(ID) from tb_proinfor';\par
+    ADOQueryCount.ExecSQL;\par
+    ADOQueryCount.Active:=true;\par
+    strMaxCount:=ADOQueryCount.Fields.Fields[0].AsString;\par
+    Result:=strMaxCount;\par
+    ADOQueryCount.Active:=false;\par
+  end\par
+  else\par
+  begin\par
+    ADOQueryCount.SQL.Text:='select min(ID) from tb_proinfor';\par
+    ADOQueryCount.ExecSQL;\par
+    ADOQueryCount.Active:=true;\par
+    strMinCount:=ADOQueryCount.Fields.Fields[0].AsString;\par
+    Result:=strMinCount;\par
+    ADOQueryCount.Active:=false;\par
+  end;\par
+end;\par
+end;\par
+//******************************************************************************\par
+procedure RecTreeViewBind;    //TreeView DataBind;\par
+begin\par
+with pimis.frmMain do\par
+begin\par
+  ADOTableTv.Active:=true;\par
+  ADOTable.open;\par
+  tvInfo.Items.Clear;\par
+  nodeRecAll:=tvInfo.Items.Add(nil,'\'cb\'f9\'d3\'d0\'d6\'b0\'b9\'a4');\par
+  tvInfo.Items.AddChild(nodeRecAll,'\'b0\'b4\'b1\'e0\'ba\'c5\'c9\'fd\'d0\'f2');\par
+  tvInfo.Items.AddChild(nodeRecAll,'\'b0\'b4\'b1\'e0\'ba\'c5\'bd\'b5\'d0\'f2');\par
+  tvInfo.Items.AddChild(nodeRecAll,'\'b0\'b4\'c9\'ed\'b7\'dd\'d6\'a4\'ba\'c5');\par
+  nodeRecName:=tvInfo.Items.Add(nil,'\'d6\'b0\'b9\'a4\'d0\'d5\'c3\'fb');\par
+  nodeRecID:=tvInfo.Items.Add(nil,'\'d6\'b0\'b9\'a4\'b1\'e0\'ba\'c5');\par
+  nodeRecIdCard:=tvInfo.Items.Add(nil,'\'d6\'b0\'b9\'a4\'c9\'ed\'b7\'dd\'d6\'a4');\par
+  while not ADOTableTv.Eof  do\par
+  begin\par
+    tvInfo.Items.AddChild(nodeRecName,ADOTableTv.FieldByName('Name').AsString);\par
+    tvInfo.Items.AddChild(nodeRecID,ADOTableTv.FieldByName('ID').AsString);\par
+    tvInfo.Items.AddChild(nodeRecIdCard,ADOTableTv.FieldByName('IdCard').AsString);\par
+    ADOTableTv.Next;\par
+  end;\par
+//  tvInfo.FullCollapse;\par
+  //  tvInfo.FullExpand;\par
+  tvInfo.Items.Item[0].Expand(true);\par
+  ADOTableTv.Active:=false;\par
+  ADOTableTv.Close;\par
+end;\par
+end;\par
+//******************************************************************************\par
+\par
+function RecClear:Boolean;  //if add a record,the function first run clear txt & memo\par
+//var\par
+//strCount:string;\par
+begin\par
+with Pimis.frmMain do\par
+begin\par
+  //  ADOQuery.Sql.text:='select max(ID) from tb_proinfor';\par
+ //   ADOQuery.ExecSQL;\par
+ //   strcount:=ADOQueryCount.Fields.Fields[0].AsString;\par
+ //   if(txtID.Text<>'') then\par
+    txtID.Text:=ADOQuery.Fields.Fields[0].AsString;\par
+   // else\par
+    txtID.Text:='\'d7\'d4\'b6\'af\'b1\'e0\'ba\'c5';\par
+    txtName.Clear;\par
+    txtIdCard.Clear;\par
+    cbxSex.Text:='\'c4\'d0';\par
+    txtage.Clear;\par
+    cbxNation.text:='\'ba\'ba\'d7\'e5';\par
+    MemoNativePlace.Clear;\par
+    cbxKnowledge.Text:='';\par
+    cbxPayLevel.Text:='';\par
+    cbxPoliticsFace.Text:='';\par
+    cbxPrincipalship.Text:='';\par
+    cbxTitleTechPost.Text:='';\par
+    txtHeatlh.Text:='\'c1\'bc\'ba\'c3';\par
+    MemoComment.Text:='\'ce\'de';\par
+    MemoIShortation.Text:='\'ce\'de';\par
+    MemoIsPunish.Text:='\'ce\'de';\par
+    txtAddress.Clear;\par
+    txtphone.Clear;\par
+    txtZip.Clear;\par
+end;\par
+  Result:=true;\par
+end;\par
+//******************************************************************************\par
+function RecBaseInfoVd:boolean; //BASE VD\par
+begin\par
+with Pimis.frmMain do\par
+begin\par
+  if(txtID.text<>'')and(txtName.Text<>'')and(txtIdCard.Text<>'')and(txtAge.Text<>'')and\par
+  (cbxNation.Text<>'')and(MemoNativePlace.Text<>'') then\par
+  Result:=true\par
+  else\par
+  Result:=false;\par
+ end;\par
+end;\par
+//******************************************************************************\par
+function RecKnowPoliVd:boolean;    //KPVD\par
+begin\par
+with Pimis.frmMain do\par
+begin\par
+ if(cbxKnowledge.Text<>'')and(cbxPaylevel.Text<>'')and\par
+ (cbxPoliticsFace.Text<>'')and(cbxPrincipalship.Text<>'')and\par
+ (cbxTitleTechPost.Text<>'')and(txtHeatlh.Text<>'')\par
+ then\par
+ Result:=true\par
+ else\par
+ Result:=false;\par
+end;\par
+end;\par
+//******************************************************************************\par
+function RecUpdate():boolean; //data update......\par
+begin\par
+with frmmain do\par
+begin\par
+  ADOQuery.Edit;\par
+ // ADOQuery.FieldByName('ID').AsString:=txtID.Text;\par
+  ADOQuery.FieldByName('IdCard').AsString:=txtIdCard.Text;\par
+  ADOQuery.FieldByName('Name').AsString:=txtName.Text;\par
+  ADOQuery.FieldByName('Sex').AsString:=cbxSex.Text;\par
+  ADOQuery.FieldByName('birthDtime').AsDateTime:=dtBrithDay.Date;\par
+  ADOQuery.FieldByName('Age').AsString:=txtAge.Text;\par
+  ADOQuery.FieldByName('Nation').AsString:=cbxNation.Text;\par
+  ADOQuery.FieldByName('NativePlace').AsString:=MemoNativePlace.Text;\par
+  ADOQuery.FieldByName('PoliticsFace').AsString:=cbxPoliticsFace.Text;\par
+  ADOQuery.FieldByName('TitleTechPost').AsString:=cbxTitleTechPost.Text;\par
+  ADOQuery.FieldByName('principalship').AsString:=cbxPrincipalship.Text;\par
+  ADOQuery.FieldByName('Paylevel').AsString:=cbxPaylevel.Text;\par
+  ADOQuery.FieldByName('knowledge').AsString:=cbxknowledge.Text;\par
+  ADOQuery.FieldByName('Heatlh').ASString:=txtHeatlh.Text;\par
+\par
+  ADOQuery.FieldByName('birthDtime').AsString:=formatdatetime('yyyy-M-d',dtBrithDay.DateTime);\par
+  ADOQuery.FieldByName('MemberTime').AsString:=formatdatetime('yyyy-M-d',dtMemberTime.DateTime);\par
+  ADOQuery.FieldByName('TongTime').AsString:=formatdatetime('yyyy-M-d',dtTongTime.DateTime);\par
+  ADOQuery.FieldByName('StartWorkTime').AsString:=formatdatetime('yyyy-M-d',dtStartWorkTime.DateTime);\par
+\par
+  ADOQuery.FieldByName('IShortation').AsString:=MemoIShortation.Text;\par
+  ADOQuery.FieldByName('IsPunish').AsString:=MemoIsPunish.Text;\par
+  ADOQuery.FieldByName('Comment').AsString:=MemoComment.Text;\par
+  ADOQuery.FieldByName('Phone').AsString:=cbxPhonetype.Text+txtPhone.Text;\par
+  ADOQuery.FieldByName('Zip').AsString:=txtZip.Text;\par
+  ADOQuery.FieldByName('Address').AsString:=txtAddress.Text;\par
+  ADOQuery.Post;\par
+Result:=true;\par
+end;\par
+end;\par
+//******************************************************************************\par
+procedure RecCon;//database record..... data show....\par
+var\par
+JPG:TJPEGImage;\par
+MS:TMemoryStream;\par
+begin\par
+with Pimis.frmMain do\par
+begin\par
+ADOQuery.Active:=true;\par
+    txtID.Text:=ADOQuery.Fields.Fields[0].AsString;\par
+    txtName.Text:=ADOQuery.Fields.Fields[1].AsString;\par
+    txtIdCard.Text:=ADOQuery.Fields.Fields[2].AsString;\par
+    if ADOQuery.FieldByName('Sex').AsString='\'c4\'d0' then\par
+        cbxSex.Text:='\'c4\'d0';\par
+    if ADOQuery.FieldByName('Sex').AsString='\'c5\'ae' then\par
+        cbxSex.Text:='\'c5\'ae';\par
+  //  dtBrithDay.DateTime:=formatdatetime('yyyy-M-d',ADOQuery.Fields.Fields[4].AsDateTime);\par
+\par
+  if(adoquery.FieldByName('Photo').Value<>'') then\par
+  begin\par
+   JPG:=TJPEGImage.Create ;\par
+    MS:=TMemoryStream.Create ;\par
+    TBlobField(ADOquery.FieldByName('photo')).SaveToStream(ms);\par
+    ms.Position :=0;\par
+    JPG.LoadFromStream(ms);\par
+    dbphoto.Picture.Assign(JPG);\par
+     ms.Free;\par
+    jpg.Free;\par
+  end\par
+  else\par
+  dbphoto.Picture.LoadFromFile(ExtractFilePath(paramstr(0))+'images/d.jpg');\par
+    //******************************\par
+    txtAge.Text:=ADOQuery.Fields.Fields[5].AsString;\par
+    cbxNation.Text:=(ADOQuery.Fields.Fields[6].AsString);\par
+    MemoNativePlace.Text:=ADOQuery.Fields.Fields[7].AsString;\par
+    cbxPoliticsFace.Text:=ADOQuery.FieldByName('PoliticsFace').AsString;\par
+ //   if(ADOQuery.FieldByName('MemberTime').AsString<>'') then\par
+    dtMemberTime.DateTime:= ADOQuery.FieldByName('MemberTime').AsDateTime;\par
+\par
+   // if(ADOQuery.FieldByName('TongTime').AsString<>'') then\par
+    dtTongTime.DateTime:= ADOQuery.FieldByName('TongTime').AsDateTime;\par
+\par
+    if(ADOQuery.FieldByName('StartWorkTime').AsString<>'') then\par
+    dtStartWorkTime.DateTime:=ADOQuery.FieldByName('StartWorkTime').AsDateTime;\par
+\par
+  //  if(ADOQuery.FieldByName('birthDtime').AsString<>'') then\par
+    dtBrithDay.DateTime:=ADOQuery.FieldByName('birthDtime').AsDateTime;\par
+\par
+    cbxknowledge.Text:=ADOQuery.FieldByName('Knowledge').AsString;\par
+    cbxPrincipalship.Text:=ADOQuery.FieldByName('principalship').AsString;\par
+    cbxTitleTechPost.Text:=ADOQuery.FieldByName('TitleTechPost').AsString;\par
+    cbxPaylevel.Text:=ADOQuery.FieldByName('Paylevel').AsString;\par
+    txtHeatlh.Text:=ADOQuery.FieldByName('Heatlh').AsString;\par
+    MemoIShortation.Text:=ADOQuery.FieldByName('Ishortation').AsString;\par
+    MemoIsPunish.Text:=ADOQuery.FieldByName('IsPunish').AsString;\par
+    MemoComment.Text:=ADOQuery.FieldByName('comment').AsString;\par
+    txtPhone.Text:=ADOQuery.FieldByName('Phone').AsString;\par
+    txtZip.Text:=ADOQuery.FieldByName('Zip').AsString;\par
+    txtAddress.Text:=ADOQuery.FieldByName('Address').AsString;\par
+    lbZhengZhi.Caption:=ADOQuery.FieldByName('PoliticsFace').AsString;\par
+    lbZhiWei.Caption:=ADOQuery.FieldByName('principalship').AsString;\par
+    lbZhiCheng.Caption:=ADOQuery.FieldByName('TitleTechPost').AsString;\par
+    lbGongZi.Caption:=ADOQuery.FieldByName('Paylevel').AsString;\par
+    lbShenTi.Caption:=ADOQuery.FieldByName('Heatlh').AsString;\par
+    lbXueLi.Caption:=ADOQuery.FieldByName('Knowledge').AsString;\par
+\par
+end;\par
+end;\par
+\par
+//*****************************here is my database functions***********************\par
+procedure TfrmMain.TabSetChange(Sender: TObject; NewTab: Integer;\par
+  var AllowChange: Boolean);\par
+begin\par
+case NewTab of\par
+0:\par
+  begin\par
+\par
+    self.PanelInfo.height:=1103;\par
+    ToolButton20.Enabled:=false;\par
+    if not(ToolButton27.Enabled) then\par
+    ToolButton26.Enabled:=true;\par
+    if(ToolButton26.Enabled) then\par
+    ToolButton25.Enabled:=true\par
+    else\par
+    ToolButton25.Enabled:=false;\par
+    PanelInfo.Visible:=true;\par
+    PanelSearch.Visible:=false;\par
+    PanelSource.Visible:=false;\par
+  end;\par
+1:\par
+  begin\par
+    ToolButton25.Enabled:=false;\par
+    ToolButton20.Enabled:=true;\par
+    ToolButton26.Enabled:=false;\par
+    PanelInfo.Visible:=false;\par
+    PanelSearch.Visible:=true;\par
+    PanelSource.Visible:=false;\par
+  end;\par
+2:\par
+  begin\par
+    ToolButton25.Enabled:=false;  \par
+    ToolButton20.Enabled:=false;\par
+    ToolButton26.Enabled:=false;\par
+    PanelInfo.Visible:=false;\par
+    PanelSearch.Visible:=false;\par
+    PanelSource.Visible:=true;\par
+  end;\par
+  else\par
+  begin\par
+\par
+   case NewTab of\par
+0:\par
+  begin\par
+    self.PanelInfo.height:=1103;\par
+    PanelInfo.Visible:=true;\par
+    PanelSearch.Visible:=false;\par
+    PanelSource.Visible:=false;\par
+  end;\par
+1:\par
+  begin\par
+    PanelInfo.Visible:=false;\par
+    PanelSearch.Visible:=true;\par
+    PanelSource.Visible:=false;\par
+  end;\par
+2:\par
+  begin\par
+    ToolButton20.Enabled:=true;\par
+    PanelInfo.Visible:=false;\par
+    PanelSearch.Visible:=false;\par
+    PanelSource.Visible:=true;\par
+  end;\par
+  else\par
+  begin\par
+   ToolButton20.Enabled:=true;\par
+  end;\par
+end;\par
+\par
+end;\par
+end;\par
+end;\par
+//******************************************************************************\par
+procedure TfrmMain.cbxPoliticsFaceChange(Sender: TObject);\par
+begin\par
+if (cbxPoliticsFace.ItemIndex=0) or(cbxPoliticsFace.ItemIndex=3) then\par
+ begin\par
+    self.dtMemberTime.Enabled:=false;\par
+    self.dtTongTime.Enabled:=false;\par
+ end\par
+ else\par
+ begin\par
+    self.dtMemberTime.Enabled:=true;\par
+    self.dtTongTime.Enabled:=true;\par
+ end;\par
+ if cbxPoliticsFace.ItemIndex=1 then\par
+    self.dtTongTime.Enabled:=false\par
+ else\par
+    self.dtTongTime.Enabled:=true;\par
+ if cbxPoliticsFace.ItemIndex=2 then\par
+    self.dtMemberTime.Enabled:=false\par
+ else\par
+    self.dtMemberTime.Enabled:=true;\par
+end;\par
+//******************************************************************************\par
+procedure TfrmMain.FormCreate(Sender: TObject);\par
+begin\par
+try\par
+strPath:=ExtractFilePath(paramstr(0))+'config.ini';\par
+iniCon:=Tinifile.Create(strPath);\par
+//ADOCon.ConnectionString:='Provider=Microsoft.Jet.OLEDB.4.0;Data Source=F:\\Delphi\'cf\'ee\'c4\'bf\\PIMISV1.0\\Dbase\\DB_DATA.MDB;Persist Security Info=False';\par
+//*******************ini file control**********************\par
+ADOCon.ConnectionString:=iniCon.ReadString('DbaseCon','DbCon','');       //\'cd\'bc\'b1\'ed\par
+//***************here is ini file control*****************\par
+if iniCon.ReadBool('DbaseCon','IsCon',true)<>false then\par
+   IsMDBcon(false);\par
+\par
+if iniCon.ReadBool('System','ShowLogin',true) then\par
+ShowLoginForm;\par
+\par
+\par
+self.PanelInfo.Height:=1103;\par
+MemoSeaInfo.Clear;\par
+except\par
+//on ElnOutError do\par
+MessageDlg('\'c1\'ac\'bd\'d3\'c2\'b7\'be\'b6\'b4\'ed\'ce\'f3',mtError,[mbOk],0);\par
+iniCon.WriteString('DbaseCon','DbCon','Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Dbase\\DB_DATA.MDB;');\par
+end;\par
+//******************************************************************************\par
+\par
+RecCon ;\par
+RecTreeViewBind;\par
+if(strID='Administrator') then\par
+    StatusBar.Panels[1].Text:='\'b3\'ac\'bc\'b6\'d3\'c3\'bb\'a7:'+strID\par
+else if(strID='') then\par
+    statusbar.Panels[1].Text:=''\par
+else\par
+    StatusBar.Panels[1].Text:='\'c6\'d5\'cd\'a8\'d3\'c3\'bb\'a7:'+strID;\par
+iniCon.Free;\par
+end;\par
+//******************************************************************************\par
+procedure TfrmMain.TimerTimer(Sender: TObject);\par
+begin\par
+StatusBar.Panels[2].Text:='\'c8\'d5\'c6\'da\'ca\'b1\'bc\'e4:'+DateToStr(date)+' '+TimeToStr(time);\par
+\par
+end;\par
+\par
+procedure TfrmMain.ToolButton15Click(Sender: TObject);\par
+//var intCount:integer;\par
+begin\par
+\par
+  if(txtID.Text<>RecMaxMin(true)) then\par
+  begin\par
+    ADOQuery.SQL.Text:='select * from tb_proinfor where ID>:ID order by ID';\par
+    ADOQuery.Parameters.ParamByName('ID').Value:=txtID.Text;\par
+    ADOQuery.ExecSQL;\par
+    RecCon;\par
+  end\par
+  else\par
+  Application.MessageBox('\'bc\'c7\'c2\'bc\'d6\'b8\'d5\'eb\'d2\'d1\'be\'ad\'b5\'bd\'cd\'b7','\'d6\'b0\'b9\'a4\'d0\'c5\'cf\'a2\'b9\'dc\'c0\'ed\'cf\'b5\'cd\'b3V1.0',MB_ICONASTERISK);\par
+end;\par
+\par
+procedure TfrmMain.ToolButton14Click(Sender: TObject);\par
+begin\par
+  if(txtID.Text<>RecMaxMin(false)) then\par
+  begin\par
+  ADOQuery.SQL.Text:='select * from tb_proinfor where ID<:ID order by ID desc';\par
+  ADOQuery.Parameters.ParamByName('ID').Value:=txtID.Text;\par
+  ADOQuery.ExecSQL;\par
+  RecCon;\par
+  end\par
+  else\par
+  Application.MessageBox('\'bc\'c7\'c2\'bc\'d6\'b8\'d5\'eb\'d2\'d1\'be\'ad\'b5\'bd\'cd\'b7','\'d6\'b0\'b9\'a4\'d0\'c5\'cf\'a2\'b9\'dc\'c0\'ed\'cf\'b5\'cd\'b3V1.0',MB_ICONASTERISK);\par
+end;\par
+\par
+procedure TfrmMain.ToolButton13Click(Sender: TObject);\par
+begin\par
+\par
+ADOQuery.SQL.Text:='select * from tb_proinfor where ID=:MinID';\par
+ADOQuery.Parameters.ParamByName('MinID').Value:=RecMaxMin(false);\par
+ADOQuery.ExecSQL;\par
+RecCon;\par
+end;\par
+\par
+procedure TfrmMain.ToolButton16Click(Sender: TObject);\par
+begin\par
+ADOQuery.SQL.Text:='select * from tb_proinfor where ID=:MaxID';\par
+ADOQuery.Parameters.ParamByName('MaxID').Value:=RecMaxMin(true);\par
+ADOQuery.ExecSQL;\par
+RecCon;\par
+end;\par
+\par
+procedure TfrmMain.FileCloseItemClick(Sender: TObject);\par
+begin\par
+end;\par
+//******************************************************************************\par
+procedure TfrmMain.ToolButton24Click(Sender: TObject);\par
+var strTemp:string;\par
+begin\par
+strTemp:='('+ADOQuery.Fields.Fields[0].AsString+')';\par
+  if MessageDlg ('\'c8\'b7\'b6\'a8\'c9\'be\'b3\'fd  '+pchar(strTemp)+' \'d5\'e2\'cc\'f5\'bc\'c7\'c2\'bc\'c2\'f0?\'a3\'bf',mtConfirmation,[mbYes, mbNo], 0)= mrYes then\par
+  begin\par
+  if not(ADOQuery.Eof) then\par
+  begin\par
+    ADOQuery.Delete;\par
+    ADOQuery.SQL.Text:='select * from tb_proinfor order by ID';\par
+    ADOQuery.ExecSQL;\par
+    RecCon;\par
+    RecTreeViewBind;\par
+    ADOQuery.Next;\par
+  end\par
+  else\par
+    txtID.Text:='10001';\par
+  end;\par
+end;\par
+\par
+procedure TfrmMain.ToolButton2Click(Sender: TObject);\par
+begin\par
+if not(Toolbutton26.Enabled) and (self.TabSet.TabIndex<>1) then\par
+begin\par
+if(RecBaseInfoVd)and(RecKnowPoliVd) then\par
+begin;\par
+  ADOQuery.Append;\par
+  RecUpdate;\par
+ // ADOQueryCount.Active:=false;\par
+ // ADOQueryCount.Close;\par
+//  RecTreeViewBind;\par
+  self.TabSet.Enabled:=true;\par
+  ToolButton26.Enabled:=true;\par
+end\par
+else\par
+begin\par
+  if not(RecBaseInfoVd) then\par
+    Application.MessageBox('\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'b2\'bb\'cd\'ea\'d5\'fb,\'c7\'eb\'b0\'d1\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'cd\'ea\'d5\'fb','\'bb\'f9\'b1\'be\'d0\'c5\'cf\'a2',MB_ICONWARNING)\par
+  else if not(RecKnowPoliVd) then\par
+    Application.MessageBox('\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'b2\'bb\'cd\'ea\'d5\'fb,\'c7\'eb\'b0\'d1\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'cd\'ea\'d5\'fb','\'d1\'a7\'c0\'fa\'b1\'b3\'be\'b0',MB_ICONWARNING)\par
+end;\par
+end;\par
+\par
+end;\par
+procedure TfrmMain.WindowCascadeItemClick(Sender: TObject);\par
+begin\par
+self.WindowState:=wsNormal;\par
+\par
+end;\par
+\par
+procedure TfrmMain.WindowTileItemClick(Sender: TObject);\par
+begin\par
+self.WindowState:=wsMaximized;\par
+\par
+end;\par
+\par
+procedure TfrmMain.WindowMinimizeItemClick(Sender: TObject);\par
+begin\par
+self.WindowState:=wsMinimized;\par
+end;\par
+\par
+procedure TfrmMain.ToolButton8Click(Sender: TObject);\par
+begin\par
+self.WindowState:=wsMaximized;\par
+end;\par
+\par
+procedure TfrmMain.ToolButton10Click(Sender: TObject);\par
+begin\par
+self.WindowState:=wsNormal;\par
+end;\par
+\par
+procedure TfrmMain.ToolButton11Click(Sender: TObject);\par
+begin\par
+self.WindowState:=wsMinimized;\par
+end;\par
+\par
+procedure TfrmMain.N26Click(Sender: TObject);\par
+begin\par
+Toolbutton26.Enabled:=true;\par
+MainMenu1.Items.Items[3].Items[1].Enabled:=false;\par
+Tabset.Enabled:=true;\par
+ADOQuery.First;\par
+RecCon;\par
+end;\par
+\par
+procedure TfrmMain.ToolButton27Click(Sender: TObject);\par
+begin\par
+ToolButton26.Enabled:=true;\par
+ToolButton27.Enabled:=false;\par
+ToolButton25.Enabled:=true;\par
+RecCon;\par
+Statusbar.Panels[0].Text:='';\par
+self.TabSet.Enabled:=true;\par
+ADOQueryCount.Active:=false;\par
+end;\par
+\par
+procedure TfrmMain.N7Click(Sender: TObject);\par
+begin\par
+if(CoolBar1.Height=56) then\par
+  begin\par
+\par
+  CoolBar1.Height:=26;\par
+  Toolbar2.Visible:=false;\par
+  end\par
+else\par
+  begin\par
+  CoolBar1.Height:=56;\par
+  ToolBar2.Visible:=true;\par
+  end;\par
+end;\par
+\par
+procedure TfrmMain.N8Click(Sender: TObject);\par
+begin\par
+if(statusbar.Visible) then\par
+   begin\par
+   statusbar.Visible:=false;\par
+   end\par
+else\par
+   begin\par
+   statusbar.Visible:=true;\par
+   end;\par
+end;\par
+\par
+procedure TfrmMain.N9Click(Sender: TObject);\par
+begin\par
+if(Panel1.Visible) then\par
+   begin\par
+   Panel1.Visible:=false;\par
+   ToolButton28.down:=false;\par
+   //MainMenu1.Items.items[2].Items[1].Checked:=false;\par
+   end\par
+else\par
+   begin\par
+   Panel1.Visible:=true;\par
+   ToolButton28.down:=true;\par
+   //MainMenu1.Items.items[2].Items[1].Checked:=true;\par
+   end;\par
+\par
+end;\par
+\par
+procedure TfrmMain.ToolButton28Click(Sender: TObject);\par
+begin\par
+if( self.Panel1.Visible) then\par
+    begin\par
+    ToolButton28.down:=false;\par
+    self.Panel1.Visible:=false;\par
+    end\par
+else\par
+    begin\par
+    ToolButton28.down:=true;\par
+    self.Panel1.Visible:=true;\par
+    end;\par
+end;\par
+\par
+procedure TfrmMain.N14Click(Sender: TObject);\par
+begin\par
+ShellExecute(Handle,nil,'notepad.exe',nil,nil,SW_SHOWNORMAL);\par
+end;\par
+\par
+procedure TfrmMain.N25Click(Sender: TObject);\par
+begin\par
+ShellExecute(Handle,nil,'calc.exe',nil,nil,SW_SHOWNORMAL);\par
+end;\par
+\par
+procedure TfrmMain.tvInfoClick(Sender: TObject);\par
+var intCount:integer;\par
+begin\par
+ToolButton27.Enabled:=false;\par
+//if self.TabSet.TabIndex<>2 then\par
+ToolButton26.Enabled:=true;\par
+ToolButton25.Enabled:=true;\par
+if(self.nodeRecAll.Item[0].Selected) then\par
+    begin\par
+      ADOQuery.SQL.Text:='select * from tb_proinfor order by ID';\par
+      ADOQuery.ExecSQL;\par
+      RecCon;\par
+    end\par
+else  if(self.nodeRecAll.Item[1].Selected) then\par
+   Begin\par
+      ADOQuery.SQL.Text:='select * from tb_proinfor order by ID desc';\par
+      ADOQuery.ExecSQL;\par
+      RecCon;\par
+   end\par
+else if(self.nodeRecAll.Item[2].Selected) then\par
+   begin\par
+      ADOQuery.SQL.Text:='select * from tb_proinfor order by IdCard';\par
+      ADOQuery.ExecSQL;\par
+      RecCon;\par
+   end\par
+else\par
+   begin\par
+      ADOQuery.SQL.Text:='select * from tb_proinfor order by ID';\par
+      ADOQuery.ExecSQL;\par
+      RecCon;\par
+   end;\par
+for intCount:=0 to self.nodeRecID.Count-1 do\par
+begin\par
+    if self.nodeRecID.Item[intCount].Selected then\par
+    begin\par
+      ADOQuery.SQL.Text:='select * from tb_proinfor where ID=:ID';\par
+      ADOQuery.Parameters.ParamByName('ID').Value:=nodeRecID.Item[intCount].Text;\par
+      ADOQuery.ExecSQL;\par
+      RecCon;\par
+    end\par
+    else if self.nodeRecName.Item[intCount].Selected then\par
+    begin\par
+      ADOQuery.SQL.Text:='select * from tb_proinfor where Name=:Name';\par
+      ADOQuery.Parameters.ParamByName('Name').Value:=nodeRecName.Item[intCount].Text;\par
+      ADOQuery.ExecSQL;\par
+      RecCon;\par
+    end\par
+    else if self.nodeRecIdCard.Item[intCount].Selected then\par
+    begin\par
+      ADOQuery.SQL.Text:='select * from tb_proinfor where IdCard=:IdCard';\par
+      ADOQuery.Parameters.ParamByName('IdCard').Value:=nodeRecIdCard.Item[intCount].Text;\par
+      ADOQuery.ExecSQL;\par
+      RecCon;\par
+    end\par
+\par
+end;\par
+\par
+end;\par
+\par
+procedure TfrmMain.sbtnSearchClick(Sender: TObject);\par
+var i:integer;\par
+begin\par
+if(rbSeaID.Checked) then\par
+begin\par
+  lvSearch.Items.Clear;\par
+  if(cbxSeaInfo.Text<>'') then\par
+  begin\par
+     ADOQuery.SQL.Text:='select * from tb_proinfor where ID like :ID';\par
+     ADOQuery.Parameters.ParamByName('ID').Value:='%'+cbxSeaInfo.Text+'%';\par
+  end\par
+  else\par
+  begin\par
+    ADOQuery.SQL.Text:='select * from tb_proinfor order by ID';\par
+//     ADOQuery.Parameters.ParamByName('ID').Value:='%'+cbxSeaInfo.Text+'%';\par
+  end;\par
+end\par
+//-----------------------------------------------\par
+else if(rbSeaName.Checked) then\par
+begin\par
+  lvSearch.Items.Clear;\par
+  if(cbxSeaInfo.Text<>'') then\par
+  begin\par
+    ADOQuery.SQL.Text:='select * from tb_proinfor where Name like :Name';\par
+    ADOQuery.Parameters.ParamByName('Name').Value:='%'+cbxSeaInfo.Text+'%';\par
+  end\par
+  else\par
+  ADOQuery.SQL.Text:='select * from tb_proinfor order by ID desc';\par
+end\par
+//-----------------------------------------------\par
+else if(rbSeaIdCard.Checked) then\par
+begin\par
+  lvSearch.Items.Clear;\par
+  if(cbxSeaInfo.Text<>'') then\par
+  begin\par
+     ADOQuery.SQL.Text:='select * from tb_proinfor where IdCard like :IdCard';\par
+     ADOQuery.Parameters.ParamByName('IdCard').Value:='%'+cbxSeaInfo.Text+'%';\par
+  end\par
+  else\par
+  ADOQuery.SQL.Text:='select * from tb_proinfor order by IdCard';\par
+end\par
+//-----------------------------------------------\par
+else\par
+ADOQuery.SQL.Text:='select * from tb_proinfor order by ID';\par
+//ADOquery.Active:=true;\par
+//ADOQuery.ExecSQL;\par
+lvSearch.Columns.Clear;\par
+ADOQuery.Active:=true;\par
+ for i:=0 to 4 do\par
+  begin\par
+    with lvSearch.Columns.Add do\par
+    begin\par
+    if i=0 then\par
+    Caption:='\'d6\'b0\'b9\'a4\'b1\'e0\'ba\'c5'\par
+    else\par
+     Caption:=ADOQuery.Fields[i].DisplayLabel;\par
+    end\par
+  end;\par
+  lvSearch.Columns.Items[0].Width:=60;\par
+  lvSearch.Columns.Items[2].Width:=120;\par
+  lvSearch.Columns.Items[3].Width:=40;\par
+  lvSearch.Columns.Items[4].Width:=75;\par
+  lvSearch.Columns.Items[1].Caption:='\'d0\'d5\'c3\'fb';\par
+  lvSearch.Columns.Items[2].Caption:='\'c9\'ed\'b7\'dd\'d6\'a4\'ba\'c5';\par
+  lvSearch.Columns.Items[3].Caption:='\'d0\'d4\'b1\'f0';\par
+  lvSearch.Columns.Items[4].Caption:='\'b3\'f6\'c9\'fa\'c4\'ea\'d4\'c2';\par
+while not(ADOQuery.Eof) do\par
+begin\par
+    with lvSearch.Items.Add do\par
+    begin\par
+      Caption:=ADOQuery.FieldByName('ID').AsString;\par
+      for i:=1 to 4 do\par
+        SubItems.Add(ADOQuery.Fields[i].AsString);\par
+    end;\par
+  ADOQuery.Next;\par
+end;\par
+\par
+if cbxSeaInfo.Text<>'' then\par
+  cbxSeaInfo.Items.Add(cbxSeaInfo.Text);\par
+end;\par
+\par
+procedure TfrmMain.ToolButton25Click(Sender: TObject);\par
+begin\par
+\par
+if(RecBaseInfoVd)and(RecKnowPoliVd) then\par
+begin;\par
+  RecUpdate;\par
+  RecTreeViewBind;\par
+  self.TabSet.Enabled:=true;\par
+  ToolButton26.Enabled:=true;\par
+end\par
+else\par
+begin\par
+  if not(RecBaseInfoVd) then\par
+    Application.MessageBox('\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'b2\'bb\'cd\'ea\'d5\'fb,\'c7\'eb\'b0\'d1\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'cd\'ea\'d5\'fb','\'bb\'f9\'b1\'be\'d0\'c5\'cf\'a2',MB_ICONWARNING)\par
+  else if not(RecKnowPoliVd) then\par
+    Application.MessageBox('\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'b2\'bb\'cd\'ea\'d5\'fb,\'c7\'eb\'b0\'d1\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'cd\'ea\'d5\'fb','\'d1\'a7\'c0\'fa\'b1\'b3\'be\'b0',MB_ICONWARNING)\par
+end;\par
+\par
+end;\par
+\par
+procedure TfrmMain.FileExitItemClick(Sender: TObject);\par
+begin\par
+QuitCom;\par
+end;\par
+\par
+procedure TfrmMain.ToolButton33Click(Sender: TObject);\par
+begin\par
+QuitCom;\par
+end;\par
+\par
+procedure TfrmMain.HelpAboutItemClick(Sender: TObject);\par
+begin\par
+frmAbout.ShowModal;\par
+end;\par
+\par
+procedure TfrmMain.lvSearchClick(Sender: TObject);\par
+var ic:integer;\par
+begin\par
+toolbutton27.enabled:=false;\par
+toolbutton26.enabled:=true;\par
+for ic:=0 to lvSearch.Items.Count-1 do\par
+begin\par
+  if(lvSearch.Items.Item[ic].Selected) then\par
+     begin\par
+     ADOQuery.SQL.Text:='select * from tb_proinfor where ID=:ID';\par
+     ADOQuery.Parameters.ParamByName('ID').Value:=lvSearch.Items.Item[ic].Caption;\par
+     ADOQuery.ExecSQL;\par
+     RecCon;\par
+  end;\par
+end;\par
+end;\par
+\par
+procedure TfrmMain.ToolButton20Click(Sender: TObject);\par
+var\par
+strSQL:string;\par
+begin\par
+try\par
+ADOQuery.Active:=false;\par
+ADOQuery.SQL.Clear;\par
+lbOUt.Caption:='\'b2\'e9\'d1\'af\'bd\'e1\'b9\'fb\'a3\'ba';\par
+strSQL:='select * from tb_proinfor ';\par
+if(txtSeaIDC.Text<>'') then\par
+  strSQL:=strSQL+' where '+txtSeaIDC.Text+''\par
+else\par
+  strSQL:=strSQL+' where ID>0';\par
+//-------------------------------------------\par
+if(cbxSeaSex.ItemIndex<>0) then\par
+  strSQL:=strSQL+' and  Sex='''+cbxSeaSex.Text+'''' ;\par
+//-------------------------------------------\par
+if(txtSeaAge.Text<>'') then\par
+  strSQL:=strSQL+' and '+txtSeaAge.Text+'';\par
+//-------------------------------------------\par
+if(cbxSeaNation.ItemIndex<>0) then\par
+  strSQL:=strSQL+' and Nation='''+cbxSeaNation.Text+'''' ;\par
+\par
+if(cbxSeaDt.ItemIndex<>0 )and(self.txtSeaDt.Text<>'')then\par
+  strSQL:=strSQL+' and '+txtSeadt.Text+'';\par
+\par
+if(self.cbxSeaPrincipalship.ItemIndex<>0) then\par
+   strSQL:=strSQL+' and principalship='''+self.cbxSeaPrincipalship.Text+'''';\par
+\par
+if(self.cbxSeaFace.ItemIndex<>0) then\par
+   strSQL:=strSQL+' and PoliticsFace='''+self.cbxSeaFace.Text+'''';\par
+\par
+if(self.cbxSeaKl.ItemIndex<>0) then\par
+   strSQL:=strSQL+' and knowledge='''+self.cbxSeaKl.Text+'''';   \par
+//-------------------------------------------\par
+\par
+\par
+//-------------------------------------------\par
+//*************************************************************************\par
+\par
+ADOQuery.SQL.Text:=strSQL;\par
+ADOQuery.ExecSQL;\par
+ADOQuery.Active:=true;\par
+DbGrid.DataSource:=self.dsSearch;\par
+lbOUt.Caption:=lbOUt.Caption+self.cbxSeaIDC.Text+':'+frmsql.txtIdcValue.Text+' \'d0\'d4\'b1\'f0:'+cbxSeaSex.Text;\par
+lbOUt.Caption:=lbOUt.Caption+' \'c4\'ea\'c1\'e4:'+frmsql.txtSeaAge.Text+' \'c3\'f1\'d7\'e5:'+cbxSeaNation.Text;\par
+lbOUt.Caption:=lbOUt.Caption+' \'c8\'d5\'c6\'da'+formatdatetime('yyyy-M-d',frmsql.dt.datetime)+' \'d5\'fe\'d6\'ce\'c3\'e6\'c3\'b2:'+cbxSeaFace.Text;\par
+lbOUt.Caption:=lbOUt.Caption+' \'d6\'b0\'ce\'f1:'+cbxSeaPrincipalship.Text+'  \'d1\'a7\'c0\'fa:'+cbxSeaKl.Text;\par
+\par
+MemoSeaInfo.Text:=strSQL;\par
+except\par
+//Application.MessageBox('SQL\'d3\'ef\'be\'e4\'b4\'ed\'ce\'f3','\'b3\'f6\'b4\'ed\'c1\'cb',MB_IConERROR);\par
+end;\par
+end;\par
+\par
+procedure TfrmMain.txtSeaIDCClick(Sender: TObject);\par
+begin\par
+frmsql.PageControl1.TabIndex:=0;\par
+frmSQL.lbSeaIDC.Caption:=self.cbxSeaIDC.Text;\par
+frmSql.lvDtTypes.Caption:=self.cbxSeaDt.Text;\par
+frmSQL.ShowModal;\par
+end;\par
+\par
+procedure TfrmMain.txtSeaAgeClick(Sender: TObject);\par
+begin\par
+frmsql.PageControl1.TabIndex:=0;\par
+frmSQL.lbSeaIDC.Caption:=self.cbxSeaIDC.Text;\par
+frmSql.lvDtTypes.Caption:=self.cbxSeaDt.Text;\par
+frmSqL.ShowModal;\par
+end;\par
+\par
+procedure TfrmMain.txtSeaDtClick(Sender: TObject);\par
+begin\par
+frmsql.PageControl1.TabIndex:=0;\par
+frmSQL.lbSeaIDC.Caption:=self.cbxSeaIDC.Text;\par
+frmSql.lvDtTypes.Caption:=self.cbxSeaDt.Text;\par
+frmsql.ShowModal;\par
+end;\par
+\par
+procedure TfrmMain.cbxSeaDtChange(Sender: TObject);\par
+begin\par
+if(self.cbxSeaDt.ItemIndex<>0) then\par
+   self.txtSeaDt.Enabled:=true\par
+else\par
+   self.txtSeaDt.Enabled:=false;\par
+end;\par
+\par
+procedure TfrmMain.Label43Click(Sender: TObject);\par
+begin\par
+proj.frmProject.ShowModal;\par
+end;\par
+\par
+procedure TfrmMain.N27Click(Sender: TObject);\par
+begin\par
+proj.frmProject.ShowModal;\par
+end;\par
+\par
+procedure TfrmMain.N28Click(Sender: TObject);\par
+begin\par
+self.tvInfo.FullExpand;\par
+end;\par
+\par
+procedure TfrmMain.N29Click(Sender: TObject);\par
+begin\par
+self.tvInfo.FullCollapse;\par
+end;\par
+\par
+procedure TfrmMain.N30Click(Sender: TObject);\par
+begin\par
+RecTreeViewBind;\par
+end;\par
+\par
+\par
+\par
+procedure TfrmMain.DBChartDblClick(Sender: TObject);\par
+begin\par
+frmsql.PageControl1.TabIndex:=2;\par
+frmsql.ShowModal;\par
+\par
+end;\par
+\par
+procedure TfrmMain.N31Click(Sender: TObject);\par
+begin\par
+frmsql.PageControl1.TabIndex:=1;\par
+frmsql.ShowModal;\par
+end;\par
+\par
+procedure TfrmMain.SQL1Click(Sender: TObject);\par
+begin\par
+\par
+iniCon:=Tinifile.Create(strPath);\par
+iniCon.WriteString('Sql','key',self.MemoSeaInfo.Text);\par
+\par
+end;\par
+\par
+procedure TfrmMain.N32Click(Sender: TObject);\par
+begin\par
+strPath:=ExtractFilePath(paramstr(0))+'config.ini';\par
+iniCon:=Tinifile.Create(strPath);\par
+if(iniCon.ReadString('sql','key','')<>'') then\par
+begin\par
+  ADOQuery.Active:=false;\par
+  ADOQuery.SQL.Clear;\par
+  ADOQuery.SQL.Text:=iniCon.ReadString('sql','key','');\par
+  ADOQuery.ExecSQL;\par
+  ADOQuery.Active:=true;\par
+  DbGrid.DataSource:=self.dsSearch;\par
+end;\par
+end;\par
+procedure TfrmMain.N10Click(Sender: TObject);\par
+begin\par
+frmOption.ShowModal;\par
+end;\par
+\par
+procedure TfrmMain.DBPhotoDblClick(Sender: TObject);\par
+\par
+\par
+begin\par
+odgpic.Execute;\par
+if odgpic.FileName<>'' then\par
+begin\par
+ dbphoto.Picture.LoadFromFile(odgpic.FileName);\par
+  JPG:=TJPEGImage.Create;\par
+  MS:=TMemoryStream.Create ;\par
+  JPG.Assign(dbphoto.Picture.Graphic);\par
+  JpG.SaveToStream(MS);\par
+  MS.Position :=0;\par
+  AdOquery.edit;\par
+  TBlobField(ADOQuery.FieldByName('Photo')).LoadFromStream(ms);\par
+  ADOquery.updaterecord ;\par
+\par
+end;\par
+  MS.Free ;\par
+  jpg.Free ;\par
+end;\par
+\par
+\par
+procedure TfrmMain.FirstExecute(Sender: TObject);\par
+begin\par
+ADOQuery.SQL.Text:='select * from tb_proinfor where ID=:MinID';\par
+ADOQuery.Parameters.ParamByName('MinID').Value:=RecMaxMin(false);\par
+ADOQuery.ExecSQL;\par
+RecCon;\par
+end;\par
+\par
+procedure TfrmMain.PrevExecute(Sender: TObject);\par
+begin\par
+  if(txtID.Text<>RecMaxMin(false)) then\par
+  begin\par
+  ADOQuery.SQL.Text:='select * from tb_proinfor where ID<:ID order by ID desc';\par
+  ADOQuery.Parameters.ParamByName('ID').Value:=txtID.Text;\par
+  ADOQuery.ExecSQL;\par
+  RecCon;\par
+  end\par
+  else\par
+  Application.MessageBox('\'bc\'c7\'c2\'bc\'d6\'b8\'d5\'eb\'d2\'d1\'be\'ad\'b5\'bd\'cd\'b7','\'d6\'b0\'b9\'a4\'d0\'c5\'cf\'a2\'b9\'dc\'c0\'ed\'cf\'b5\'cd\'b3V1.0',MB_ICONASTERISK);\par
+\par
+end;\par
+\par
+procedure TfrmMain.NextExecute(Sender: TObject);\par
+begin\par
+  if(txtID.Text<>RecMaxMin(true)) then\par
+  begin\par
+    ADOQuery.SQL.Text:='select * from tb_proinfor where ID>:ID order by ID';\par
+    ADOQuery.Parameters.ParamByName('ID').Value:=txtID.Text;\par
+    ADOQuery.ExecSQL;\par
+    RecCon;\par
+  end\par
+  else\par
+  Application.MessageBox('\'bc\'c7\'c2\'bc\'d6\'b8\'d5\'eb\'d2\'d1\'be\'ad\'b5\'bd\'cd\'b7','\'d6\'b0\'b9\'a4\'d0\'c5\'cf\'a2\'b9\'dc\'c0\'ed\'cf\'b5\'cd\'b3V1.0',MB_ICONASTERISK);\par
+end;\par
+\par
+procedure TfrmMain.LastExecute(Sender: TObject);\par
+begin\par
+ADOQuery.SQL.Text:='select * from tb_proinfor where ID=:MaxID';\par
+ADOQuery.Parameters.ParamByName('MaxID').Value:=RecMaxMin(true);\par
+ADOQuery.ExecSQL;\par
+RecCon;\par
+end;\par
+\par
+procedure TfrmMain.UpdateExecute(Sender: TObject);\par
+begin\par
+if(RecBaseInfoVd)and(RecKnowPoliVd) then\par
+begin;\par
+  RecUpdate;\par
+  RecTreeViewBind;\par
+  self.TabSet.Enabled:=true;\par
+  ToolButton26.Enabled:=true;\par
+end\par
+else\par
+begin\par
+  if not(RecBaseInfoVd) then\par
+    Application.MessageBox('\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'b2\'bb\'cd\'ea\'d5\'fb,\'c7\'eb\'b0\'d1\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'cd\'ea\'d5\'fb','\'bb\'f9\'b1\'be\'d0\'c5\'cf\'a2',MB_ICONWARNING)\par
+  else if not(RecKnowPoliVd) then\par
+    Application.MessageBox('\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'b2\'bb\'cd\'ea\'d5\'fb,\'c7\'eb\'b0\'d1\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'cd\'ea\'d5\'fb','\'d1\'a7\'c0\'fa\'b1\'b3\'be\'b0',MB_ICONWARNING)\par
+end;\par
+end;\par
+\par
+procedure TfrmMain.NewExecute(Sender: TObject);\par
+begin\par
+ADOQueryCount.Active:=false;\par
+RecClear;\par
+ //dbphoto.Picture.LoadFromFile(ExtractFilePath(paramstr(0))+'images/d.jpg');\par
+ToolButton26.Enabled:=false;\par
+ToolButton27.Enabled:=true;\par
+ToolButton25.Enabled:=false;\par
+\par
+StatusBar.Panels[0].Text:='\'d7\'ca\'c1\'cf\'cc\'ee\'d0\'b4\'cd\'ea\'b1\'cf,\'b5\'e3\'b1\'a3\'b4\'e6(cirl+s)\'b0\'b4\'c5\'a5\'bc\'b4\'bf\'c9\'a3\'ac\'c8\'e7\'cf\'eb\'b3\'b7\'cf\'fa\'b5\'e3\'b3\'b7\'cf\'fa\'b0\'b4\'c5\'a5';\par
+end;\par
+\par
+procedure TfrmMain.RundoExecute(Sender: TObject);\par
+begin\par
+ToolButton26.Enabled:=true;\par
+ToolButton27.Enabled:=false;\par
+ToolButton25.Enabled:=true;\par
+RecCon;\par
+Statusbar.Panels[0].Text:='';\par
+self.TabSet.Enabled:=true;\par
+ADOQueryCount.Active:=false;\par
+end;\par
+\par
+procedure TfrmMain.FileSave1Execute(Sender: TObject);\par
+begin\par
+if not(Toolbutton26.Enabled) and (self.TabSet.TabIndex=0) then\par
+begin\par
+if(RecBaseInfoVd)and(RecKnowPoliVd) then\par
+begin;\par
+  ADOQuery.Append;\par
+  RecUpdate;\par
+ // ADOQueryCount.Active:=false;\par
+ // ADOQueryCount.Close;\par
+//  RecTreeViewBind;\par
+  self.TabSet.Enabled:=true;\par
+  ToolButton26.Enabled:=true;\par
+end\par
+else\par
+begin\par
+  if not(RecBaseInfoVd) then\par
+    Application.MessageBox('\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'b2\'bb\'cd\'ea\'d5\'fb,\'c7\'eb\'b0\'d1\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'cd\'ea\'d5\'fb','\'bb\'f9\'b1\'be\'d0\'c5\'cf\'a2',MB_ICONWARNING)\par
+  else if not(RecKnowPoliVd) then\par
+    Application.MessageBox('\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'b2\'bb\'cd\'ea\'d5\'fb,\'c7\'eb\'b0\'d1\'ca\'fd\'be\'dd\'c2\'bc\'c8\'eb\'cd\'ea\'d5\'fb','\'d1\'a7\'c0\'fa\'b1\'b3\'be\'b0',MB_ICONWARNING)\par
+end;\par
+end;\par
+if(self.TabSet.TabIndex=1) then\par
+adoquery.UpdateBatch;\par
+end;\par
+\par
+procedure TfrmMain.DeleteExecute(Sender: TObject);\par
+ var strTemp:string;\par
+begin\par
+strTemp:='('+ADOQuery.Fields.Fields[0].AsString+')';\par
+  if MessageDlg ('\'c8\'b7\'b6\'a8\'c9\'be\'b3\'fd  '+pchar(strTemp)+' \'d5\'e2\'cc\'f5\'bc\'c7\'c2\'bc\'c2\'f0?\'a3\'bf',mtConfirmation,[mbYes, mbNo], 0)= mrYes then\par
+  begin\par
+  if not(ADOQuery.Eof) then\par
+  begin\par
+    ADOQuery.Delete;\par
+    ADOQuery.SQL.Text:='select * from tb_proinfor order by ID';\par
+    ADOQuery.ExecSQL;\par
+    RecCon;\par
+    RecTreeViewBind;\par
+    ADOQuery.Next;\par
+  end\par
+  else\par
+    txtID.Text:='10001';\par
+  end;\par
+end;\par
+\par
+procedure TfrmMain.N23Click(Sender: TObject);\par
+begin\par
+shellExecute(handle,'open',PChar('www.cs-aspx.net'),'','',sw_Show);\par
+\par
+end;\par
+\par
+procedure TfrmMain.N22Click(Sender: TObject);\par
+begin\par
+shellExecute(handle,'open',PChar('mailto:wjcking@sohu.com'),'','',sw_Show); \par
+\par
+end;\par
+\par
+end.\par
+\par
+\par
+}
+ 

@@ -1,0 +1,10 @@
+[DEFAULT]
+BASEURL=http://63151011.aofa.cn/
+
+[DOC#3#4]
+BASEURL=http://web.aofa.cn/63151011/
+ORIGURL=http://web.aofa.cn/63151011
+
+[InternetShortcut]
+URL=http://63151011.aofa.cn/
+Modified=2023E91DC917C401EE

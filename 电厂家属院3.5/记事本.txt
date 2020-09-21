@@ -1,0 +1,57 @@
+13815085208
+河北省通信公司辛集市分公司数据营业厅  史暖  邮编:052360 
+
+{
+http://rascalkaka.icpcn.com
+FTP 地址：ftp.icpcn.com
+FTP 用户：rascalkaka.icpcn.com
+FTP 密码：bb1xtird
+}
+{
+msvbm60.dll
+注册名 ldr  注册码77940148
+124836780
+HS10161691
+http://61.243.222.136/jiusan/test/tpy.rar  
+http://bbs.dongguan.gd.cn/showtopic.asp?TOPIC_ID=1603&Forum_ID=76
+}
+
+{
+UC号码：41397520
+密码：1984328
+团体号码：640726
+密码：1984328
+}
+
+{
+UC号码：41415172
+密码：1984328
+团体号码:641345
+密码：1984328
+}
+
+{
+42159451
+}
+//////////////
+
+可以在企业管理器中连接！
+SQL连接所需数据：
+服务器地址：61.129.74.67
+60.211.254.69
+60.211.254.69
+60.211.254.69
+user:wjcking
+pass:040808wjcking
+数据库名称：wjcking
+
+workstation id=WJCKING;packet size=4096;user id=wjcking;data source="61.129.74.67";persist security info=False;initial catalog=wjcking;password=040808wjcking
+	protected string strCon=System.Configuration.ConfigurationSettings.AppSettings["wjcking"];
+
+
+HEBEI ONEST NETWORK  EDUCATION CENTER
+Room 1010 of Layers of Mansion of Books
+No 1.North Build Street
+Shijiazhuang HEB 050021
+China
+ 

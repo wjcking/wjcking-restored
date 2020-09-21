@@ -1,0 +1,8 @@
+[DEFAULT]
+BASEURL=http://szyhbcn.free.yydns.com/ebook/default.asp
+[DOC#12]
+BASEURL=http://www.qxcomm.com/p_html/szyhbcn/top.htm
+ORIGURL=top.htm
+[InternetShortcut]
+URL=http://szyhbcn.free.yydns.com/ebook/default.asp
+Modified=F0CDAAEEDE54C3014B

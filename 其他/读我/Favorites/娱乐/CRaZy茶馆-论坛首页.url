@@ -1,0 +1,8 @@
+[DEFAULT]
+BASEURL=http://bbs.cs521.com/index.asp
+[DOC#1394]
+BASEURL=http://bbs.cs521.com/Online.asp?action=1&Boardid=0
+ORIGURL=Online.asp?action=1&Boardid=0
+[InternetShortcut]
+URL=http://bbs.cs521.com/index.asp
+Modified=B038A23AF885C40106

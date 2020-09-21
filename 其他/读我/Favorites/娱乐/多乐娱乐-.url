@@ -1,0 +1,9 @@
+[DEFAULT]
+BASEURL=http://www.web165.com/homepage/ddxxjj/bbs2//list.asp?boardid=5
+
+[DOC_hiddenframe]
+BASEURL=about:blank
+
+[InternetShortcut]
+URL=http://www.web165.com/homepage/ddxxjj/bbs2//list.asp?boardid=5
+Modified=60E8F7614193C30138

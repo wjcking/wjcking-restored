@@ -1,0 +1,8 @@
+[DEFAULT]
+BASEURL=http://www.gbgba.com/
+[DOC#5#7]
+BASEURL=http://gameboy.xaonline.com/www/game/info/index.htm
+ORIGURL=http://gameboy.xaonline.com/test/index.html
+[InternetShortcut]
+URL=http://www.gbgba.com/
+Modified=E0E7E0F1B84BC3015F

@@ -1,0 +1,59 @@
+<?xml version="1.0" standalone="yes"?>
+<MyCalendar>
+  <Event>
+    <ShortDesc>Gig in Portland - Jazz Club</ShortDesc>
+    <DetailDesc>This should be fun - playing J &amp; T again - be sure to bring the charts.</DetailDesc>
+    <EventDate>2001/07/02</EventDate>
+    <StartTime>6:00PM</StartTime>
+    <EndTime>11:30PM</EndTime>
+  </Event>
+  <Event>
+    <ShortDesc>CCT Rehearsal - Brigadoon</ShortDesc>
+    <DetailDesc>Community Theatre orchestra rehearsal - bring mutes.</DetailDesc>
+    <EventDate>2001/07/14</EventDate>
+    <StartTime>3:30PM</StartTime>
+    <EndTime>6:30PM</EndTime>
+  </Event>
+  <Event>
+    <ShortDesc>.NET Training Class</ShortDesc>
+    <DetailDesc>This should be fun - we'll explore some of the really cool stuff, like ASP.NET server controls and Web Services.</DetailDesc>
+    <EventDate>2001/07/17</EventDate>
+    <StartTime>8:00AM</StartTime>
+    <EndTime>4:30PM</EndTime>
+  </Event>
+  <Event>
+    <ShortDesc>Dinner with Christel</ShortDesc>
+    <DetailDesc>We'll celebrate at our favorite restaurant - "Le Bistro" - great food.</DetailDesc>
+    <EventDate>2001/07/17</EventDate>
+    <StartTime>7:00PM</StartTime>
+    <EndTime>10:30PM</EndTime>
+  </Event>
+  <Event>
+    <ShortDesc>Writing Workshop for Musical Project with Gregg</ShortDesc>
+    <DetailDesc>We're going to brainstorm some ideas and see if we can come up with something great.  We're off to a good start.</DetailDesc>
+    <EventDate>2001/07/19</EventDate>
+    <StartTime>10:00AM</StartTime>
+    <EndTime>6:30PM</EndTime>
+  </Event>
+  <Event>
+    <ShortDesc>Community Band</ShortDesc>
+    <DetailDesc>Central park - we'll play everything from standards to shows tunes to classical to marches - you name it.  People bring their lawn chairs, eat their dinner, kids play - a great time!</DetailDesc>
+    <EventDate>2001/07/24</EventDate>
+    <StartTime>7:00PM</StartTime>
+    <EndTime>9:00PM</EndTime>
+  </Event>
+  <Event>
+    <ShortDesc>Jam Session at the Beach</ShortDesc>
+    <DetailDesc>Bring more food this time and the crab nets - and the instruments!  We'll might stay for a week or so depending on the weather.</DetailDesc>
+    <EventDate>2001/07/21</EventDate>
+    <StartTime>8:00AM</StartTime>
+    <EndTime>11:30PM</EndTime>
+  </Event>
+  <Event>
+    <ShortDesc>Rob's Birthday!</ShortDesc>
+    <DetailDesc>Nothing too fancy - just friends and family.  Hope it's a nice day - bike ride would be fun.</DetailDesc>
+    <EventDate>2001/07/30</EventDate>
+    <StartTime>6:09PM</StartTime>
+    <EndTime>11:30PM</EndTime>
+  </Event>
+</MyCalendar>

@@ -1,0 +1,8 @@
+[DEFAULT]
+BASEURL=http://www.chinaour.com/
+[DOC#3#5]
+BASEURL=http://free.itdrp.com/nic2000/mel/chinaour/index.html
+ORIGURL=http://free.itdrp.com/nic2000/mel/chinaour/index.html
+[InternetShortcut]
+URL=http://www.chinaour.com/
+Modified=70CDCCF9E24EC301F6

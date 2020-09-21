@@ -1,0 +1,57 @@
+
+<html>
+<head>
+
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>WWW.CS-ASPX.NET</title>
+<!-- TemplateEndEditable --> 
+<link href="../images/9points.css" rel="stylesheet" type="text/css">
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="9point">
+<table width="778" align="center" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td height="12" valign="top" bgcolor="#000000"><div align="right" class="9point"><font color="#FFFFFF">Powered 
+        by ASP.NET</font></div></td>
+  </tr>
+  <tr> <!-- TemplateBeginEditable name="top" -->
+    <td height="12" valign="top" bgcolor="#FFFFFF"> <div align="right" class="9point"></div></td>
+    <!-- TemplateEndEditable --></tr>
+</table>
+
+<table width="778" align="center"  border="0" cellpadding="0" cellspacing="0" class="未命名1">
+  <tr class="9point"> 
+    <td width="20%" height="18" valign="center" bgcolor="#e5e5e5"><div align="center"><font color="#FFFFFF"></font></div></td>
+    <td width="9%" valign="middle" bgcolor="#31404E"> 
+      <div align="center"><a href="../default.aspx"><font color="#FFFFFF"> &nbsp;返回首页</font></a></div></td>
+    <td width="9%" valign="center" bgcolor="#31404E"><div align="center"><a href="../article.aspx"><font color="#FFFFFF">技术文摘</font></a></div></td>
+    <td width="8%" valign="center" bgcolor="#31404E"><div align="center"><a href="../software.aspx"><font color="#FFFFFF">软件设计</font></a></div></td>
+    <td width="9%" valign="center" bgcolor="#31404E"><div align="center"><a href="../link.aspx"><font color="#FFFFFF">超级链接</font></a></div></td>
+    <td width="8%" valign="center" bgcolor="#31404E"><div align="center"><a href="../down.aspx"><font color="#FFFFFF">相关下载</font></a></div></td>
+    <td width="9%" valign="center" bgcolor="#31404E"><div align="center"><a href="../guestbook.aspx"><font color="#FFFFFF">雁过留声</font></a></div></td>
+    <td width="8%" valign="center" bgcolor="#31404E"><div align="center"><a href="../guestbook.aspx"><font color="#FFFFFF">社区论坛</font></a></div></td>
+    <td width="10%" valign="center" bgcolor="#31404E"> <div align="center"><a href="../friend.aspx"><font color="#FFFFFF">管理专区</font></a></div></td>
+    <td width="10%" valign="center" bgcolor="#31404E"><div align="center"></div></td>
+  </tr>
+</table>
+<table width="778" align="center" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td height="10"> <table width="100%" border="0">
+        <tr> <!-- TemplateBeginEditable name="middl" -->
+          <td>&nbsp;</td>
+          <!-- TemplateEndEditable --></tr>
+      </table></td>
+  </tr>
+</table>
+<table width="778" align="center" height="39" border="0" cellpadding="0" cellspacing="0" class="未命名1">
+  <tr> 
+    <td height="59" bgcolor="#31404E" width="19%"><div align="center" class="9point"> 
+        <a href="../myinfor.aspx"><font color="#FFFFFF"> 版权信息| 关于本站 | 联系方式 |</font></a> <a href="userinfor.aspx"><font color=white>流量统计</font></a><br>
+        <font color="#FFFFFF"> ------------------------------------------------------------------------------<br>
+        Copyright 2003--2003 cs-aspx All rights reserved </font></div></td>
+  </tr>
+
+
+</table>
+</body>
+</html>

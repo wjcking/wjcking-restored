@@ -1,0 +1,30 @@
+.Default9 {
+	FONT-FAMILY: Verdana,ËÎÌו; FONT-SIZE: 9pt
+}
+.Other9 {
+	FONT-FAMILY: Verdana,ËÎÌו; FONT-SIZE: 9pt; LETTER-SPACING: -1pt; VERTICAL-ALIGN: 1
+}
+.Gray {
+	COLOR: #999999; FONT-FAMILY: Verdana; FONT-SIZE: 9pt; TEXT-ALIGN: center
+}
+TD {
+	FONT-FAMILY: Verdana,ËÎÌו; FONT-SIZE: 9pt
+}
+A {
+	TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #000000
+}
+A:visited {
+	COLOR: #000000
+}
+A:hover {
+	COLOR: #3399ff; TEXT-DECORATION: underline
+}
+#floater {
+	LEFT: 0px; POSITION: relative; TOP: 0px; VISIBILITY: visible; WIDTH: 108px; Z-INDEX: 3
+}
+.input {
+	BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid
+}

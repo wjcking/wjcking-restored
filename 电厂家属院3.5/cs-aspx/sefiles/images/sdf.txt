@@ -1,0 +1,21 @@
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,79,0" height="120" align="center">
+                <param name=movie value="images/0002.swf">
+                    <param name=quality value=High>
+                    <param name="wmode" value="Transparent">
+                  <param name="_cx" value="20585">
+                  <param name="_cy" value="5424">
+                  <param name="FlashVars" value="0">
+                  <param name="Src" value="images/0002.swf">
+                  <param name="Play" value="0">
+                  <param name="Loop" value="-1">
+                  <param name="SAlign" value>
+                  <param name="Menu" value="-1">
+                  <param name="Base" value>
+                  <param name="AllowScriptAccess" value="always">
+                  <param name="Scale" value="ShowAll">
+                  <param name="DeviceFont" value="0">
+                  <param name="EmbedMovie" value="0">
+                  <param name="BGColor" value>
+                  <param name="SWRemote" value>
+                    <embed src="images/0002.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" height="120" wmode="transparent">
+                    </embed></object>

@@ -1,0 +1,10 @@
+[DEFAULT]
+BASEURL=http://www.nssoft.net/delphihelp.asp
+
+[DOC#310]
+BASEURL=http://www.nssoft.net/listdoc.asp?cid=18&offset=18
+ORIGURL=searchdoc.asp
+
+[InternetShortcut]
+URL=http://www.nssoft.net/delphihelp.asp
+Modified=80F8CE01A4B1C30160

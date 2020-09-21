@@ -1,0 +1,40 @@
+procedure RecLvBind;
+begin
+with pimis.frmMain  do
+begin
+//ADOquery.Active:=false;
+//ADOQuery.SQL.Clear;
+if(rbSeaID.Checked) then
+begin
+  lvSearch.Items.Clear;
+  if(cbxSeaInfo.Text<>'') then
+  begin
+     ADOQuery.SQL.Text:='select * from tb_proinfor where ID like :ID';     ADOQuery.Parameters.ParamByName('ID').Value:='%'+cbxSeaInfo.Text+'%';
+  end;
+end
+//-----------------------------------------------
+else if(rbSeaName.Checked) then
+begin
+  lvSearch.Items.Clear;
+  if(cbxSeaInfo.Text<>'') then
+  begin
+    ADOQuery.SQL.Text:='select * from tb_proinfor where Name like :Name';    ADOQuery.Parameters.ParamByName('Name').Value:='%'+cbxSeaInfo.Text+'%';
+  end;
+end
+//-----------------------------------------------
+else if(rbSeaIdCard.Checked) then
+begin
+  lvSearch.Items.Clear;
+  if(cbxSeaInfo.Text<>'') then
+  begin
+     ADOQuery.SQL.Text:='select * from tb_proinfor where IdCard like :IdCard';     ADOQuery.Parameters.ParamByName('IdCard').Value:='%'+cbxSeaInfo.Text+'%';
+  end;
+end
+//-----------------------------------------------
+else
+ADOQuery.SQL.Text:='select * from tb_proinfor order by ID';
+//ADOquery.Active:=true;
+//ADOQuery.ExecSQL;
+end;
+end;
+向下一次连接数据库

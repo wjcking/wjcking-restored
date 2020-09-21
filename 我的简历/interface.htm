@@ -1,0 +1,122 @@
+<!--公司电话 13911301581 -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0020)http://lzhm.net/job/ -->
+<HTML><HEAD>
+<title>作品图例</title>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<SCRIPT language=JavaScript>
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+function expOvr(src){if(!src.contains(event.fromElement)){src.bgColor='#7CBDE4';}}
+function expOut(src){if(!src.contains(event.toElement)){src.bgColor='#F7F7F7';}}
+
+function mOvr(src){if(!src.contains(event.fromElement)){src.bgColor='#FCFCFC';}}
+function mOut(src){if(!src.contains(event.toElement)){src.bgColor='#F7F7F7';}}
+</SCRIPT>
+
+<META content="手写HTML" name=GENERATOR>
+
+<link href="9POINTS.CSS" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-style: italic;
+}
+.style4 {font-size: 24pt}
+.style5 {
+	font-size: 14pt;
+	font-weight: bold;
+}
+.style7 {font-size: 14pt}
+.style9 {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+-->
+</style>
+</HEAD>
+<script language="javascript">
+var ENTER     = "<br>"
+var EMPTY     = "";
+var ZERO      = 0;
+var ONE       = 1;
+var IMAGEPATH = "images/project/" ;
+var EXTENNAME = ".jpg";
+var imageMax  = new Array(5,6,6,2,5,2,5,2,6,6); 
+function getExhibit()
+{
+	document.all["panel"].innerHTML = EMPTY;
+ 	with(document.forms[ZERO])
+	{	
+		var val = ddlProject.value;				
+		var idx = ddlProject.selectedIndex;
+		
+   		for( var i = ONE; i <= imageMax[idx]; i++)
+			document.all["panel"].innerHTML	 +=  printf(val+i+EXTENNAME)+ENTER+ENTER	;	
+		}
+}
+function printf( imageName)
+{
+	var imgName = IMAGEPATH + imageName;	
+	return "<img src='" + imgName + "' border=1 >" ;
+}
+
+</script>
+
+<BODY text=#000000 bgColor=#eeeeee leftMargin=0 topMargin=0 onLoad="getExhibit()" >
+<form name="exhibit">
+<DIV align=center>
+
+  <TABLE  cellSpacing=0 cellPadding=0 class="9points.css" width=100% bgColor=#ffffff 
+      border=0>
+    <TBODY>
+      <TR>
+        <TD  vAlign=bottom background="images/bannerslice2.gif"><table width="100%"  border="0" cellpadding="2" cellspacing="2">
+          <tr valign="bottom">
+            <td width="42%" height="82"><span class="style3"><span class="style4">作品图例</span> -- </span><span class="StringFilter"><strong><span class="style7 StringFilter"><strong><em><span class="StringFilter style5"><span class="StringFilter  style7"><em>Writings</em></span></span> exhibit </em></strong></span></strong></span></td>
+            <td width="42%" align="right"><select name="ddlProject" onChange="getExhibit()">
+              <option value="videa" selected >虚拟理想 Videa3.0</option>
+              <option value="xs">衡水市习三内画艺术有限公司</option>
+              <option value="kfpc">山东孔府制药有限公司</option>
+              <option value="pdfview">Pdf网络查看器</option>
+              <option value="pimis">职工信息管理系统</option>
+              <option value="v-idea">VIDEA桌面管理</option>
+              <option value="datums">资料经理人</option>
+              <option value="combox">个人通讯录</option>
+              <option value="Exam">通用考试自测系统</option>
+              <option value="other">其他</option>
+            </select></td>
+            <td width="16%"><p>
+			<a href="default.htm"><font color="#FFFFFF">简历</font></a> 
+			<a href="project.htm"><font color="#FFFFFF">&gt;&gt; 作品</font></a> 
+			<a href="interface.htm"><font color="#FFFFFF">&gt;&gt; 图例</font></a></p>              </td>
+          </tr>
+        </table> </TD>
+      </TR>
+      <TR>
+        <TD height="278"  align="center" vAlign=top>
+		<br>
+          <DIV id = "panel" align=center ></div> <BR>
+		  
+
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+  <table width="100%"  border="0" cellpadding="0" cellspacing="0" background="images/bannerslice2.gif">
+            <tr valign="bottom" background="images/bannerslice2.gif">
+              <td width="34%" height="44" background="images/bannerslice2.gif">&nbsp;</td>
+              <td width="33%" background="images/bannerslice2.gif">&nbsp;</td>
+              <td width="33%" background="images/bannerslice2.gif">&nbsp;</td>
+            </tr>
+  </table>
+
+</DIV></form>
+</BODY></HTML>

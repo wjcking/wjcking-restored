@@ -1,0 +1,9 @@
+[DEFAULT]
+BASEURL=http://oldchild.nbc.net.cn/
+
+[DOC#325]
+BASEURL=http://cnsmin.3721.com/textclick/cnsminex.htm?intv=7&intkey=9abdceb3
+
+[InternetShortcut]
+URL=http://oldchild.nbc.net.cn/
+Modified=609AD92DFC00C301C0

@@ -1,0 +1,15 @@
+[DEFAULT]
+BASEURL=http://www.java.com.cn/index.asp
+
+[DOC_tcframe]
+BASEURL=http://ad.t2t2.com/textclick.htm?user=infotele&class=2&style=4&bkcolor=BDD0DF&fgcolor=000000
+
+[DOC_tcframe#57]
+BASEURL=http://stat.t2t2.com/log/log1.htm?default&user=infotele
+
+[DOC_tcframe#57#6]
+BASEURL=http://cnsmin.3721.com/search/cnsminex.htm?pid=U_taijilian_48651&coagent=U_taijilian_48651
+
+[InternetShortcut]
+URL=http://www.java.com.cn/index.asp
+Modified=C0FD45BB1DF9C30197

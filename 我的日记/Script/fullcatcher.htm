@@ -1,0 +1,16 @@
+<script language="VBScript">
+
+Sub OnContextMenu()
+	On Error Resume Next
+	set obj=CreateObject("DiaryOneAPI.Catcher")
+	if err<>0 then
+    		Alert("DiaryOne is not installed properly, please install DiaryOne again!")
+  	else
+		set srcEvent = external.menuArguments.event
+		obj.visible = true
+		obj.CatchFromIE external.menuArguments.document, srcEvent.clientX, srcEvent.clientY, 0
+  	end if
+end sub
+
+Call OnContextMenu()
+</script>

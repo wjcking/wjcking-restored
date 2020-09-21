@@ -1,0 +1,17 @@
+.9point {
+	font-family: "ËÎÌו";
+	font-size: 9pt;
+}
+
+
+
+A:link{
+text-decoration:none;color:#000000
+
+}
+A:active{text-decoration:none;color:#FF0000
+}
+A:visited{text-decoration:none;color:#0000A0
+}
+A:hover{FONT-SIZE:9pt;text-decoration:none;color:#FF0000;
+}

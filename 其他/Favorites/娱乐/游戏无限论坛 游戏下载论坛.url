@@ -1,0 +1,10 @@
+[DEFAULT]
+BASEURL=http://www.gbbs.cn/
+[DOC#1367]
+BASEURL=http://cnsmin.3721.com/search/cnsminex.htm?pid=U_mytongji4_80849&coagent=U_mytongji4_80849
+ORIGURL=http://cnsmin.3721.com/search/cnsminex.htm?pid=U_mytongji4_80849&coagent=U_mytongji4_80849
+[DOC#1378]
+BASEURL=about:blank
+[InternetShortcut]
+URL=http://www.gbbs.cn/
+Modified=6063FA1D4483C40166

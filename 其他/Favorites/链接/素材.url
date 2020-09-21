@@ -1,0 +1,8 @@
+[DEFAULT]
+BASEURL=http://www.mbsky.com/mb/index.asp
+[DOC#3#4]
+BASEURL=http://218.62.30.252/weaterm/mb/
+ORIGURL=http://218.62.30.252/weaterm
+[InternetShortcut]
+URL=http://www.mbsky.com/mb/index.asp
+Modified=D0B8659CF055C30192

@@ -1,0 +1,143 @@
+unit BllPerson;
+
+interface
+uses
+    Windows, Messages, SysUtils, Variants,
+    Classes, Graphics, Controls, Forms,
+    Dialogs, StdCtrls, ComCtrls, ExtCtrls,
+    DB, ADODB , Person, DALPerson,Database,IDAL,ConfigTools;
+type
+    TBllPerson = class(TObject)
+
+    private
+    _KeyWords   : string;
+    _PersonType : string;
+    _ConType    : string;
+    _Zero       : Integer;
+
+    function PersonID:Integer;
+    function repConType(const value:string):string;
+
+    public
+
+    property KeyWords       : string  read _KeyWords    write _KeyWords;
+    property PersonType     : string  read _PersonType  write _PersonType;
+    property ConType        : string  read _ConType     write _ConType;
+    property ID             : Integer read _Zero        write _Zero;
+
+    function ListPersonInfo(KeyWords:string;const PersonType:string;const ConType:string):TDataSource;//interface
+    function GetPersonInfo(ID:Integer):TPerson; //interface
+    function RecordLeader(const sign :string):Integer;
+
+    procedure InsertPersonInfo(Perinfo:TPerson);//interface
+    procedure UpdatePersonInfo(ID:Integer;Perinfo:TPerson);//interface
+    procedure DeletePersonInfo;//interface
+    procedure CanDoInsert;
+    constructor Create;
+
+    end;
+var
+  ICtrlPerInfo : IPersonInfo;
+
+const
+    DELETE_INFO           = '确定删除吗?';
+    PERSON_INFO_TITLE     = '个人通讯录';
+    PERSON_INSERT_ERROR   = '姓名和手机是必须填写的！';
+    PERSON_INSERT_SUCCESS = '联系人添加成功，请继续！';
+    PERSON_UPDATE_ERROR   = '更新失败,姓名和手机是必须填写的！';
+    PERSON_UPDATE_SUCCESS = '更新成功';
+
+    First = '<<';
+    Next  = '>';
+    Prev  = '<';
+    Last  = '>>';
+   
+implementation
+
+constructor TBllPerson.Create;
+begin
+    ICtrlPerInfo :=  TDALPerson.Create;
+end;
+function  TBLLPerson.PersonID:Integer;
+begin
+    with (DataAccess.Query) do begin
+    if(Active)  then _Zero:= Fields[0].AsInteger else _Zero := 0  ;
+    end;
+    Result := _Zero;
+end;
+
+function TBLLPerson.repConType(const value:string):string;
+const
+    NAME  = '姓名';
+    PHONE = '家庭电话';
+    QQ    = 'QQ号';
+    HP    = '手机';
+begin
+    if      ( value = NAME )    then Result := DALPerson.PERSON_NAME
+    else if ( value = PHONE )   then Result := DALPerson.PERSON_PHONE
+    else if ( value = QQ)       then Result := DALPerson.PERSON_QQ
+    else if ( value = HP)       then Result := DALPerson.PERSON_HP
+    else Result := value;
+end;
+function  TBllPerson.ListPersonInfo(KeyWords:string; const PersonType:string; const ConType:string):TDataSource;
+begin
+   Result := ICtrlPerInfo.ListPersonInfo(TConfigTool.Filter(KeyWords),PersonType,repConType(ConType));
+end;
+function  TBllPerson.GetPersonInfo(ID:Integer):TPerson;
+begin
+    if (PersonID <> -1 )    then
+        Result := ICtrlPerInfo.GetPersonInfo(ID)
+    else
+        Result := nil;
+end;
+procedure TBllperson.CanDoInsert;
+begin
+    DataAccess.Query.Active := false;
+    DataAccess.Query.Close;
+end;
+procedure TBllPerson.InsertPersonInfo(Perinfo:TPerson);
+begin
+    if(Perinfo.Name <> Empty ) and (Perinfo.HP <> Empty) then
+    begin
+
+        ICtrlPerInfo.InsertPersonInfo(Perinfo);
+        TConfigTool.playsound(SOUND_PATH);
+    end
+    else
+        ShowMessage(PERSON_INSERT_ERROR);
+end;
+procedure TBllPerson.UpdatePersonInfo(ID:Integer;Perinfo:TPerson);
+begin
+    if (Perinfo.Name <> Empty ) and (Perinfo.HP <> Empty) then
+    begin
+        TConfigTool.playsound(SOUND_PATH);
+        ICtrlPerInfo.UpdatePersonInfo(ID,Perinfo);
+    end
+    else
+        ShowMessage(PERSON_UPDATE_ERROR);
+end;
+procedure TBllPerson.DeletePersonInfo;
+begin
+  
+    if( Application.MessageBox(DELETE_INFO,PERSON_INFO_TITLE,MB_YESNO + MB_ICONQUESTION) = ID_YES )  then
+    begin
+        ICtrlPerInfo.DeletePersonInfo;
+        TConfigTool.playsound(SOUND_PATH);
+    end;
+
+end;
+function TBllPerson.RecordLeader(const sign :string):Integer;
+begin
+    if(DataAccess.Query.Active) and (DataAccess.Query.RecordCount <> -1) then
+    begin
+        if      (sign =  First ) then DataAccess.Query.First
+        else if (sign =  Prev  ) then DataAccess.Query.Prior
+        else if (sign =  Next  ) then DataAccess.Query.Next
+        else if (sign =  Last  ) then DataAccess.Query.Last;
+        Result := DataAccess.Query.RecNo;
+    end
+    else
+        Result := 0;
+end;
+
+end.

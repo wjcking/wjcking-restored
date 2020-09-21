@@ -1,0 +1,12 @@
+[DEFAULT]
+BASEURL=http://www.njcatv.net/javascript/
+
+[DOC#5#6]
+BASEURL=http://www.njcatv.net/javascript/left.htm
+
+[DOC#5#7]
+BASEURL=http://www.njcatv.net/javascript/807skill1.htm
+
+[InternetShortcut]
+URL=http://www.njcatv.net/javascript/
+Modified=209E5D9A7D02C301F8

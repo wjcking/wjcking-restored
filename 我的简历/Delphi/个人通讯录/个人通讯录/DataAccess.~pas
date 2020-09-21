@@ -1,0 +1,41 @@
+unit DataAccess;
+
+interface
+
+uses
+  SysUtils, Classes, ADODB, DB;
+
+type
+  TDbase = class(TDataModule)
+    ADOTable: TADOTable;
+    ADOQuery: TADOQuery;
+    ds: TDataSource;
+    ADOCon: TADOConnection;
+  private
+
+  public
+  procedure ExecuteNonQuery(query:string);
+  procedure Dispose;
+  end;
+
+var
+  Dbase: TDbase;
+
+implementation
+
+procedure TDbase.ExecuteNonQuery(query:string);
+begin
+    ADOQuery.SQL.Clear;
+    ADOQuery.ExecSQL;
+end;
+procedure TDbase.Dispose;
+begin
+    if(ADOQuery.Active) then begin
+    ADOQuery.Close;
+    ADOQuery.Free;
+    end;
+    if(
+end;
+
+
+end.

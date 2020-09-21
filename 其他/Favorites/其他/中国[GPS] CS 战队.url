@@ -1,0 +1,9 @@
+[DEFAULT]
+BASEURL=http://www.csgps.com/Home_ShowInfo.asp?ID=733&CID=13
+
+[DOC#530]
+BASEURL=http://www.csgps.com/Ad.asp
+
+[InternetShortcut]
+URL=http://www.csgps.com/Home_ShowInfo.asp?ID=733&CID=13
+Modified=60EABC54DC3EC30138

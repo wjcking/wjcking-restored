@@ -1,0 +1,15 @@
+[DEFAULT]
+BASEURL=http://www.examrare.com/chinese/index.htm
+
+[DOC#519]
+BASEURL=http://stat.t2t2.com/log/log1.htm?default&user=Examrare
+
+[DOC#519#6]
+BASEURL=http://cnsmin.3721.com/search/cnsminex.htm?pid=U_taijilian_48651&coagent=U_taijilian_48651
+
+[DOC_tcframe]
+BASEURL=http://ad.t2t2.com/textclick.htm?user=Examrare&class=2&style=1&bkcolor=FFFFFF&fgcolor=446D8C
+
+[InternetShortcut]
+URL=http://www.examrare.com/chinese/index.htm
+Modified=204472CC1801C40180

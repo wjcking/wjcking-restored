@@ -1,0 +1,12 @@
+[DEFAULT]
+BASEURL=http://com.hooday.com/
+
+[DOC#4#5]
+BASEURL=about:blank
+
+[DOC#4#6]
+BASEURL=http://www.hooday.com/com/list.php?q=22
+
+[InternetShortcut]
+URL=http://com.hooday.com/
+Modified=407CF531A8EBC20138

@@ -1,0 +1,48 @@
+DiaryOne can store not only texts but also multimedia information including sounds, pictures, etc. Sometimes you don't want to type into the diary, you can speak to DiaryOne and it will record your voice. That's the sound diary.
+DiaryOne stored any information based on account. Before using it, you must create an account for yourself. The account is protected by the password you specified. All your privacy will never be accessed by others.
+DiaryOne provides the security for your data. It also provides the backup/restore and the export/import solutions within the software. And more, DiaryOne provides more plug-ins for export your diaries to 'CD Diary', 'Web Diary', etc.
+DiaryOne provides various skins and stationeries for your diaries. You can select a diary skin as you like, more skins can be got from the website. The various stationeries can suit the various mood. When creating account, DiaryOne provides many display picture for your account, select one as you like.
+DiaryOne is an easy-to-use diary keeper. All operations are simple and human.
+DiaryOne simulate the real diary-book.
+DiaryOne provides many additional materials in its package including additional emotions, illustrates and photos. You can use them in your diary easily. Of course, you can add your own materials into the materials library.
+DiaryOne provides skin capability. You can select the skin you like.
+The first time you use DiaryOne, you need create your private account first in order to use DiaryOne in future. This can prevent others accessing your private information. Start DiaryOne, click the 'Create account' button.
+In the 'create account' dialog, enter your account name and password(twice), then click OK to finish creating account.
+Don't forget your password! There are no other ways to find out the password if you forget.
+If you have an existing account of DiaryOne, every time you want to access your diaries, you need sign in. Start DiaryOne, then enter your account name and password. Then click the 'Sign in' button to sign in.
+If the software is only used by yourself, you can check the option 'Auto sign in next time'. Then the next time you start DiaryOne, it will not show the sign in window and sign in automatically. But in this case, your data can't be protected by your account. Any one start DiaryOne can read your data.
+When entering account name, you can click on the drop button of account. It will show a menu of all existing account, you only need select one.
+The first time you use DiaryOne, it will create a new diary automatically. Then you can write your diary directly.
+If you want to create a new diary manually, only need select the menu 'File' | 'New diary' or click the 'New diary' button.
+Sometimes you want to create a bypast diary, only select the menu 'File' | 'New bypast diary'. Then select a date in the dialog as you like.
+When viewing a diary, you can modify the diary directly. Then only need select the menu 'File' | 'Save' to save the modifications.
+If you are sure to delete a diary, select the menu 'File' | 'Delete'. Please note, the deleted diary can't be recovered, and all attachments and sounds of it will be deleted too.
+To change the date of a diary, select the menu 'File' | 'Move to...' to move the diary to the specified date.
+If a diary is the favorite one and you want to view it frequently, you can add it to the favorites by selecting the menu 'File' | 'Add to favorites'. Then it can be listed in the favorites list.
+Selecting the menu 'File' | 'Print' can make a paper-printed diary.
+You can view all diaries by the navigator buttons. There are 4 navigator buttons at the bottom-right of the interface.
+To find the diary of a specified date, you need the side tool window. In the side tool window, click 'My diaries' page, you will get a diaries tree for one year. Switch to the year you want first, then find the month and the day in the tree, click on the node.
+To switch the year, you only need select the menu 'View' | 'Switch year to'.
+There is a 'month switch bar' on the right side of the main interface. Just click on the month number you want. Please note, if there is no any diaries in the month, then you can't switch to that month. Or it will locate to the first diary of the month.
+The 'Edit' menu gives the common editing functions as a word process tool.
+The 'Insert' menu allows to insert various objects into the diary. E.g. date and time, break, pictures, emotions, etc.
+Select the menu 'File' | 'Weather' to change the weather of current diary. Or you can click on the weather button to change.
+Select the menu 'File' | 'Stationeries' to change the stationery of current diary.
+Click the 'record sound' button on the tool bar, then the recording will be started. When recording, you should speak to the microphone of your computer.
+When finishing the record, DiaryOne processes it into your diary database. It will take several seconds to do it, and the processing time is determined by the length of your recording sound.
+To insert attachments into the diary, select the menu 'Insert' | 'Attachments...'. Then attachments you selected will be added into the diary and shown in the attachment panel.
+In the attachments panel, you can right click the mouse to popup the manage menu for attachments. In the menu, you can open an attachment, save an attachment to file and remove it.
+In 'my diaries' page, you can find the diaries tree and a year selector. When you selected a year, the tree will be updated to show the nodes of all diaries in this year. So you can find the diary of a special date quickly. To view the special dairy, only need click on the node.
+In 'Calendar' page, you can find a calendar and a clock. Change the date of the calendar, you can locate and view the diary of the date. The clock always shows the current time.
+In 'Favorites' page, you can find two trees. The first is 'Diary' tree. It lists all favorite diaries you added. Just click on the node, you can view the selected diary.
+In 'Material Library' page, you can find the materials of various types. DiaryOne provides many illustrates, additional emotions and photos. You can use it in your diary easily.
+In 'Search' page, you can find some diaries including a special phrase easily. You only need enter the search phrase and click the 'Search' button. The results will be shown in the list below. Click one row of the list, you can view the diary.
+'Import' function allows you import the diaries from .txt or .rtf files. Many other diary software can export the diaries into these two format files. So if you are using some diary softwares, you can export all your diaries and then import them into DiaryOne.
+'Export' function allows you export the diaries to .txt or .rtf files.
+'Backup' function allows you backup the diaries data to one disk file. Then you can save this file on other place to make a second copy for your data. It's an important solution for keep your data safe. DiaryOne suggest you backup frequently.
+The 'Backup password' is not same as the 'Account password'. The backup password is needed when restoring. The account password is needed when signing in. So you should remember these two password. Or you can set them the same password.
+'Restore' function allows you restore the backup copy of diaries data when your current data destroied(E.g. the virus destroied the data or the hard disk doesn't work).
+The 'Resotre password' is not same as the 'Account password'. The restore password is specified when backuping.
+The 'Restore' operation will overwrite all your data existing and recover the data you backuped. So don't use this function except your data is destroied.
+The unregistered version is for evaluation purpose only. The limitation of this copy is that you can only use it for 30 days. If you like DiaryOne and want to remove the limitations, please register.
+After purchasing, you will get a registration name and key. Just select the menu 'Help' | 'Enter registration key', the register dialog will be shown. Enter the registration name and key here and click OK. If it prompt you that register succeesfully, please close DiaryOne and restart it. Then you can use the registered version of DiaryOne. Enjoy!

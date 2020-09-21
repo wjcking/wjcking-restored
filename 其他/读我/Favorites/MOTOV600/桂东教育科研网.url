@@ -1,0 +1,8 @@
+[DEFAULT]
+BASEURL=http://www.gdjyw.com/midi/
+[DOC#6#8#10]
+BASEURL=http://www.gdjyw.com/midi/piano/piano.htm
+ORIGURL=china/china.htm
+[InternetShortcut]
+URL=http://www.gdjyw.com/midi/
+Modified=40D617157F54C401DA

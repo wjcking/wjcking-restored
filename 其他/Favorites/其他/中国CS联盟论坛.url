@@ -1,0 +1,9 @@
+[DEFAULT]
+BASEURL=http://bbs.ccsk.net/
+
+[DOC#5]
+BASEURL=http://bbs.ccsk.net/forum/index.php
+
+[InternetShortcut]
+URL=http://bbs.ccsk.net/
+Modified=E05C91E9ECF5C2015A

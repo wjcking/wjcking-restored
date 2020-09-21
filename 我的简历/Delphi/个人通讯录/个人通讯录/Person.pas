@@ -1,0 +1,60 @@
+unit Person;
+
+interface
+
+type
+    TPerson = class(TObject)
+    private   // private declarations
+    _ID         :Integer;
+    _Name       :string;
+    _Sex        :string;
+    _HP         :string;
+    _ComPhone   :string;
+    _QQ         :string;
+    _Phone      :string;
+    _WebSite    :string;
+    _Mail       :string;
+    _Address    :string;
+    _PersonType :string;
+    public    //Attributes , [personinfo] table fileds
+    property Name       :string       read _Name       write _Name ;
+    property Sex        :string       read _Sex        write _Sex;
+    property HP         :string       read _HP         write _HP;
+    property ComPhone   :string       read _ComPhone   write _ComPhone;
+    property QQ         :string       read _QQ         write _QQ;
+    property Phone      :string       read _Phone      write _Phone;
+    property WebSite    :string       read _WebSite    write _WebSite;
+    property Mail       :string       read _Mail       write _Mail;
+    property Address    :string       read _Address    write _Address;
+    property PersonType :string       read _PersonType write _PersonType ;
+
+
+    constructor Create(name:string;sex:string;hp:string;comphone:string;qq:string;phone:string;
+                            website:string;mail:string;address:string;persontype:string);
+    destructor Dispose;
+    end;
+
+implementation
+
+
+constructor TPerson.Create(name:string; sex:string; hp:string; comphone:string; qq:string;
+                                 phone:string; website:string; mail:string; address:string;
+                                 persontype:string);
+begin
+    self._Name       := name;
+    self._Sex        := sex;
+    self._HP         := hp;
+    self._ComPhone   := comphone;
+    self._QQ         := qq;
+    self._Phone      := phone;
+    self._WebSite    := website;
+    self._Mail       := mail;
+    self._Address    := address;
+    self._PersonType := persontype;
+end;
+
+destructor TPerson.Dispose;
+begin
+    if(self <> nil) then self.Free;
+end;
+end.

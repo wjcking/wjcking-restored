@@ -1,0 +1,8 @@
+[DEFAULT]
+BASEURL=http://expert.csdn.net/expert/forum.asp
+[DOC#8#10#12#4#6]
+BASEURL=http://expert.csdn.net/Expert/ForumsList.asp?roomid=52&typenum=1&xmlsrc=&csdnstyle=
+ORIGURL=/expert/deeptree/welcome.asp?1=1&typenum=1&xmlsrc=/Expert/deeptree/Rooms/List.xml&csdnstyle=&hidetoc=false&whichpage=
+[InternetShortcut]
+URL=http://expert.csdn.net/expert/forum.asp
+Modified=00E84B552F1EC30199
